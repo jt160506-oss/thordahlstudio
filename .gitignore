@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+.AppleDouble
+._*
+
+# Editor
+.vscode/
+.idea/
+
+# Logs / temp
+*.log
+node_modules/

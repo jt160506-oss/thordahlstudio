@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primær SEO -->
+<title>Thordahl — hjemmesider bygget til Google og AI</title>
+<meta name="description" content="Thordahl er et personligt webdesign-studie for små danske virksomheder. Moderne, hurtige hjemmesider bygget til at blive fundet på Google og anbefalet af AI som ChatGPT.">
+<link rel="canonical" href="https://thordahlstudio.dk/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Jakob Thordahl">
+<meta name="theme-color" content="#08080A">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Thordahl">
+<meta property="og:locale" content="da_DK">
+<meta property="og:url" content="https://thordahlstudio.dk/">
+<meta property="og:title" content="Thordahl — hjemmesider bygget til Google og AI">
+<meta property="og:description" content="Personligt webdesign-studie for små danske virksomheder. Moderne, hurtige hjemmesider bygget til at blive fundet på Google og anbefalet af AI.">
+<meta property="og:image" content="https://thordahlstudio.dk/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Thordahl — hjemmesider der sælger.">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Thordahl — hjemmesider bygget til Google og AI">
+<meta name="twitter:description" content="Personligt webdesign-studie for små danske virksomheder. Bygget til Google og AI.">
+<meta name="twitter:image" content="https://thordahlstudio.dk/assets/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Struktureret data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Thordahl",
+  "description": "Personligt webdesign-studie for små danske virksomheder. Moderne, hurtige hjemmesider bygget til at blive fundet på Google og anbefalet af AI.",
+  "url": "https://thordahlstudio.dk/",
+  "image": "https://thordahlstudio.dk/assets/og-image.png",
+  "priceRange": "$$",
+  "areaServed": { "@type": "Country", "name": "Danmark" },
+  "knowsAbout": ["Webdesign", "Webudvikling", "SEO", "AI-synlighed", "GEO"],
+  "founder": {
+    "@type": "Person",
+    "name": "Jakob Thordahl"
+  },
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ny hjemmeside" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Redesign" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vedligeholdelse og support" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO og AI-synlighed" } }
+  ]
+}
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+a{text-decoration:none;color:inherit}
+:root{--bg:#08080A;--ink:#EFEBE1;--mut:#7C7C86;--acc:#C6FF3D}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:"Space Grotesk",sans-serif;overflow:hidden;cursor:none}
+.skip{position:fixed;left:-999px;top:0;z-index:99;background:var(--acc);color:#0A140A;padding:10px 16px;border-radius:0 0 8px 0;font-weight:600;font-size:14px}
+.skip:focus{left:0}
+#c{position:fixed;inset:0;z-index:0}
+.blob{position:fixed;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle at 42% 38%,rgba(198,255,61,.55),rgba(120,180,0,0) 68%);filter:blur(46px);opacity:.42;z-index:1;pointer-events:none;transform:translate(-50%,-50%)}
+.vig{position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(circle at 40% 50%,transparent 34%,rgba(8,8,10,.72) 100%)}
+.wrap{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;max-width:1200px;margin:0 auto;padding:30px 44px 42px}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:13px;letter-spacing:.03em}
+.top .b{font-family:"Bricolage Grotesque";font-weight:800;font-size:21px;letter-spacing:-.01em}
+.top .b span{color:var(--acc)}
+.top nav{display:flex;gap:28px;color:var(--mut)}
+.top nav a{transition:color .3s}
+.top nav a:hover,.top nav a:focus-visible{color:var(--ink)}
+.mid{flex:1;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);margin-bottom:24px;opacity:0;animation:f .9s ease .3s forwards}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);box-shadow:0 0 12px var(--acc)}
+h1{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(48px,9vw,132px);line-height:.9;letter-spacing:-.035em}
+h1 .w{display:inline-block;opacity:0;transform:translateY(26px);filter:blur(10px);animation:wr 1s cubic-bezier(.16,1,.3,1) forwards}
+.cyc{display:inline-block;position:relative;color:var(--acc)}
+.cyc .in{display:inline-block}
+.sub{margin-top:28px;max-width:46ch;font-size:17px;line-height:1.6;color:#B4B3BC;opacity:0;animation:f 1s ease 1.05s forwards}
+.cta{margin-top:36px;display:flex;gap:22px;align-items:center;opacity:0;animation:f 1s ease 1.25s forwards}
+.btn{display:inline-flex;align-items:center;gap:11px;background:var(--acc);color:#0A140A;padding:16px 30px;border-radius:100px;font-weight:600;font-size:14.5px;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.btn:hover,.btn:focus-visible{transform:translateY(-3px);box-shadow:0 0 40px rgba(198,255,61,.4)}
+.link{color:var(--mut);font-size:14px}
+.link:hover,.link:focus-visible{color:var(--ink)}
+.bot{display:flex;justify-content:space-between;color:var(--mut);font-size:12.5px;letter-spacing:.03em}
+.bot .s{color:var(--acc)}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--acc);outline-offset:4px;border-radius:6px}
+@keyframes wr{to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes f{to{opacity:1}}
+.cur{position:fixed;width:30px;height:30px;border:1px solid rgba(239,235,225,.45);border-radius:50%;z-index:9;pointer-events:none;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s;mix-blend-mode:difference}
+.cur.b{width:58px;height:58px;background:rgba(239,235,225,.9)}
+@media(max-width:640px){
+  body{cursor:auto}
+  .cur,.top nav{display:none}
+  .wrap{padding:22px 20px 28px}
+  .blob{width:300px;height:300px}
+  .bot{flex-direction:column;gap:6px}
+}
+/* Rolig fallback for brugere der har slået bevægelse fra */
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .eyebrow,.sub,.cta,h1 .w,.cyc{opacity:1!important;transform:none!important;filter:none!important}
+  body{cursor:auto}
+  .cur,.blob,#c{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#hovedindhold">Spring til indhold</a>
+<canvas id="c" aria-hidden="true"></canvas>
+<div class="blob" id="blob" aria-hidden="true"></div>
+<div class="vig" aria-hidden="true"></div>
+<div class="cur" id="cur" aria-hidden="true"></div>
+
+<div class="wrap">
+  <header class="top">
+    <a class="b" href="/" aria-label="Thordahl — forside">thordahl<span aria-hidden="true">°</span></a>
+    <nav aria-label="Hovedmenu">
+      <a href="#ydelser">Ydelser</a>
+      <a href="#cases">Cases</a>
+      <a href="#proces">Proces</a>
+      <a href="#om">Om</a>
+    </nav>
+    <div style="color:var(--mut)">Digitalt studie</div>
+  </header>
+
+  <main class="mid" id="hovedindhold">
+    <p class="eyebrow"><i aria-hidden="true"></i>Webdesign · bygget til Google &amp; AI</p>
+    <h1>
+      <span class="w" style="animation-delay:.5s">Hjemmesider</span><br>
+      <span class="w" style="animation-delay:.62s">der&nbsp;</span><span class="cyc" style="opacity:0;animation:f .6s ease .9s forwards"><span class="in" id="cyc">sælger.</span></span>
+    </h1>
+    <p class="sub">Vi bygger moderne hjemmesider til lokale virksomheder — hurtige, personlige og skabt til at blive fundet på Google og anbefalet af AI som ChatGPT.</p>
+    <div class="cta">
+      <a class="btn" href="#kontakt">Book et gratis opkald<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="link" href="#cases">Se cases →</a>
+    </div>
+  </main>
+
+  <footer class="bot">
+    <div>Levering på 5–7 dage · Én kontaktperson hele vejen</div>
+    <div>Nye projekter tages ind løbende</div>
+  </footer>
+</div>
+
+<script>
+// Respektér brugerens bevægelses-præference
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if(!reduce){
+  // levende lys (B) — tonet mod grønt/køligt
+  const cv=document.getElementById('c'),g=cv.getContext('2d');
+  let W,H,DPR=Math.min(devicePixelRatio||1,2);
+  function sz(){W=cv.width=innerWidth*DPR;H=cv.height=innerHeight*DPR}sz();addEventListener('resize',sz);
+  const cols=[[150,200,90],[90,140,150],[120,110,170],[180,220,120],[70,100,120]];
+  const B=[];for(let i=0;i<5;i++)B.push({x:Math.random(),y:Math.random(),a:Math.random()*6,s:.28+Math.random()*.4,r:.26+Math.random()*.16,c:cols[i]});
+  let mx=.5,my=.45,t=0;addEventListener('mousemove',e=>{mx=e.clientX/innerWidth;my=e.clientY/innerHeight});
+  function loop(){t+=.004;g.clearRect(0,0,W,H);g.globalCompositeOperation='lighter';
+    B.forEach((b,i)=>{const ox=Math.cos(t*b.s+b.a)*.13,oy=Math.sin(t*b.s*1.1+b.a)*.13;
+      let px=(b.x+ox)*W,py=(b.y+oy)*H;if(i===0){px=(b.x+ox)*W+(mx-.5)*W*.45;py=(b.y+oy)*H+(my-.5)*H*.45;}
+      const rad=Math.max(W,H)*b.r,gr=g.createRadialGradient(px,py,0,px,py,rad);
+      gr.addColorStop(0,`rgba(${b.c[0]},${b.c[1]},${b.c[2]},.16)`);gr.addColorStop(1,'rgba(0,0,0,0)');
+      g.fillStyle=gr;g.fillRect(0,0,W,H)});requestAnimationFrame(loop)}loop();
+
+  // cyklende ord (C)
+  const words=["sælger.","rangerer.","konverterer.","bemærkes."];let wi=0;const cyc=document.getElementById('cyc');
+  setInterval(()=>{wi=(wi+1)%words.length;cyc.style.transition='transform .4s cubic-bezier(.7,0,.3,1),opacity .4s';cyc.style.transform='translateY(-55%)';cyc.style.opacity='0';
+   setTimeout(()=>{cyc.textContent=words[wi];cyc.style.transition='none';cyc.style.transform='translateY(55%)';cyc.offsetHeight;cyc.style.transition='transform .5s cubic-bezier(.16,1,.3,1),opacity .5s';cyc.style.transform='none';cyc.style.opacity='1';},400);},2400);
+
+  // cursor + følgende kugle (C) + cursor-ring (B)
+  const cur=document.getElementById('cur'),blob=document.getElementById('blob');
+  let cx=innerWidth*.5,cy=innerHeight*.5,tX=cx,tY=cy,bx=innerWidth*.7,by=innerHeight*.4;
+  addEventListener('mousemove',e=>{tX=e.clientX;tY=e.clientY});
+  (function m(){cx+=(tX-cx)*.22;cy+=(tY-cy)*.22;cur.style.left=cx+'px';cur.style.top=cy+'px';
+    bx+=(tX-bx)*.05;by+=(tY-by)*.05;blob.style.left=bx+'px';blob.style.top=by+'px';requestAnimationFrame(m)})();
+  document.querySelectorAll('a').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('b'));el.addEventListener('mouseleave',()=>cur.classList.remove('b'))});
+}
+</script>
+</body>
+</html>
