@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sådan fungerer AI-søgemaskiner — og hvordan din side bliver anbefalet | Thordahl</title>
+<meta name="description" content="Hvordan Google AI Overviews, ChatGPT-søgning og Perplexity henter og citerer hjemmesider — forklaret konkret, med aktuelle tal fra 2025-2026, og hvad det betyder for din virksomhed.">
+<link rel="canonical" href="https://thordahlstudio.dk/blog/saadan-fungerer-ai-soegemaskiner/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Jakob Thordahl">
+<meta name="theme-color" content="#0B0B0C">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Thordahl">
+<meta property="og:locale" content="da_DK">
+<meta property="og:url" content="https://thordahlstudio.dk/blog/saadan-fungerer-ai-soegemaskiner/">
+<meta property="og:title" content="Sådan fungerer AI-søgemaskiner — og hvordan din side bliver anbefalet">
+<meta property="og:description" content="Hvordan Google AI Overviews, ChatGPT-søgning og Perplexity henter og citerer hjemmesider. Med aktuelle tal fra 2025-2026.">
+<meta property="og:image" content="https://thordahlstudio.dk/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thordahlstudio.dk/assets/og-image.png">
+<link rel="icon" href="../../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="96x96" href="../../assets/favicon-96x96.png">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sådan fungerer AI-søgemaskiner — og hvordan din side bliver anbefalet",
+  "description": "Hvordan Google AI Overviews, ChatGPT-søgning og Perplexity henter og citerer hjemmesider, med aktuelle tal fra 2025-2026.",
+  "author": { "@type": "Person", "name": "Jakob Thordahl" },
+  "publisher": { "@type": "Organization", "name": "Thordahl", "url": "https://thordahlstudio.dk" },
+  "datePublished": "2026-07-17",
+  "dateModified": "2026-07-17",
+  "mainEntityOfPage": "https://thordahlstudio.dk/blog/saadan-fungerer-ai-soegemaskiner/",
+  "image": "https://thordahlstudio.dk/assets/og-image.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Forside", "item": "https://thordahlstudio.dk/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://thordahlstudio.dk/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Sådan fungerer AI-søgemaskiner", "item": "https://thordahlstudio.dk/blog/saadan-fungerer-ai-soegemaskiner/" }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#hovedindhold">Spring til indhold</a>
+
+<header class="nav scrolled" id="nav" style="position:sticky">
+  <div class="nav-in">
+    <a class="logo" href="../../index.html" aria-label="Thordahl forside">thordahl<span>°</span></a>
+    <nav class="nav-links" aria-label="Menu">
+      <a href="../../index.html#ydelser">Ydelser</a>
+      <a href="../index.html">Blog</a>
+    </nav>
+    <a href="../../index.html#kontakt" class="btn nav-cta">Kontakt</a>
+  </div>
+</header>
+
+<article class="post" id="hovedindhold">
+  <div class="breadcrumb"><a href="../../index.html">Forside</a> · <a href="../index.html">Blog</a> · Sådan fungerer AI-søgemaskiner</div>
+  <span class="kicker">AI-søgning</span>
+  <h1>Sådan fungerer AI-søgemaskiner — og hvordan din side bliver anbefalet</h1>
+  <p class="meta">Af Jakob Thordahl · 17. juli 2026 · ca. 11 min læsning</p>
+
+  <p class="lead">En AI-søgemaskine som Google AI Overviews, ChatGPT eller Perplexity slår ikke bare ti links op — den læser en håndfuld hjemmesider, sammenfatter et svar og angiver, hvilke kilder svaret bygger på. For din virksomhed betyder det, at spillet har ændret sig: det handler ikke længere kun om at ligge nummer ét, men om at være én af de få kilder, AI'en vælger at citere.</p>
+
+  <div class="callout">
+    <h4>Kort fortalt</h4>
+    <p>AI-søgemaskiner bygger svar med en teknik kaldet <strong>RAG</strong>: de henter relevante sider i realtid og lader så en sprogmodel skrive et svar <em>ud fra</em> dem. De citerer typisk kun 3-5 kilder ud af mange hentede. Det, der afgør, om du bliver en af dem, er: at din side svarer direkte på spørgsmålet, er let at uddrage fra, og udstråler troværdighed.</p>
+  </div>
+
+  <h2>Skiftet: fra ti blå links til ét svar</h2>
+  <p>I klassisk søgning får du en liste af links og vælger selv. I AI-søgning får du et færdigt svar med nogle få kildehenvisninger. Forskellen er enorm for en virksomhed: hvor der før var ti pladser at kæmpe om på første side, er der nu ofte kun tre-fem citerede kilder — og resten er reelt usynlige. Det gør det både sværere og mere værdifuldt at være med: bliver du citeret, står du som <em>svaret</em>, ikke som ét blandt ti valg.</p>
+  <p>Det er ikke en niche længere. Google viser i dag AI-svar for en stor del af søgningerne, og for lokale søgninger udløses et AI-svar i over 40 % af tilfældene.<sup>[1]</sup> Samtidig bruger en voksende del af kunderne ChatGPT og Perplexity direkte, når de skal have hjælp eller en anbefaling.</p>
+
+  <h2>Fundamentet: hvad "RAG" betyder</h2>
+  <p>Næsten alle AI-søgemaskiner bygger på samme grundidé: <strong>Retrieval-Augmented Generation</strong>, forkortet RAG. Det lyder teknisk, men princippet er enkelt og værd at forstå:</p>
+  <ul>
+    <li><strong>Retrieval (hentning):</strong> Systemet søger på nettet i realtid og henter en række potentielt relevante sider — ofte med en blanding af klassisk søgeordsmatch og "semantisk" match, hvor det forstår betydning frem for kun ord.</li>
+    <li><strong>Augmented (beriget):</strong> De hentede sider lægges ind som baggrundsmateriale til sprogmodellen.</li>
+    <li><strong>Generation (svar):</strong> Sprogmodellen skriver et svar <em>ud fra</em> de hentede sider og citerer dem, den støtter sig til.</li>
+  </ul>
+  <p>Pointen: AI'en finder ikke svaret inde i sig selv — den henter det på nettet og refererer til kilderne. Derfor kan din hjemmeside blive en del af svaret, selv om modellen aldrig er "trænet" på lige præcis din side. Og derfor er det afgørende, at din side er let at hente og let at uddrage fra.</p>
+
+  <h2>Google AI Overviews og AI Mode</h2>
+  <p>Googles AI-svar (AI Overviews) er de sammenfattede svar, der vises øverst over de almindelige resultater, drevet af en tilpasset version af Googles Gemini-model oven på det eksisterende søgeindeks. AI Mode er en mere samtale-agtig udgave, hvor man kan stille opfølgende spørgsmål.</p>
+  <p>Det interessante er, hvordan Google finder kilderne. Systemet bruger en teknik kaldet <strong>query fan-out</strong>: dit spørgsmål "foldes ud" i en række underspørgsmål, som et fuldt svar ville skulle dække, og Google henter så indhold, der klarer sig på tværs af de underspørgsmål.<sup>[2]</sup> Det belønner sider, der dækker et emne grundigt, frem for sider, der kun rammer ét enkelt søgeord.</p>
+  <p>Nogle tal, der siger noget om spillet: 88 % af Googles AI-svar citerer tre eller flere kilder, og kun 1 % nøjes med en enkelt.<sup>[2]</sup> Sammenhængen mellem at ligge i top-10 organisk og blive citeret er desuden faldende — fra 76 % af citaterne i juli 2025 til 38 % i marts 2026.<sup>[2]</sup> Med andre ord: du behøver ikke længere nødvendigvis at ligge nummer ét for at blive citeret, men du skal have indhold, der besvarer spørgsmålet skarpt og troværdigt.</p>
+
+  <h2>ChatGPT-søgning</h2>
+  <p>ChatGPT svarer som udgangspunkt ud fra sin træning, men slår op på nettet, når det giver mening — fx når du beder om noget aktuelt, beder om kilder, eller spørger om noget uden for modellens sikre viden. Cirka 18 % af ChatGPT-samtaler udløser mindst én websøgning.<sup>[3]</sup></p>
+  <p>Når ChatGPT søger, henter den en pulje kandidatsider (historisk via Bings søgeindeks) og udvælger så nogle få at citere. Og her er en vigtig detalje: en analyse af over 500.000 sider fandt, at ChatGPT kun citerer omkring <strong>15 %</strong> af de sider, den henter — de øvrige 85 % bliver vurderet og valgt fra.<sup>[3]</sup> Modellen vurderer især tre ting: om siden svarer direkte på spørgsmålet, om den er struktureret, så svaret er let at uddrage, og om kilden virker troværdig.</p>
+  <p>En konsekvens for lokale virksomheder: fordi kandidatpuljen historisk har hængt sammen med Bing, betaler det sig at have styr på det klassiske SEO-fundament <em>og</em> at være til stede på de kilder, AI'er ofte trækker på (fx en velfyldt virksomhedsprofil og omtaler andre steder).</p>
+
+  <h2>Perplexity</h2>
+  <p>Perplexity er bygget om søgning fra bunden og viser altid sine kilder som nummererede, klikbare henvisninger. Under motorhjelmen kaster den et bredt net (henter i omegnen af ti sider per spørgsmål) og citerer typisk tre til fem af dem.<sup>[4]</sup></p>
+  <p>To ting er værd at bemærke. For det første belønner Perplexity sider, der er <strong>lette at uddrage fra</strong> — klare definitioner, mærkede afsnit, korte konkluderende sætninger — frem for lange, tætte tekstmure. For det andet vægter den <strong>friskhed</strong> højt: i en analyse fra 2026 var 82 % af de citerede sider udgivet inden for de seneste 30 dage.<sup>[4]</sup> En artikel, du udgiver i formiddag, kan altså blive fundet og citeret i eftermiddag.</p>
+
+  <h2>Hvad de tre har til fælles</h2>
+  <p>På tværs af Google, ChatGPT og Perplexity tegner der sig et tydeligt mønster for, hvad der bliver citeret:</p>
+  <ul>
+    <li><strong>Svaret står tidligt og direkte.</strong> De første 100-200 ord skal besvare spørgsmålet klart. AI'er uddrager gerne fra toppen.</li>
+    <li><strong>Indholdet er let at "plukke".</strong> Tydelige overskrifter, lister, definitioner og korte konkluderende sætninger slår lange, tætte afsnit.</li>
+    <li><strong>Troværdighed er afgørende.</strong> Et rigtigt afsender-navn, erfaring, kildeangivelser og et stærkt fagligt indtryk (E-E-A-T) vægter tungt. Undersøgelser peger på, at op mod 96 % af citaterne i Googles AI-svar kommer fra kilder med stærke troværdigheds-signaler.<sup>[2]</sup></li>
+    <li><strong>Konkret dokumentation hjælper.</strong> Forskning fra Princeton og Allen Institute (KDD 2024) viste, at netop det at tilføje citater, statistik og kilder kan øge en sides synlighed i AI-svar med op mod 40 %.<sup>[5]</sup></li>
+  </ul>
+
+  <div class="callout">
+    <h4>Den vigtige nuance</h4>
+    <p>At blive citeret af en AI er ikke det samme som at "narre" en algoritme. De ting, der virker — klare svar, god struktur, ægte troværdighed — er præcis de samme ting, der gør en side god for et menneske. Det er hele pointen: du bygger for mennesket, og AI'en belønner det.</p>
+  </div>
+
+  <h2>Hvad det betyder for din virksomhed</h2>
+  <p>Du skal ikke vælge mellem Google og AI. De trækker på det samme fundament: en teknisk sund, hurtig side med klart, troværdigt indhold. Men AI-søgning stiller skarpere krav til, at din side kan <em>læses og uddrages</em> af en maskine — og til at det er tydeligt, hvem der står bag. Gør du det godt, kan du som lille, lokal virksomhed blive den, AI'en anbefaler, i et felt hvor de fleste konkurrenter slet ikke er klar endnu.</p>
+  <p>I den næste guide bliver det helt konkret: <a href="../bliv-fundet-af-ai/index.html">hvad du praktisk gør for at gøre din hjemmeside klar til at blive citeret af AI</a>.</p>
+
+  <div class="sources">
+    <h4>Kilder</h4>
+    <ol>
+      <li>Local SEO Statistics 2026 (AI Overviews i lokale søgninger) — <a href="https://www.digitalapplied.com/blog/local-seo-statistics-2026-data-points" target="_blank" rel="noopener">digitalapplied.com</a></li>
+      <li>Google AI Overviews Ranking Factors 2026 (query fan-out, citationsmønstre, E-E-A-T) — <a href="https://wellows.com/blog/google-ai-overviews-ranking-factors/" target="_blank" rel="noopener">wellows.com</a></li>
+      <li>How ChatGPT sources the web (browse-trigger, 15 %-citation) — <a href="https://www.tryprofound.com/blog/chatgpt-citation-sources" target="_blank" rel="noopener">tryprofound.com</a></li>
+      <li>How Perplexity AI answers work (RAG, friskhed) — <a href="https://ziptie.dev/blog/how-perplexity-ai-answers-work/" target="_blank" rel="noopener">ziptie.dev</a></li>
+      <li>Generative Engine Optimization (Princeton/Allen Institute, KDD 2024) — <a href="https://searchengineland.com/mastering-generative-engine-optimization-in-2026-full-guide-469142" target="_blank" rel="noopener">searchengineland.com</a></li>
+    </ol>
+  </div>
+
+  <div class="post-cta">
+    <h3>Vil du være den, AI'en anbefaler?</h3>
+    <p>Jeg bygger hjemmesider, der er klar til både Google og AI-søgning — teknisk, indholdsmæssigt og troværdighedsmæssigt. Tag en uforpligtende snak om, hvad der giver mening for din virksomhed.</p>
+    <a href="../../index.html#kontakt" class="btn">Book et gratis opkald</a>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <div class="logo">thordahl<span class="acc">°</span></div>
+      <p>Personligt digitalt studie. Moderne hjemmesider til lokale virksomheder — bygget til Google og AI.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Studie</h5>
+      <a href="../../index.html#ydelser">Ydelser</a>
+      <a href="../../index.html#om">Om</a>
+      <a href="../index.html">Blog</a>
+      <a href="../../silkeborg/index.html">Webdesign i Silkeborg</a>
+    </div>
+    <div class="foot-col">
+      <h5>Kontakt</h5>
+      <a href="mailto:kontakt@thordahlstudio.dk">kontakt@thordahlstudio.dk</a>
+      <a href="tel:+4581616608">+45 81 61 66 08</a>
+      <a href="../../privatlivspolitik/index.html">Privatlivspolitik</a>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 Thordahl · thordahlstudio.dk</span>
+    <span>Bygget til Google &amp; AI</span>
+  </div>
+</footer>
+</body>
+</html>

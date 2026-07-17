@@ -212,6 +212,50 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;margin-top:40px}
 .legal a{color:var(--acc);border-bottom:1px solid var(--line)}
 .legal strong{color:var(--ink);font-weight:500}
 
+/* Blog-oversigt */
+.blogwrap{max-width:900px;margin:0 auto;padding:140px 28px 40px}
+.blog-hero{max-width:680px;margin-bottom:48px}
+.blog-hero h1{font-size:clamp(38px,6vw,64px);line-height:1.02}
+.blog-hero p{color:#B7B2A7;font-size:18px;margin-top:18px}
+.bloglist{display:grid;gap:18px;padding-bottom:90px}
+.postcard{display:block;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:30px;transition:border-color .3s,transform .3s,background .3s}
+.postcard:hover{border-color:rgba(198,255,61,.38);transform:translateY(-3px);background:#151517}
+.postcard .tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+.postcard h2{font-size:clamp(23px,3vw,30px);margin:12px 0 10px;letter-spacing:-.02em}
+.postcard p{color:#B7B2A7;font-size:15.5px}
+.postcard .more{display:inline-block;margin-top:16px;color:var(--ink);font-size:14px;border-bottom:1px solid var(--acc);padding-bottom:2px}
+.postcard .rt{color:var(--mut);font-size:13px;margin-left:10px}
+
+/* Artikel */
+.post{max-width:740px;margin:0 auto;padding:130px 28px 70px}
+.post .breadcrumb{font-size:13px;color:var(--mut);margin-bottom:22px}
+.post .breadcrumb a{color:var(--mut);border-bottom:1px solid var(--line2)}
+.post .breadcrumb a:hover{color:var(--ink)}
+.post .kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc)}
+.post h1{font-size:clamp(32px,5vw,52px);line-height:1.05;margin:14px 0 12px;letter-spacing:-.03em}
+.post .meta{color:var(--mut);font-size:14px;margin-bottom:26px}
+.post .lead{font-size:20px;color:#CFCABF;line-height:1.6;margin:0 0 10px}
+.post h2{font-size:clamp(24px,3.2vw,30px);margin:46px 0 14px;letter-spacing:-.02em}
+.post h3{font-size:20px;margin:30px 0 10px}
+.post p{color:#C3BEB2;font-size:17px;line-height:1.78;margin-bottom:18px}
+.post ul,.post ol{color:#C3BEB2;font-size:17px;line-height:1.7;margin:0 0 20px 24px}
+.post li{margin-bottom:10px}
+.post li::marker{color:var(--acc)}
+.post a{color:var(--acc);border-bottom:1px solid var(--line)}
+.post strong{color:var(--ink);font-weight:600}
+.post .callout{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:12px;padding:22px 24px;margin:28px 0}
+.post .callout h4{font-family:"Bricolage Grotesque";font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
+.post .callout p:last-child{margin-bottom:0}
+.post blockquote{border-left:3px solid var(--line);padding-left:22px;margin:26px 0;color:#DAD5CA;font-size:19px;font-style:italic}
+.post figure{margin:26px 0}
+.post .sources{margin-top:48px;border-top:1px solid var(--line);padding-top:26px}
+.post .sources h4{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-bottom:14px;font-family:"Bricolage Grotesque"}
+.post .sources ol{font-size:13.5px;color:var(--mut);margin-left:20px}
+.post .sources a{color:var(--mut);word-break:break-word}
+.post-cta{margin-top:48px;background:linear-gradient(180deg,var(--panel),#0E0E10);border:1px solid var(--line);border-radius:20px;padding:34px;text-align:center}
+.post-cta h3{font-size:24px;margin-bottom:10px}
+.post-cta p{color:#B7B2A7;font-size:15.5px;margin-bottom:22px}
+
 @media(max-width:900px){
   .hero-grid,.case,.about,.contact,.config-grid{grid-template-columns:1fr}
   .hero{padding:120px 0 70px}

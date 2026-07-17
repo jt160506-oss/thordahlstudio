@@ -13,9 +13,27 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thordahlstudio.dk/privatlivspolitik/</loc>
+    <loc>https://thordahlstudio.dk/blog/</loc>
     <lastmod>2026-07-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://thordahlstudio.dk/blog/hvad-er-seo/</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://thordahlstudio.dk/blog/saadan-fungerer-ai-soegemaskiner/</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://thordahlstudio.dk/blog/bliv-fundet-af-ai/</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
