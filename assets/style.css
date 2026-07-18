@@ -256,6 +256,61 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;margin-top:40px}
 .post-cta h3{font-size:24px;margin-bottom:10px}
 .post-cta p{color:#B7B2A7;font-size:15.5px;margin-bottom:22px}
 
+/* ——— Kapitel-system (rød tråd) ——— */
+.chapter{display:inline-flex;align-items:center;gap:13px;font-family:"Bricolage Grotesque";font-weight:700;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-bottom:16px}
+.chapter b{color:var(--acc);font-weight:800;font-size:12.5px}
+.chapter .rail{width:40px;height:1px;background:linear-gradient(90deg,var(--acc),transparent);opacity:.6}
+.sec-head p strong,.about-txt p strong{color:var(--ink);font-weight:600}
+.sec-lead{max-width:660px;color:#B7B2A7;font-size:17px;margin-top:18px}
+.sec-lead strong{color:var(--ink);font-weight:600}
+
+/* Problem-sektion */
+.shift{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px}
+.shift-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px}
+.shift-card .t{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:12px}
+.shift-card h3{font-size:21px;margin-bottom:10px;letter-spacing:-.02em}
+.shift-card p{color:#B7B2A7;font-size:15px}
+.shift-card.now{border-color:rgba(198,255,61,.32)}
+.shift-card.now .t{color:var(--acc)}
+
+/* ——— Case: browser-ramme + virkende beregner ——— */
+.casegrid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.browser{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0E0E10;box-shadow:0 28px 70px rgba(0,0,0,.45)}
+.browser-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#151517;border-bottom:1px solid var(--line2)}
+.browser-bar i{width:9px;height:9px;border-radius:50%;background:#2b2c30;display:block;flex:none}
+.browser-bar .url{margin-left:8px;font-size:11.5px;color:var(--mut);background:var(--bg);border:1px solid var(--line2);border-radius:100px;padding:4px 12px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.browser-body{padding:24px}
+.calcdemo .row{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:var(--mut);margin-bottom:7px}
+.calcdemo .row b{color:var(--ink);font-weight:600;font-size:15px}
+.calcdemo input[type=range]{width:100%;accent-color:var(--acc);margin-bottom:20px;cursor:pointer}
+.calcdemo .result{border-top:1px solid var(--line2);margin-top:6px;padding-top:18px;display:flex;justify-content:space-between;align-items:flex-end}
+.calcdemo .result span{font-size:13px;color:var(--mut)}
+.calcdemo .result .big{font-family:"Bricolage Grotesque";font-weight:800;font-size:32px;color:var(--acc);letter-spacing:-.02em;line-height:1}
+.demo-note{margin-top:14px;font-size:12px;color:var(--mut);display:flex;align-items:center;gap:7px}
+.case-points{display:flex;flex-direction:column;gap:18px;margin:26px 0}
+.case-point{display:flex;gap:14px}
+.case-point .ic{flex:none;width:36px;height:36px;border-radius:10px;background:rgba(198,255,61,.1);display:grid;place-items:center;color:var(--acc)}
+.case-point b{display:block;color:var(--ink);font-size:15.5px;font-weight:600;margin-bottom:3px}
+.case-point p{color:#B7B2A7;font-size:14.5px;margin:0}
+.case-meta{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 24px}
+.case-meta span{font-size:12px;color:var(--mut);border:1px solid var(--line);border-radius:100px;padding:5px 12px}
+
+/* ——— Kvitteringsside ——— */
+.thanks{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 28px 80px}
+.thanks-card{max-width:560px;text-align:center}
+.thanks-mark{width:66px;height:66px;border-radius:50%;background:rgba(198,255,61,.12);border:1px solid rgba(198,255,61,.4);display:grid;place-items:center;margin:0 auto 26px;color:var(--acc)}
+.thanks h1{font-size:clamp(32px,5vw,46px);margin-bottom:16px}
+.thanks p{color:#B7B2A7;font-size:17px;margin-bottom:14px}
+.thanks .next{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;margin:30px 0;text-align:left}
+.thanks .next h4{font-family:"Bricolage Grotesque";font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:14px}
+.thanks .next ol{margin-left:20px;color:#B7B2A7;font-size:15px}
+.thanks .next li{margin-bottom:9px}
+.thanks .next li::marker{color:var(--acc)}
+
+@media(max-width:900px){
+  .shift,.casegrid{grid-template-columns:1fr}
+}
+
 @media(max-width:900px){
   .hero-grid,.case,.about,.contact,.config-grid{grid-template-columns:1fr}
   .hero{padding:120px 0 70px}

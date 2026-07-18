@@ -63,6 +63,26 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Hvad koster en ny hjemmeside?", "acceptedAnswer": { "@type": "Answer", "text": "Prisen afhænger af omfanget — antal sider, design, tekst, funktioner og SEO. Derfor giver jeg ikke en fast standardpris, før jeg kender projektet. Send en kort besked, så vender jeg tilbage med et ærligt og konkret tilbud uden binding." } },
+    { "@type": "Question", "name": "Hvor lang tid tager det at få lavet en hjemmeside?", "acceptedAnswer": { "@type": "Answer", "text": "Det afhænger af projektets størrelse og hvor meget indhold der skal produceres. En enkel side går hurtigere end en større side, en webshop eller et redesign. Du får en realistisk tidsplan sammen med tilbuddet — ikke et løst gæt." } },
+    { "@type": "Question", "name": "Er det første opkald gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, og det er helt uforpligtende. Vi taler om din virksomhed, din nuværende side og hvad du gerne vil opnå. Bagefter sender jeg et konkret forslag — eller siger ærligt fra, hvis jeg ikke er den rigtige til opgaven." } },
+    { "@type": "Question", "name": "Bruger du WordPress eller en skabelon?", "acceptedAnswer": { "@type": "Answer", "text": "Nej. Jeg bygger siderne fra bunden, så de bliver hurtige, rene og tilpasset netop din forretning. Skabelonsider er billigere at lave, men de er ofte langsomme, ens at se på og svære at optimere ordentligt." } },
+    { "@type": "Question", "name": "Skal jeg selv skrive teksten til hjemmesiden?", "acceptedAnswer": { "@type": "Answer", "text": "Nej. Jeg hjælper med struktur, formuleringer og SEO-venligt indhold, så teksten både lyder som dig, er nem at forstå for kunderne og tydelig for Google." } },
+    { "@type": "Question", "name": "Kan jeg selv rette i hjemmesiden bagefter?", "acceptedAnswer": { "@type": "Answer", "text": "I de fleste tilfælde ja — siden kan bygges, så du selv kan rette tekst, billeder og produkter. Vi aftaler præcis, hvad du skal kunne redigere, inden vi går i gang." } },
+    { "@type": "Question", "name": "Hvem ejer hjemmesiden og domænet?", "acceptedAnswer": { "@type": "Answer", "text": "Det gør du. Domæne, indhold og den færdige side tilhører dig. Du er ikke bundet til mig for at kunne bruge din egen hjemmeside." } },
+    { "@type": "Question", "name": "Hvad koster det at drive hjemmesiden bagefter?", "acceptedAnswer": { "@type": "Answer", "text": "Et domæne koster typisk under hundrede kroner om året. Hosting kan i mange tilfælde holdes meget billigt eller gratis, fordi jeg bygger lette, statiske sider. Ønsker du løbende support og opdateringer, aftaler vi det separat." } },
+    { "@type": "Question", "name": "Bliver min hjemmeside synlig på Google?", "acceptedAnswer": { "@type": "Answer", "text": "Siden bygges med et solidt SEO-fundament fra start: teknik, hastighed, struktur, metadata og indhold der matcher det, dine kunder søger på. Ingen kan love en bestemt placering, men synlighed er en fast del af arbejdet — ikke noget der kommer bagefter." } },
+    { "@type": "Question", "name": "Hvad er AI-synlighed, og hvorfor betyder det noget?", "acceptedAnswer": { "@type": "Answer", "text": "Flere og flere spørger ChatGPT eller Perplexity i stedet for kun at google. De AI'er henter svar fra hjemmesider og citerer nogle få kilder. AI-synlighed handler om at bygge din side, så den er nem for en AI at læse, forstå og anbefale." } },
+    { "@type": "Question", "name": "Laver du også webshops?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Jeg har arbejdet med e-commerce i praksis — fra produktsider og købsflow til ordrehåndtering — og hjælper med at gøre en webshop hurtig og nem at handle på." } },
+    { "@type": "Question", "name": "Hvad sker der, hvis jeg får brug for hjælp efter lancering?", "acceptedAnswer": { "@type": "Answer", "text": "Du skriver eller ringer, og jeg hjælper. Smårettelser, opdateringer, nye sektioner eller tekniske spørgsmål — din side bliver ikke afleveret og glemt." } }
+  ]
+}
+</script>
 
 <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -77,10 +97,9 @@
     <a class="logo" href="index.html" aria-label="Thordahl forside">thordahl<span>°</span></a>
     <nav class="nav-links" aria-label="Hovedmenu">
       <a href="#ydelser">Ydelser</a>
-      <a href="#loesninger">Løsninger</a>
       <a href="#case">Cases</a>
+      <a href="#proces">Proces</a>
       <a href="#om">Om</a>
-      <a href="#faq">FAQ</a>
       <a href="blog/index.html">Blog</a>
     </nav>
     <a href="#kontakt" class="btn nav-cta">Kontakt</a>
@@ -91,17 +110,16 @@
 <div class="mobile-menu" id="mobileMenu">
   <button class="close" id="closeMenu" aria-label="Luk menu">×</button>
   <a href="#ydelser">Ydelser</a>
-  <a href="#loesninger">Løsninger</a>
   <a href="#case">Cases</a>
+  <a href="#proces">Proces</a>
   <a href="#om">Om</a>
-  <a href="#faq">FAQ</a>
   <a href="blog/index.html">Blog</a>
   <a href="#kontakt" class="acc">Kontakt →</a>
 </div>
 
 <main id="hovedindhold">
 
-<!-- HERO -->
+<!-- HERO — uændret -->
 <section class="hero">
   <div class="hero-glow" id="glow" aria-hidden="true"></div>
   <div class="wrap hero-grid">
@@ -141,46 +159,135 @@
   </div>
 </section>
 
-<!-- YDELSER -->
-<section class="sec" id="ydelser">
+<!-- 01 · PROBLEMET -->
+<section class="sec" id="hvorfor">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow"><i aria-hidden="true"></i>Ydelser</span>
-      <h2>Fire ydelser, én kontaktperson.</h2>
-      <p>De dækker det, de fleste lokale virksomheder har brug for. Du arbejder direkte med mig hele vejen — og siden bygges til at blive fundet både på Google og i AI-søgning.</p>
+      <span class="chapter"><b>01</b><span class="rail"></span>Udgangspunktet</span>
+      <h2>Hvorfor bliver din virksomhed ikke fundet?</h2>
+      <p class="sec-lead">De fleste hjemmesider til lokale virksomheder er bygget efter en opskrift fra 2015: pæn nok, men langsom, svær at forstå for søgemaskiner — og helt uforberedt på, at kunderne har fået en ny måde at søge på. <strong>Din næste kunde spørger måske slet ikke Google. Hun spørger en AI.</strong></p>
+    </div>
+    <div class="shift reveal">
+      <div class="shift-card">
+        <div class="t">Sådan var det</div>
+        <h3>Ti blå links</h3>
+        <p>Kunden googlede, fik en liste og klikkede rundt. Der var ti pladser at kæmpe om, og det handlede mest om at ligge højt nok til at blive set.</p>
+      </div>
+      <div class="shift-card now">
+        <div class="t">Sådan er det nu</div>
+        <h3>Ét svar med tre kilder</h3>
+        <p>ChatGPT, Perplexity og Googles AI-svar læser en håndfuld sider og <strong>sammenfatter ét svar med typisk 3-5 kilder</strong>. Er du ikke en af dem, findes du reelt ikke i det svar.</p>
+      </div>
+    </div>
+    <p class="sec-lead reveal" style="margin-top:32px">Det er ikke en fjern fremtid — for lokale søgninger udløser Google i dag et AI-svar i over 40 % af tilfældene. Den gode nyhed: <strong>de færreste lokale virksomheder er klar til det endnu.</strong> Der er en fordel at hente lige nu. Jeg har skrevet grundigt om, hvordan det fungerer, i <a href="blog/saadan-fungerer-ai-soegemaskiner/index.html" style="color:var(--acc)">guiden om AI-søgemaskiner</a>.</p>
+  </div>
+</section>
+
+<!-- 02 · YDELSER -->
+<section class="sec" id="ydelser" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="chapter"><b>02</b><span class="rail"></span>Ydelser</span>
+      <h2>Hvad kan jeg hjælpe dig med?</h2>
+      <p class="sec-lead">Fire ydelser, der dækker det, de fleste lokale virksomheder har brug for. <strong>Du arbejder direkte med mig hele vejen</strong> — ingen mellemled, ingen skiftende konsulenter.</p>
     </div>
     <div class="services">
       <article class="svc reveal">
         <div class="num">01</div><h3>Ny hjemmeside</h3>
-        <p>En moderne, hurtig og letforståelig hjemmeside, bygget fra bunden til din forretning — uden skabeloner.</p>
+        <p>En moderne, hurtig og letforståelig hjemmeside, <strong>bygget fra bunden</strong> til din forretning — uden skabeloner.</p>
         <div class="tags"><span>Strategi-samtale</span><span>Wireframes</span><span>Visuelt design</span><span>Tekst-sparring</span><span>Lancering</span></div>
       </article>
       <article class="svc reveal">
         <div class="num">02</div><h3>Redesign</h3>
-        <p>Et løft af udseende, struktur og tekst — vi bygger videre på det, der allerede virker, i stedet for at starte forfra.</p>
+        <p>Et løft af udseende, struktur og tekst. <strong>Vi bygger videre på det, der virker</strong>, i stedet for at starte forfra.</p>
         <div class="tags"><span>UX</span><span>Visuelt</span><span>Mobil-fix</span></div>
       </article>
       <article class="svc reveal">
         <div class="num">03</div><h3>Vedligeholdelse &amp; support</h3>
-        <p>Når siden er live, holder jeg den hurtig, sikker og opdateret. Du skriver eller ringer, og jeg ordner det.</p>
+        <p>Når siden er live, holder jeg den hurtig, sikker og opdateret. <strong>Du skriver eller ringer, og jeg ordner det.</strong></p>
         <div class="tags"><span>Hosting inkluderet</span><span>Daglig backup</span><span>Direkte support</span><span>Småændringer</span></div>
       </article>
       <article class="svc reveal">
         <div class="num">04</div><h3>SEO &amp; AI-synlighed</h3>
-        <p>Mange sider er bygget med kun Google for øje. I dag får en del kunder svar direkte fra ChatGPT og Perplexity — så jeg bygger siden til at kunne læses og anbefales begge steder.</p>
+        <p>Mange sider er bygget med kun Google for øje. Jeg bygger siden, så den kan <strong>læses og anbefales i begge verdener</strong> — Google og AI.</p>
         <div class="tags"><span>Google SEO</span><span>AI-optimering</span><span>JSON-LD</span><span>Søgeordsanalyse</span><span>Teknisk audit</span></div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- LØSNINGER / KONFIGURATOR -->
-<section class="sec" id="loesninger">
+<!-- 03 · CASE -->
+<section class="sec" id="case" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow"><i aria-hidden="true"></i>Løsninger</span>
-      <h2>Sæt din løsning sammen.</h2>
-      <p>Prisen afhænger af, hvad du har brug for. I stedet for en fast pakke sætter vi den sammen efter dit behov — vælg det, der passer, så vender jeg tilbage med et konkret, uforpligtende forslag.</p>
+      <span class="chapter"><b>03</b><span class="rail"></span>Case</span>
+      <h2>Hvordan ser det ud, når det er bygget rigtigt?</h2>
+      <p class="sec-lead">En hjemmeside skal gøre mere end at se godt ud. Den skal <strong>hjælpe den besøgende med at træffe en beslutning</strong> — og gøre næste skridt indlysende. Her er et rigtigt, live projekt.</p>
+    </div>
+
+    <div class="casegrid reveal">
+      <div>
+        <div class="chapter" style="margin-bottom:10px"><b>Live</b><span class="rail"></span>Privatøkonomi</div>
+        <h3 style="font-size:34px;letter-spacing:-.03em;margin-bottom:14px">Kredithjørnet</h3>
+        <p style="color:#B7B2A7;font-size:16px">Et site om privatøkonomi, hvor målgruppen skal forstå noget kompliceret og træffe et valg. I stedet for endnu en side, der kun <em>fortæller</em>, byggede jeg <strong>værktøjer, der regner på læserens egen situation</strong> — og gør det konkret nok til at handle på.</p>
+
+        <div class="case-meta">
+          <span>Konverteringsberegner</span><span>Boliglånsberegner</span><span>SEO-struktur</span><span>Mobil-først</span>
+        </div>
+
+        <div class="case-points">
+          <div class="case-point">
+            <span class="ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></span>
+            <div><b>Værktøjer frem for tekstmure</b><p>Beregnere, der giver et konkret tal med det samme, i stedet for lange forklaringer læseren ikke orker.</p></div>
+          </div>
+          <div class="case-point">
+            <span class="ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></span>
+            <div><b>Hurtig og mobilvenlig</b><p>Bygget let fra bunden, så den loader hurtigt — også på en telefon med dårligt signal.</p></div>
+          </div>
+          <div class="case-point">
+            <span class="ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+            <div><b>Bygget til at blive fundet</b><p>Struktur, metadata og indhold lagt an på de spørgsmål, målgruppen faktisk søger efter.</p></div>
+          </div>
+        </div>
+
+        <a href="https://kredithjornet.dk" target="_blank" rel="noopener" class="btn btn-ghost">Besøg kredithjornet.dk →</a>
+      </div>
+
+      <div>
+        <div class="browser">
+          <div class="browser-bar">
+            <i></i><i></i><i></i>
+            <span class="url">kredithjornet.dk — låneberegner</span>
+          </div>
+          <div class="browser-body">
+            <div class="calcdemo">
+              <div class="row"><span>Lånebeløb</span><b id="cAmount">250.000 kr.</b></div>
+              <input type="range" id="rAmount" min="25000" max="1000000" step="5000" value="250000" aria-label="Lånebeløb">
+              <div class="row"><span>Løbetid</span><b id="cYears">10 år</b></div>
+              <input type="range" id="rYears" min="1" max="30" step="1" value="10" aria-label="Løbetid i år">
+              <div class="result">
+                <span>Ydelse pr. måned<br><small style="color:var(--mut);font-size:11.5px">ved 5 % i rente</small></span>
+                <span class="big" id="cOut">2.652 kr.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="demo-note">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+          Prøv den — træk i skyderne. Det er samme type værktøj, jeg byggede til Kredithjørnet.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 · LØSNINGER -->
+<section class="sec" id="loesninger" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="chapter"><b>04</b><span class="rail"></span>Omfang og pris</span>
+      <h2>Hvad har du brug for — og hvad koster det?</h2>
+      <p class="sec-lead">Prisen afhænger af omfanget, så en fast pakkepris ville være et gæt. <strong>I stedet sætter vi løsningen sammen efter dit behov.</strong> Vælg det, der passer, så vender jeg tilbage med et konkret, uforpligtende forslag.</p>
     </div>
 
     <div class="config reveal">
@@ -222,47 +329,13 @@
   </div>
 </section>
 
-<!-- CASE -->
-<section class="sec" id="case">
+<!-- 05 · PROCES -->
+<section class="sec" id="proces" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow"><i aria-hidden="true"></i>Cases</span>
-      <h2>En hjemmeside skal gøre mere end at se godt ud.</h2>
-      <p>Den skal hjælpe den besøgende videre og gøre næste skridt nemt.</p>
-    </div>
-    <div class="case reveal">
-      <div>
-        <div class="k">Live projekt · privatøkonomi</div>
-        <h3>Kredithjørnet</h3>
-        <p>Et rigtigt, live projekt. I stedet for en side, der kun fortæller, byggede jeg værktøjer, der hjælper læseren med at regne på sin egen situation — og gør det lettere at handle på det.</p>
-        <div class="feats">
-          <div><span class="ic" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 7h6M9 12h6M9 17h4M5 3h14v18H5z"/></svg></span>Konverteringsberegner, der svarer med det samme</div>
-          <div><span class="ic" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></span>Boliglånsberegner, der giver læseren et konkret tal</div>
-          <div><span class="ic" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></span>Hurtig, mobilvenlig og bygget til at blive fundet</div>
-        </div>
-        <a href="https://kredithjornet.dk" target="_blank" rel="noopener" class="btn btn-ghost">Besøg kredithjornet.dk →</a>
-      </div>
-      <div class="case-visual" aria-hidden="true">
-        <div style="font-size:12px;color:var(--mut);letter-spacing:.1em">BEREGNER · EKSEMPEL</div>
-        <div class="mini-calc">
-          <div class="row"><span>Lånebeløb</span><b>250.000 kr.</b></div>
-          <div class="mini-bar"><i></i></div>
-          <div class="row" style="margin-top:10px"><span>Løbetid</span><b>10 år</b></div>
-          <div class="mini-out">1.842 kr./md.</div>
-        </div>
-        <div style="font-size:12.5px;color:var(--mut)">Værktøjer, der svarer på det, brugeren faktisk vil vide.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCES -->
-<section class="sec" id="proces">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><i aria-hidden="true"></i>Proces</span>
-      <h2>Sådan kommer vi i gang.</h2>
-      <p>Tre trin fra første besked til et konkret forslag på din nye hjemmeside.</p>
+      <span class="chapter"><b>05</b><span class="rail"></span>Proces</span>
+      <h2>Hvordan foregår et samarbejde?</h2>
+      <p class="sec-lead">Tre trin fra første besked til et konkret forslag. <strong>Du binder dig ikke til noget undervejs.</strong></p>
     </div>
     <div class="steps">
       <div class="step reveal"><div class="n">01</div><h3>Send en kort besked</h3><p>Skriv et par linjer om din virksomhed, og hvad du gerne vil have hjælp til.</p><span class="time">Under 1 minut</span></div>
@@ -272,59 +345,69 @@
   </div>
 </section>
 
-<!-- OM -->
-<section class="sec" id="om">
-  <div class="wrap about">
-    <figure class="about-photo reveal">
-      <img src="assets/jakob.webp" alt="Jakob Thordahl" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="fallback" style="display:none"><span class="init">JT</span><span style="font-size:13px">Foto på vej</span></div>
-      <figcaption>Jakob Thordahl · Thordahl</figcaption>
-    </figure>
-    <div class="about-txt reveal">
-      <span class="eyebrow"><i aria-hidden="true"></i>Om mig</span>
-      <h2>Hej — jeg er Jakob.</h2>
-      <p>Efter handelsskolen flyttede jeg til München, hvor jeg i en årrække arbejdede med <span class="hl">digital forretningsudvikling og drift</span> til daglig: webudvikling, SEO, Google- og Bing Ads, leadgenerering, indhold, kundeservice, e-commerce og konverteringsoptimering.</p>
-      <p>Det betyder, at jeg ikke kun designer en side — jeg kender <span class="hl">hele den digitale værdikæde</span> bag den: hvordan du bliver fundet, hvordan besøgende bliver til kunder, og hvad der skal til for at siden bliver ved med at fungere i drift.</p>
-      <p>Det, jeg lægger ekstra vægt på, er <span class="hl">AI-søgemaskiner som ChatGPT og Perplexity</span> — så din virksomhed også bliver nævnt, når folk spørger en AI om hjælp. Og arbejder du med mig, har du én kontaktperson hele vejen. Ingen mellemled.</p>
-      <div class="about-chips">
-        <span>Webudvikling</span><span>SEO</span><span>Performance marketing</span><span>Konverteringsoptimering</span><span>E-commerce</span><span>Google &amp; Bing Ads</span><span>Leadgenerering</span><span>Digital drift</span>
+<!-- 06 · OM -->
+<section class="sec" id="om" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="chapter"><b>06</b><span class="rail"></span>Om mig</span>
+      <h2>Hvem er det, du kommer til at arbejde med?</h2>
+    </div>
+    <div class="about">
+      <figure class="about-photo reveal">
+        <img src="assets/jakob.webp" alt="Jakob Thordahl" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="fallback" style="display:none"><span class="init">JT</span><span style="font-size:13px">Foto på vej</span></div>
+        <figcaption>Jakob Thordahl · Thordahl</figcaption>
+      </figure>
+      <div class="about-txt reveal">
+        <p>Efter handelsskolen flyttede jeg til München, hvor jeg i en årrække arbejdede med <strong>digital forretningsudvikling og drift</strong> til daglig: webudvikling, SEO, Google- og Bing Ads, leadgenerering, indhold, kundeservice, e-commerce og konverteringsoptimering.</p>
+        <p>Det betyder, at jeg ikke kun designer en side — jeg kender <strong>hele den digitale værdikæde</strong> bag den: hvordan du bliver fundet, hvordan besøgende bliver til kunder, og hvad der skal til for at siden bliver ved med at fungere i drift.</p>
+        <p>Det, jeg lægger ekstra vægt på, er <strong>AI-søgemaskiner som ChatGPT og Perplexity</strong> — så din virksomhed også bliver nævnt, når folk spørger en AI om hjælp. Og arbejder du med mig, har du én kontaktperson hele vejen. Ingen mellemled.</p>
+        <div class="about-chips">
+          <span>Webudvikling</span><span>SEO</span><span>Performance marketing</span><span>Konverteringsoptimering</span><span>E-commerce</span><span>Google &amp; Bing Ads</span><span>Leadgenerering</span><span>Digital drift</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="sec" id="faq">
+<!-- 07 · FAQ -->
+<section class="sec" id="faq" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head reveal" style="margin:0 auto 52px;text-align:center">
-      <span class="eyebrow" style="justify-content:center"><i aria-hidden="true"></i>FAQ</span>
-      <h2>Spørgsmål, jeg tit får.</h2>
+      <span class="chapter" style="justify-content:center"><b>07</b><span class="rail"></span>FAQ</span>
+      <h2>Hvad spørger folk typisk om?</h2>
     </div>
     <div class="faq">
-      <div class="qa reveal"><button aria-expanded="false">Hvor meget koster en ny hjemmeside?</button><div class="a"><p>Prisen afhænger af, hvad du har brug for — fx antal sider, design, tekst, funktioner, SEO, og om siden skal bygges fra bunden eller redesignes. Derfor giver jeg ikke en fast standardpris, før jeg kender projektet. Send en kort besked, så vender jeg tilbage med et ærligt og konkret tilbud uden binding.</p></div></div>
-      <div class="qa reveal"><button aria-expanded="false">Hvor lang tid tager det?</button><div class="a"><p>Tidsplanen afhænger af projektets størrelse, indhold, og hvor meget der skal bygges fra bunden. En simpel side kan laves hurtigere, mens en større side, webshop eller et redesign kræver mere planlægning. Kontakt mig med lidt info, så giver jeg et realistisk bud på pris, proces og tidsplan.</p></div></div>
-      <div class="qa reveal"><button aria-expanded="false">Er det første opkald gratis?</button><div class="a"><p>Ja, det første opkald er gratis og helt uforpligtende. Vi taler kort om din virksomhed, din nuværende hjemmeside, og hvad du gerne vil opnå. Efter samtalen kan jeg vurdere, hvad der giver bedst mening — og sende dig et konkret forslag.</p></div></div>
-      <div class="qa reveal"><button aria-expanded="false">Skal jeg selv skrive teksten?</button><div class="a"><p>Nej. Jeg hjælper med struktur, formuleringer og SEO-venligt indhold, så siden bliver nemmere at forstå for dine kunder og mere tydelig for Google. Målet er, at teksten både lyder naturlig, passer til din virksomhed og hjælper dine besøgende videre.</p></div></div>
-      <div class="qa reveal"><button aria-expanded="false">Kan jeg selv rette i siden bagefter?</button><div class="a"><p>Ja, i de fleste tilfælde kan siden bygges, så du selv kan rette almindeligt indhold som tekst, billeder og produkter efter lancering. Det afhænger af projektet og platformen. Jeg gennemgår altid, hvad du selv kan redigere, inden vi går i gang.</p></div></div>
-      <div class="qa reveal"><button aria-expanded="false">Hvad hvis jeg får brug for hjælp efter lancering?</button><div class="a"><p>Du kan altid kontakte mig. Jeg hjælper med smårettelser, opdateringer, tekniske spørgsmål og videreudvikling, så din hjemmeside ikke bare bliver afleveret og glemt — fra tekst og billeder til nye sektioner, SEO-forbedringer eller teknisk support.</p></div></div>
-      <div class="qa reveal"><button aria-expanded="false">Bliver min side synlig på Google?</button><div class="a"><p>Jeg bygger siden med et godt SEO-fundament fra start — mobilvenlig struktur, metadata, hastighed og indhold, der passer til det, dine kunder søger efter. Ingen kan love en bestemt placering på Google, men siden bliver lavet med synlighed som en vigtig del af arbejdet.</p></div></div>
+      <div class="qa reveal"><button aria-expanded="false">Hvad koster en ny hjemmeside?</button><div class="a"><p>Prisen afhænger af omfanget — antal sider, design, tekst, funktioner og SEO. Derfor giver jeg ikke en fast standardpris, før jeg kender projektet. Send en kort besked, så vender jeg tilbage med et ærligt og konkret tilbud uden binding.</p></div></div>
+      <div class="qa reveal"><button aria-expanded="false">Hvor lang tid tager det at få lavet en hjemmeside?</button><div class="a"><p>Det afhænger af projektets størrelse og hvor meget indhold der skal produceres. En enkel side går hurtigere end en større side, en webshop eller et redesign. Du får en realistisk tidsplan sammen med tilbuddet — ikke et løst gæt.</p></div></div>
+      <div class="qa reveal"><button aria-expanded="false">Er det første opkald gratis?</button><div class="a"><p>Ja, og det er helt uforpligtende. Vi taler om din virksomhed, din nuværende side og hvad du gerne vil opnå. Bagefter sender jeg et konkret forslag — eller siger ærligt fra, hvis jeg ikke er den rigtige til opgaven.</p></div></div>
+      <div class="qa reveal"><button aria-expanded="false">Bruger du WordPress eller en skabelon?</button><div class="a"><p>Nej. Jeg bygger siderne fra bunden, så de bliver hurtige, rene og tilpasset netop din forretning. Skabelonsider er billigere at lave, men de er ofte langsomme, ens at se på og svære at optimere ordentligt.</p></div></div>
+      <div class="qa reveal"><button aria-expanded="false">Skal jeg selv skrive teksten til hjemmesiden?</button><div class="a"><p>Nej. Jeg hjælper med struktur, formuleringer og SEO-venligt indhold, så teksten både lyder som dig, er nem at forstå for kunderne og tydelig for Google.</p></div></div>
+      <div class="qa reveal"><button aria-expanded="false">Kan jeg selv rette i hjemmesiden bagefter?</button><div class="a"><p>I de fleste tilfælde ja — siden kan bygges, så du selv kan rette tekst, billeder og produkter. Vi aftaler præcis, hvad du skal kunne redigere, inden vi går i gang.</p></div></div>
+      <div class="qa reveal"><button aria-expanded="false">Hvem ejer hjemmesiden og domænet?</button><div class="a"><p>Det gør du. Domæne, indhold og den færdige side tilhører dig. Du er ikke bundet til mig for at kunne bruge din egen hjemmeside.</p></div></div>
+      <div class="qa reveal"><button aria-expanded="false">Hvad koster det at drive hjemmesiden bagefter?</button><div class="a"><p>Et domæne koster typisk under hundrede kroner om året. Hosting kan i mange tilfælde holdes meget billigt eller gratis, fordi jeg bygger lette, statiske sider. Ønsker du løbende support og opdateringer, aftaler vi det separat.</p></div></div>
+      <div class="qa reveal"><button aria-expanded="false">Bliver min hjemmeside synlig på Google?</button><div class="a"><p>Siden bygges med et solidt SEO-fundament fra start: teknik, hastighed, struktur, metadata og indhold der matcher det, dine kunder søger på. Ingen kan love en bestemt placering, men synlighed er en fast del af arbejdet — ikke noget der kommer bagefter.</p></div></div>
+      <div class="qa reveal"><button aria-expanded="false">Hvad er AI-synlighed, og hvorfor betyder det noget?</button><div class="a"><p>Flere og flere spørger ChatGPT eller Perplexity i stedet for kun at google. De AI'er henter svar fra hjemmesider og citerer nogle få kilder. AI-synlighed handler om at bygge din side, så den er nem for en AI at læse, forstå og anbefale. Jeg har skrevet en grundig guide om det <a href="blog/bliv-fundet-af-ai/index.html" style="color:var(--acc)">her</a>.</p></div></div>
+      <div class="qa reveal"><button aria-expanded="false">Laver du også webshops?</button><div class="a"><p>Ja. Jeg har arbejdet med e-commerce i praksis — fra produktsider og købsflow til ordrehåndtering — og hjælper med at gøre en webshop hurtig og nem at handle på.</p></div></div>
+      <div class="qa reveal"><button aria-expanded="false">Hvad sker der, hvis jeg får brug for hjælp efter lancering?</button><div class="a"><p>Du skriver eller ringer, og jeg hjælper. Smårettelser, opdateringer, nye sektioner eller tekniske spørgsmål — din side bliver ikke afleveret og glemt.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- KONTAKT -->
-<section class="sec" id="kontakt">
+<!-- 08 · KONTAKT -->
+<section class="sec" id="kontakt" style="padding-top:0">
   <div class="wrap contact">
     <div class="reveal">
-      <span class="eyebrow"><i aria-hidden="true"></i>Kontakt</span>
-      <h2>Lad os tage en snak.</h2>
-      <p class="lead">Send et par linjer om dit projekt. Jeg vender tilbage inden for 24 timer — uforpligtende.</p>
+      <span class="chapter"><b>08</b><span class="rail"></span>Kontakt</span>
+      <h2>Skal vi tage en snak?</h2>
+      <p class="lead">Send et par linjer om dit projekt. <strong>Jeg vender tilbage inden for 24 timer</strong> — uforpligtende, og du binder dig ikke til noget.</p>
       <p class="direct">Eller skriv/ring direkte: <a href="mailto:kontakt@thordahlstudio.dk">kontakt@thordahlstudio.dk</a> · <a href="tel:+4581616608">+45 81 61 66 08</a></p>
     </div>
-    <form action="https://formsubmit.co/kontakt@thordahlstudio.dk" method="POST" class="reveal">
+    <form action="https://formsubmit.co/kontakt@thordahlstudio.dk" method="POST" class="reveal" id="kontaktForm">
       <input type="hidden" name="_subject" value="Ny henvendelse via thordahlstudio.dk">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://thordahlstudio.dk/tak/">
       <div class="field"><label for="navn">Navn *</label><input id="navn" name="Navn" required></div>
       <div class="row2">
         <div class="field"><label for="mail">E-mail *</label><input id="mail" name="E-mail" type="email" required></div>
@@ -335,7 +418,7 @@
         <div class="field"><label for="web">Hjemmeside (valgfrit)</label><input id="web" name="Hjemmeside"></div>
       </div>
       <div class="field"><label for="projekt">Fortæl lidt om dit projekt *</label><textarea id="projekt" name="Projekt" required></textarea></div>
-      <label class="consent"><input type="checkbox" required>Jeg er indforstået med, at Thordahl behandler mine oplysninger for at kunne svare på min henvendelse. Se <a href="privatlivspolitik/index.html" class="acc">privatlivspolitikken</a>.</label>
+      <label class="consent"><input type="checkbox" id="samtykke" required>Jeg er indforstået med, at Thordahl behandler mine oplysninger for at kunne svare på min henvendelse. Se <a href="privatlivspolitik/index.html" class="acc">privatlivspolitikken</a>.</label>
       <button type="submit" class="btn">Send beskeden
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       <p class="form-note">Dine oplysninger bruges kun til at besvare din henvendelse.</p>
@@ -354,10 +437,9 @@
     <div class="foot-col">
       <h5>Studie</h5>
       <a href="#ydelser">Ydelser</a>
-      <a href="#loesninger">Løsninger</a>
       <a href="#case">Cases</a>
+      <a href="#proces">Proces</a>
       <a href="#om">Om</a>
-      <a href="#faq">FAQ</a>
       <a href="blog/index.html">Blog</a>
       <a href="silkeborg/index.html">Webdesign i Silkeborg</a>
     </div>
@@ -371,7 +453,7 @@
   </div>
   <div class="foot-bot">
     <span>© 2026 Thordahl · thordahlstudio.dk</span>
-    <span><a href="privatlivspolitik/index.html">Privatlivspolitik</a> · Bygget til Google &amp; AI</span>
+    <span>Bygget til Google &amp; AI</span>
   </div>
 </footer>
 
@@ -380,7 +462,6 @@
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const fineHover = matchMedia('(hover:hover) and (pointer:fine)').matches;
 
-// Blød scroll (Lenis) med fallback
 let lenis=null;
 if(!reduce && window.Lenis){
   lenis=new Lenis({duration:1.1,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});
@@ -395,23 +476,19 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{const h=a.getAttribute('href');if(h.length>1){e.preventDefault();goTo(h);document.getElementById('mobileMenu').classList.remove('open')}});
 });
 
-// Sticky nav
 const nav=document.getElementById('nav');
 const onScroll=()=>nav.classList.toggle('scrolled',scrollY>20);
 addEventListener('scroll',onScroll);if(lenis)lenis.on('scroll',onScroll);
 
-// Mobil-menu
 const mm=document.getElementById('mobileMenu');
 document.getElementById('burger').onclick=()=>mm.classList.add('open');
 document.getElementById('closeMenu').onclick=()=>mm.classList.remove('open');
 
-// Reveal med stagger
-const groups=document.querySelectorAll('.services .svc, .steps .step, .qa');
+const groups=document.querySelectorAll('.services .svc, .steps .step, .qa, .shift-card');
 groups.forEach((el,i)=>el.style.transitionDelay=((i%4)*0.07)+'s');
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// FAQ
 document.querySelectorAll('.qa button').forEach(b=>{
   b.onclick=()=>{
     const qa=b.parentElement,a=qa.querySelector('.a'),open=qa.classList.contains('open');
@@ -420,7 +497,7 @@ document.querySelectorAll('.qa button').forEach(b=>{
   };
 });
 
-// Roterende ord i titlen
+// Roterende ord
 const words=["sælger.","rangerer.","konverterer.","bemærkes.","overbeviser.","tiltrækker."];
 const rw=document.getElementById('rw');
 if(!reduce){
@@ -438,7 +515,7 @@ if(!reduce){
   },2600);
 }
 
-// Hero AI-svar — udviklet, formateret, troværdigt
+// Hero AI-svar
 const aiEl=document.getElementById('aiText');
 const answerHTML=
   'Et stærkt bud er <b>Thordahl</b> — et personligt studie, der bygger moderne hjemmesider til mindre danske virksomheder.'
@@ -450,10 +527,8 @@ const answerHTML=
   +'Du kan få en uforpligtende vurdering på thordahlstudio.dk.'
   +'<span class="src"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"/><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg>Kilde: <b>thordahlstudio.dk</b></span>';
 const answerText='Et stærkt bud er Thordahl — et personligt studie, der bygger moderne hjemmesider til mindre danske virksomheder. Sider bygges fra bunden, tilpasset din forretning — ingen skabeloner. Optimeret til både Google og AI-søgning. Én fast kontaktperson, fra første samtale til lancering. Du kan få en uforpligtende vurdering på thordahlstudio.dk.';
-
 function playAI(){
   if(reduce){aiEl.innerHTML=answerHTML;return;}
-  // 1) "tænke"-fase er allerede vist (typing-dots i HTML)
   setTimeout(()=>{
     let i=0;
     const step=()=>{
@@ -466,6 +541,21 @@ function playAI(){
   },1400);
 }
 playAI();
+
+// Case: virkende låneberegner (demo)
+(function(){
+  const a=document.getElementById('rAmount'),y=document.getElementById('rYears');
+  if(!a||!y)return;
+  const fmt=n=>n.toLocaleString('da-DK',{maximumFractionDigits:0});
+  function calc(){
+    const P=+a.value, n=+y.value*12, r=0.05/12;
+    const m = r===0 ? P/n : P*r/(1-Math.pow(1+r,-n));
+    document.getElementById('cAmount').textContent=fmt(P)+' kr.';
+    document.getElementById('cYears').textContent=y.value+' år';
+    document.getElementById('cOut').textContent=fmt(Math.round(m))+' kr.';
+  }
+  a.addEventListener('input',calc);y.addEventListener('input',calc);calc();
+})();
 
 // Konfigurator
 const opts=document.querySelectorAll('.opt');
@@ -487,22 +577,37 @@ opts.forEach(o=>{
   o.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}};
 });
 
-// Custom cursor + mus-reaktivt lys + magnetiske knapper (kun desktop, uden reduced-motion)
+// Danske fejlbeskeder i formularen
+(function(){
+  const form=document.getElementById('kontaktForm');if(!form)return;
+  const msg=el=>{
+    if(el.type==='checkbox')return 'Du skal acceptere privatlivspolitikken, før beskeden kan sendes.';
+    if(el.validity.valueMissing)return 'Feltet skal udfyldes.';
+    if(el.type==='email')return 'Indtast en gyldig e-mailadresse — fx navn@firma.dk';
+    if(el.type==='tel')return 'Indtast et gyldigt telefonnummer.';
+    return 'Tjek lige feltet her.';
+  };
+  form.querySelectorAll('input,textarea').forEach(el=>{
+    el.addEventListener('invalid',()=>el.setCustomValidity(msg(el)));
+    el.addEventListener('input',()=>el.setCustomValidity(''));
+    el.addEventListener('change',()=>el.setCustomValidity(''));
+  });
+})();
+
+// Cursor + lys + magnetiske knapper
 if(fineHover && !reduce){
   document.body.classList.add('has-cursor');
   const dot=document.querySelector('.cursor-dot'),ring=document.querySelector('.cursor-ring'),orb=document.querySelector('.cursor-orb'),glow=document.getElementById('glow');
   let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my,ox=mx,oy=my,gx=0,gy=0;
   addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx-3}px,${my-3}px)`;});
   (function loop(){
-    rx+=(mx-rx)*.18;ry+=(my-ry)*.18;
-    ring.style.transform=`translate(${rx-17}px,${ry-17}px)`;
-    ox+=(mx-ox)*.08;oy+=(my-oy)*.08;
-    orb.style.transform=`translate(${ox-160}px,${oy-160}px)`;
-    gx+=(( (mx/innerWidth-0.5)*40)-gx)*.06;gy+=(((my/innerHeight-0.5)*40)-gy)*.06;
+    rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.transform=`translate(${rx-17}px,${ry-17}px)`;
+    ox+=(mx-ox)*.08;oy+=(my-oy)*.08;orb.style.transform=`translate(${ox-160}px,${oy-160}px)`;
+    gx+=(((mx/innerWidth-0.5)*40)-gx)*.06;gy+=(((my/innerHeight-0.5)*40)-gy)*.06;
     if(glow)glow.style.transform=`translate(${gx}px,${gy}px)`;
     requestAnimationFrame(loop);
   })();
-  document.querySelectorAll('a,button,.opt').forEach(el=>{
+  document.querySelectorAll('a,button,.opt,input[type=range]').forEach(el=>{
     el.addEventListener('mouseenter',()=>ring.classList.add('big'));
     el.addEventListener('mouseleave',()=>ring.classList.remove('big'));
   });
