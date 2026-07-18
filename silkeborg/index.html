@@ -336,7 +336,7 @@ const fineHover = matchMedia('(hover:hover) and (pointer:fine)').matches;
 
 let lenis=null;
 if(!reduce && window.Lenis){
-  lenis=new Lenis({duration:1.1,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});
+  lenis=new Lenis({lerp:0.085,wheelMultiplier:1,touchMultiplier:1.6});
   const raf=t=>{lenis.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf);
 }
 function goTo(t){const el=document.querySelector(t);if(!el)return;if(lenis)lenis.scrollTo(el,{offset:-70});else el.scrollIntoView({behavior:reduce?'auto':'smooth'});}
@@ -344,7 +344,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click'
 
 const nav=document.getElementById('nav');
 const onScroll=()=>nav.classList.toggle('scrolled',scrollY>20);
-addEventListener('scroll',onScroll);if(lenis)lenis.on('scroll',onScroll);
+addEventListener('scroll',onScroll,{passive:true});if(lenis)lenis.on('scroll',onScroll);
 
 const mm=document.getElementById('mobileMenu');
 document.getElementById('burger').onclick=()=>mm.classList.add('open');
