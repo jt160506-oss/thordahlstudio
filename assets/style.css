@@ -274,7 +274,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;margin-top:40px}
 .shift-card.now .t{color:var(--acc)}
 
 /* ——— Case: browser-ramme + virkende beregner ——— */
-.casegrid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.casegrid{display:grid;grid-template-columns:1fr 1.12fr;gap:44px;align-items:start}
 .browser{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0E0E10;box-shadow:0 28px 70px rgba(0,0,0,.45)}
 .browser-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#151517;border-bottom:1px solid var(--line2)}
 .browser-bar i{width:9px;height:9px;border-radius:50%;background:#2b2c30;display:block;flex:none}
@@ -295,17 +295,40 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;margin-top:40px}
 .case-meta{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 24px}
 .case-meta span{font-size:12px;color:var(--mut);border:1px solid var(--line);border-radius:100px;padding:5px 12px}
 
-/* ——— Kvitteringsside ——— */
-.thanks{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 28px 80px}
-.thanks-card{max-width:560px;text-align:center}
-.thanks-mark{width:66px;height:66px;border-radius:50%;background:rgba(198,255,61,.12);border:1px solid rgba(198,255,61,.4);display:grid;place-items:center;margin:0 auto 26px;color:var(--acc)}
-.thanks h1{font-size:clamp(32px,5vw,46px);margin-bottom:16px}
-.thanks p{color:#B7B2A7;font-size:17px;margin-bottom:14px}
-.thanks .next{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;margin:30px 0;text-align:left}
-.thanks .next h4{font-family:"Bricolage Grotesque";font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:14px}
-.thanks .next ol{margin-left:20px;color:#B7B2A7;font-size:15px}
-.thanks .next li{margin-bottom:9px}
+/* ——— Kvitteringsside (fuld skærm, ingen scroll) ——— */
+html.noscroll,body.noscroll{height:100%;overflow:hidden}
+.thanks{height:100dvh;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center}
+.thanks-card{max-width:540px;width:100%}
+.thanks-logo{font-family:"Bricolage Grotesque";font-weight:800;font-size:22px;letter-spacing:-.02em;margin-bottom:30px;display:inline-block}
+.thanks-logo span{color:var(--acc)}
+.thanks-mark{width:60px;height:60px;border-radius:50%;background:rgba(198,255,61,.12);border:1px solid rgba(198,255,61,.4);display:grid;place-items:center;margin:0 auto 22px;color:var(--acc)}
+.thanks h1{font-size:clamp(28px,4.6vw,42px);margin-bottom:14px}
+.thanks p{color:#B7B2A7;font-size:16px;margin-bottom:12px}
+.thanks .next{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:24px 0;text-align:left}
+.thanks .next h4{font-family:"Bricolage Grotesque";font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:11px}
+.thanks .next ol{margin-left:18px;color:#B7B2A7;font-size:14.5px;line-height:1.5}
+.thanks .next li{margin-bottom:7px}
 .thanks .next li::marker{color:var(--acc)}
+.thanks .actions{margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+@media(max-height:700px){
+  .thanks-logo{margin-bottom:18px}
+  .thanks-mark{width:48px;height:48px;margin-bottom:16px}
+  .thanks h1{font-size:26px;margin-bottom:10px}
+  .thanks p{font-size:14.5px;margin-bottom:8px}
+  .thanks .next{padding:16px 18px;margin:18px 0}
+  .thanks .next ol{font-size:13.5px}
+  .thanks .actions{margin-top:18px}
+}
+
+/* ——— Case: rigtigt skærmbillede ——— */
+.shot{display:block;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0E0E10;box-shadow:0 28px 70px rgba(0,0,0,.45);transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s}
+.shot:hover{transform:translateY(-4px);border-color:rgba(198,255,61,.35)}
+.shot-img{position:relative;aspect-ratio:1600/888;background:#101012;overflow:hidden}
+.shot-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.shot-fallback{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--mut);text-align:center;padding:24px}
+.shot-fallback .nm{font-family:"Bricolage Grotesque";font-weight:800;font-size:26px;color:var(--ink)}
+.shot-visit{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-top:1px solid var(--line2);font-size:13px;color:var(--mut)}
+.shot-visit b{color:var(--acc);font-weight:500}
 
 @media(max-width:900px){
   .shift,.casegrid{grid-template-columns:1fr}

@@ -254,27 +254,24 @@
       </div>
 
       <div>
-        <div class="browser">
+        <a class="shot" href="https://kredithjornet.dk" target="_blank" rel="noopener" aria-label="Åbn kredithjornet.dk i et nyt vindue">
           <div class="browser-bar">
             <i></i><i></i><i></i>
-            <span class="url">kredithjornet.dk — låneberegner</span>
+            <span class="url">kredithjornet.dk</span>
           </div>
-          <div class="browser-body">
-            <div class="calcdemo">
-              <div class="row"><span>Lånebeløb</span><b id="cAmount">250.000 kr.</b></div>
-              <input type="range" id="rAmount" min="25000" max="1000000" step="5000" value="250000" aria-label="Lånebeløb">
-              <div class="row"><span>Løbetid</span><b id="cYears">10 år</b></div>
-              <input type="range" id="rYears" min="1" max="30" step="1" value="10" aria-label="Løbetid i år">
-              <div class="result">
-                <span>Ydelse pr. måned<br><small style="color:var(--mut);font-size:11.5px">ved 5 % i rente</small></span>
-                <span class="big" id="cOut">2.652 kr.</span>
-              </div>
+          <div class="shot-img">
+            <img id="shotImg" src="assets/kredithjornet.webp" alt="Skærmbillede af kredithjornet.dk — forside om boliglån med overblik og beregner" loading="lazy" width="1600" height="888" data-alt="assets/kredithjornet.png|assets/kredithjornet.jpg">
+            <div class="shot-fallback">
+              <span class="nm">Kredithjørnet</span>
+              <span style="font-size:14px">kredithjornet.dk</span>
+              <span style="font-size:13px;color:var(--acc)">Åbn siden →</span>
             </div>
           </div>
-        </div>
+          <div class="shot-visit"><span>Live projekt · privatøkonomi</span><b>Åbn siden →</b></div>
+        </a>
         <p class="demo-note">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
-          Prøv den — træk i skyderne. Det er samme type værktøj, jeg byggede til Kredithjørnet.
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>
+          Skærmbillede af det rigtige site — klik for at åbne kredithjornet.dk.
         </p>
       </div>
     </div>
@@ -542,19 +539,14 @@ function playAI(){
 }
 playAI();
 
-// Case: virkende låneberegner (demo)
+// Case-skærmbillede: prøv flere filformater, ellers vis pænt fallback
 (function(){
-  const a=document.getElementById('rAmount'),y=document.getElementById('rYears');
-  if(!a||!y)return;
-  const fmt=n=>n.toLocaleString('da-DK',{maximumFractionDigits:0});
-  function calc(){
-    const P=+a.value, n=+y.value*12, r=0.05/12;
-    const m = r===0 ? P/n : P*r/(1-Math.pow(1+r,-n));
-    document.getElementById('cAmount').textContent=fmt(P)+' kr.';
-    document.getElementById('cYears').textContent=y.value+' år';
-    document.getElementById('cOut').textContent=fmt(Math.round(m))+' kr.';
-  }
-  a.addEventListener('input',calc);y.addEventListener('input',calc);calc();
+  const img=document.getElementById('shotImg');if(!img)return;
+  let queue=(img.dataset.alt||'').split('|').filter(Boolean);
+  img.addEventListener('error',function(){
+    if(queue.length){img.src=queue.shift();}
+    else{img.style.display='none';const fb=img.nextElementSibling;if(fb)fb.style.display='flex';}
+  });
 })();
 
 // Konfigurator
