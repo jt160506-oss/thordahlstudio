@@ -107,6 +107,17 @@
   </div>
 </header>
 
+<nav class="railnav" id="railnav" aria-label="Sektioner på siden">
+  <a href="#hvorfor" data-sec="hvorfor"><span class="dot" aria-hidden="true"></span><span class="lbl">Udgangspunktet</span></a>
+  <a href="#ydelser" data-sec="ydelser"><span class="dot" aria-hidden="true"></span><span class="lbl">Ydelser</span></a>
+  <a href="#case" data-sec="case"><span class="dot" aria-hidden="true"></span><span class="lbl">Case</span></a>
+  <a href="#loesninger" data-sec="loesninger"><span class="dot" aria-hidden="true"></span><span class="lbl">Omfang og pris</span></a>
+  <a href="#proces" data-sec="proces"><span class="dot" aria-hidden="true"></span><span class="lbl">Proces</span></a>
+  <a href="#om" data-sec="om"><span class="dot" aria-hidden="true"></span><span class="lbl">Om mig</span></a>
+  <a href="#faq" data-sec="faq"><span class="dot" aria-hidden="true"></span><span class="lbl">FAQ</span></a>
+  <a href="#kontakt" data-sec="kontakt"><span class="dot" aria-hidden="true"></span><span class="lbl">Kontakt</span></a>
+</nav>
+
 <div class="mobile-menu" id="mobileMenu">
   <button class="close" id="closeMenu" aria-label="Luk menu">×</button>
   <a href="#ydelser">Ydelser</a>
@@ -157,6 +168,11 @@
       <div class="aicard-foot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>Illustration af princippet — ikke en rigtig samtale.</div>
     </div>
   </div>
+
+  <div class="scrollcue" id="scrollcue" aria-hidden="true">
+    <span class="track"><i></i></span>
+    Scroll
+  </div>
 </section>
 
 <!-- 01 · PROBLEMET -->
@@ -184,7 +200,7 @@
 </section>
 
 <!-- 02 · YDELSER -->
-<section class="sec" id="ydelser" style="padding-top:0">
+<section class="sec" id="ydelser">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="chapter"><b>02</b><span class="rail"></span>Ydelser</span>
@@ -217,7 +233,7 @@
 </section>
 
 <!-- 03 · CASE -->
-<section class="sec" id="case" style="padding-top:0">
+<section class="sec" id="case">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="chapter"><b>03</b><span class="rail"></span>Case</span>
@@ -279,7 +295,7 @@
 </section>
 
 <!-- 04 · LØSNINGER -->
-<section class="sec" id="loesninger" style="padding-top:0">
+<section class="sec" id="loesninger">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="chapter"><b>04</b><span class="rail"></span>Omfang og pris</span>
@@ -327,7 +343,7 @@
 </section>
 
 <!-- 05 · PROCES -->
-<section class="sec" id="proces" style="padding-top:0">
+<section class="sec" id="proces">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="chapter"><b>05</b><span class="rail"></span>Proces</span>
@@ -343,7 +359,7 @@
 </section>
 
 <!-- 06 · OM -->
-<section class="sec" id="om" style="padding-top:0">
+<section class="sec" id="om">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="chapter"><b>06</b><span class="rail"></span>Om mig</span>
@@ -368,7 +384,7 @@
 </section>
 
 <!-- 07 · FAQ -->
-<section class="sec" id="faq" style="padding-top:0">
+<section class="sec" id="faq">
   <div class="wrap">
     <div class="sec-head reveal" style="margin:0 auto 52px;text-align:center">
       <span class="chapter" style="justify-content:center"><b>07</b><span class="rail"></span>FAQ</span>
@@ -392,7 +408,7 @@
 </section>
 
 <!-- 08 · KONTAKT -->
-<section class="sec" id="kontakt" style="padding-top:0">
+<section class="sec" id="kontakt">
   <div class="wrap contact">
     <div class="reveal">
       <span class="chapter"><b>08</b><span class="rail"></span>Kontakt</span>
@@ -461,7 +477,7 @@ const fineHover = matchMedia('(hover:hover) and (pointer:fine)').matches;
 
 let lenis=null;
 if(!reduce && window.Lenis){
-  lenis=new Lenis({duration:1.1,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});
+  lenis=new Lenis({duration:1.35,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});
   const raf=t=>{lenis.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf);
 }
 function goTo(target){
@@ -485,6 +501,33 @@ const groups=document.querySelectorAll('.services .svc, .steps .step, .qa, .shif
 groups.forEach((el,i)=>el.style.transitionDelay=((i%4)*0.07)+'s');
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// ——— Fokus-system: kun ét kapitel i fokus ad gangen ———
+const secs=[...document.querySelectorAll('main .sec')];
+const railnav=document.getElementById('railnav');
+const railLinks=[...document.querySelectorAll('.railnav a')];
+if(!reduce && secs.length){
+  const focusIO=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      e.target.classList.toggle('dim', !e.isIntersecting);
+      if(e.isIntersecting){
+        const id=e.target.id;
+        railLinks.forEach(a=>a.classList.toggle('active', a.dataset.sec===id));
+      }
+    });
+  },{rootMargin:'-32% 0px -32% 0px',threshold:0});
+  secs.forEach(s=>focusIO.observe(s));
+}
+
+// ——— Hero: scroll-invitation + rail dukker op efter første skærm ———
+const cue=document.getElementById('scrollcue');
+function heroWatch(){
+  if(cue) cue.classList.toggle('hide', scrollY > 60);
+  if(railnav) railnav.classList.toggle('on', scrollY > innerHeight*0.5);
+}
+addEventListener('scroll',heroWatch,{passive:true});
+if(lenis)lenis.on('scroll',heroWatch);
+heroWatch();
 
 document.querySelectorAll('.qa button').forEach(b=>{
   b.onclick=()=>{
