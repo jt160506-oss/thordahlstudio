@@ -429,16 +429,17 @@ html[data-tier="reduced"] .browser{box-shadow:0 14px 34px rgba(0,0,0,.4)}
 @media(max-width:768px){
   .hero{min-height:100svh;padding:76px 0 0;display:flex;align-items:center;overflow:hidden}
   .hero>.wrap{width:100%}
+  /* Forsidens hero (.hero-grid) — scopet, så byhero'erne (.hero-solo) er urørte */
   .hero-grid{display:block}                 /* enkelt kolonne, ingen grid */
-  .hero .aicard{display:none}               /* type-drevet — intet AI-kort på mobil */
-  .hero .trust{display:none}                /* enklere, mere eksklusivt */
-  .hero .sub{display:none}                  /* skjul den lange desktop-sub */
-  .hero .sub-m{display:block;margin-top:16px;max-width:32ch;font-size:16.5px;color:#C3BEB2;line-height:1.5}
-  .hero .eyebrow{font-size:11px}
-  .hero h1{font-size:clamp(37px,10.5vw,54px);margin-top:18px}
-  .hero .rot{height:1.14em}
-  .hero .cta{margin-top:30px;flex-direction:column;align-items:stretch;gap:12px}
-  .hero .cta .btn{justify-content:center}
+  .hero-grid .aicard{display:none}          /* type-drevet — intet AI-kort på mobil */
+  .hero-grid .trust{display:none}           /* enklere, mere eksklusivt */
+  .hero-grid .sub{display:none}             /* skjul den lange desktop-sub */
+  .hero-grid .sub-m{display:block;margin-top:16px;max-width:32ch;font-size:16.5px;color:#C3BEB2;line-height:1.5}
+  .hero-grid .eyebrow{font-size:11px}
+  .hero-grid h1{font-size:clamp(37px,10.5vw,54px);margin-top:18px}
+  .hero-grid .rot{height:1.14em}
+  .hero-grid .cta{margin-top:30px;flex-direction:column;align-items:stretch;gap:12px}
+  .hero-grid .cta .btn{justify-content:center}
   .cta-desktop{display:none}
   .cta-mobile{display:inline-flex}
 
@@ -455,4 +456,35 @@ html[data-tier="reduced"] .browser{box-shadow:0 14px 34px rgba(0,0,0,.4)}
 /* Reduced motion: frys glimtet til en flot, statisk udgave */
 @media(prefers-reduced-motion:reduce){
   .hero-glow{animation:none!important}
+}
+
+/* ——— Bysider: centreret, type-drevet hero (samme designsprog) ——— */
+.hero-solo{position:relative;z-index:2;text-align:center;max-width:780px;margin:0 auto}
+.hero-solo .eyebrow{justify-content:center}
+.hero-solo h1{font-size:clamp(38px,6vw,62px);margin:20px 0 0}
+.hero-solo .sub{margin:22px auto 0;max-width:54ch;font-size:18px;color:#C3BEB2}
+.hero-solo .cta{margin-top:32px;justify-content:center}
+.hero-solo .trust{margin-top:26px;justify-content:center}
+
+/* Krydslinks mellem byer */
+.citylinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.citylinks a{font-size:14px;color:#C9C4B9;border:1px solid var(--line);border-radius:100px;padding:8px 16px;transition:border-color .25s,color .25s}
+.citylinks a:hover,.citylinks a:focus-visible{border-color:var(--acc);color:var(--acc)}
+
+/* Footer: by-band (lokal intern linkning) */
+.foot-cities{max-width:var(--max);margin:34px auto 0;padding:26px 28px 0;border-top:1px solid var(--line2)}
+.foot-cities h5{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:14px}
+.foot-cities-list{display:flex;flex-wrap:wrap;gap:10px 20px}
+.foot-cities-list a{color:#C9C4B9;font-size:14px;transition:color .2s}
+.foot-cities-list a:hover{color:var(--acc)}
+
+/* Tre ydelser side om side på bysider */
+.services.cols-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){ .services.cols-3{grid-template-columns:1fr} }
+
+@media(max-width:768px){
+  .hero-solo h1{font-size:clamp(34px,9vw,48px)}
+  .hero-solo .cta{flex-direction:column;align-items:stretch}
+  .hero-solo .cta .btn{justify-content:center}
+  .hero-solo .trust{display:none}
 }

@@ -31,7 +31,19 @@ Jakob har efter handelsskolen arbejdet en årrække i München med digital forre
 
 ## Sider
 - Forside: https://thordahlstudio.dk/
-- Webdesign i Silkeborg: https://thordahlstudio.dk/silkeborg/
+- Blog (SEO og AI-synlighed): https://thordahlstudio.dk/blog/
+
+## Lokale sider (webdesign pr. by i Midtjylland)
+- Silkeborg (base): https://thordahlstudio.dk/silkeborg/
+- Aarhus: https://thordahlstudio.dk/aarhus/
+- Viborg: https://thordahlstudio.dk/viborg/
+- Skanderborg: https://thordahlstudio.dk/skanderborg/
+- Horsens: https://thordahlstudio.dk/horsens/
+- Herning: https://thordahlstudio.dk/herning/
+- Ikast: https://thordahlstudio.dk/ikast/
+- Ry: https://thordahlstudio.dk/ry/
+- Hammel: https://thordahlstudio.dk/hammel/
+- Bjerringbro: https://thordahlstudio.dk/bjerringbro/
 
 ## Kontakt
 - E-mail: kontakt@thordahlstudio.dk
