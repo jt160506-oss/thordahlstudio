@@ -472,9 +472,9 @@ html[data-tier="reduced"] .browser{box-shadow:0 14px 34px rgba(0,0,0,.4)}
 .citylinks a:hover,.citylinks a:focus-visible{border-color:var(--acc);color:var(--acc)}
 
 /* Footer: by-band (lokal intern linkning) */
-.foot-cities{max-width:var(--max);margin:34px auto 0;padding:26px 28px 0;border-top:1px solid var(--line2)}
-.foot-cities h5{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:14px}
-.foot-cities-list{display:flex;flex-wrap:wrap;gap:10px 20px}
+.foot-cities{max-width:var(--max);margin:34px auto 0;padding:26px 28px 0;border-top:1px solid var(--line2);text-align:center}
+.foot-cities h5{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:16px}
+.foot-cities-list{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 20px}
 .foot-cities-list a{color:#C9C4B9;font-size:14px;transition:color .2s}
 .foot-cities-list a:hover{color:var(--acc)}
 
