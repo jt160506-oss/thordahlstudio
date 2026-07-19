@@ -90,6 +90,9 @@ header.nav.scrolled{background:rgba(11,11,12,.92);backdrop-filter:blur(8px);bord
 .hero .trust{margin-top:30px;display:flex;gap:16px;flex-wrap:wrap;color:var(--mut);font-size:13px}
 .hero .trust span{white-space:nowrap}
 .hero .trust b{color:var(--ink);font-weight:500}
+/* Mobil-hero-elementer — skjult på desktop, vises i @media(max-width:768px) */
+.sub-m{display:none}
+.cta-mobile{display:none}
 
 /* AI answer card */
 .aicard{background:linear-gradient(180deg,#161618,#0F0F11);border:1px solid var(--line);border-radius:20px;box-shadow:0 34px 90px rgba(0,0,0,.55);overflow:hidden}
@@ -419,3 +422,37 @@ html[data-tier="reduced"] .hero-glow{will-change:auto}
 html[data-tier="reduced"] .aicard{box-shadow:0 16px 40px rgba(0,0,0,.5)}
 html[data-tier="reduced"] .shot,
 html[data-tier="reduced"] .browser{box-shadow:0 14px 34px rgba(0,0,0,.4)}
+
+/* ——— Mobil-hero (≤768px): rolig, type-drevet, én fuld skærm ——— */
+/* Separat behandling — desktop-heroen røres ikke. Placeret efter 900px-blokken,
+   så den vinder for hero på telefoner. Alt bevæger sig på timer, ikke på scroll. */
+@media(max-width:768px){
+  .hero{min-height:100svh;padding:76px 0 0;display:flex;align-items:center;overflow:hidden}
+  .hero>.wrap{width:100%}
+  .hero-grid{display:block}                 /* enkelt kolonne, ingen grid */
+  .hero .aicard{display:none}               /* type-drevet — intet AI-kort på mobil */
+  .hero .trust{display:none}                /* enklere, mere eksklusivt */
+  .hero .sub{display:none}                  /* skjul den lange desktop-sub */
+  .hero .sub-m{display:block;margin-top:16px;max-width:32ch;font-size:16.5px;color:#C3BEB2;line-height:1.5}
+  .hero .eyebrow{font-size:11px}
+  .hero h1{font-size:clamp(37px,10.5vw,54px);margin-top:18px}
+  .hero .rot{height:1.14em}
+  .hero .cta{margin-top:30px;flex-direction:column;align-items:stretch;gap:12px}
+  .hero .cta .btn{justify-content:center}
+  .cta-desktop{display:none}
+  .cta-mobile{display:inline-flex}
+
+  /* Signatur-glimt: selvkørende blød timer-puls (ikke scroll, ikke cursor) */
+  .hero-glow{
+    top:-14%;right:-22%;width:88vw;height:88vw;
+    animation:glowdrift 9s ease-in-out infinite;
+  }
+}
+@keyframes glowdrift{
+  0%,100%{opacity:.7;transform:translate3d(0,0,0) scale(1)}
+  50%{opacity:1;transform:translate3d(-3%,2%,0) scale(1.07)}
+}
+/* Reduced motion: frys glimtet til en flot, statisk udgave */
+@media(prefers-reduced-motion:reduce){
+  .hero-glow{animation:none!important}
+}
