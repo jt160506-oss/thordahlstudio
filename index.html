@@ -370,7 +370,7 @@
     </div>
     <div class="about">
       <figure class="about-photo reveal">
-        <img src="assets/jakob.webp" alt="Jakob Thordahl" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="assets/jakob.webp" alt="Jakob Thordahl" width="2316" height="3088" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="fallback" style="display:none"><span class="init">JT</span><span style="font-size:13px">Foto på vej</span></div>
         <figcaption>Jakob Thordahl · Thordahl</figcaption>
       </figure>
@@ -473,13 +473,15 @@
   </div>
 </footer>
 
+<script src="/assets/perf.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 <script>
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const fineHover = matchMedia('(hover:hover) and (pointer:fine)').matches;
+const T = window.Thordahl || {tier:()=>'high',isReduced:()=>false,onReduce:()=>{}};
 
 let lenis=null;
-if(!reduce && window.Lenis){
+if(!reduce && !T.isReduced() && window.Lenis){
   lenis=new Lenis({lerp:0.085,wheelMultiplier:1,touchMultiplier:1.6});
   const raf=t=>{lenis.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf);
 }
@@ -493,8 +495,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 });
 
 const nav=document.getElementById('nav');
-const onScroll=()=>nav.classList.toggle('scrolled',scrollY>20);
-addEventListener('scroll',onScroll,{passive:true});if(lenis)lenis.on('scroll',onScroll);
 
 const mm=document.getElementById('mobileMenu');
 document.getElementById('burger').onclick=()=>mm.classList.add('open');
@@ -504,6 +504,13 @@ const groups=document.querySelectorAll('.services .svc, .steps .step, .qa, .shif
 groups.forEach((el,i)=>el.style.transitionDelay=((i%4)*0.07)+'s');
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Hero synlig? Pausér hero-arbejde (glød-parallax, ord-rotation) uden for skærmen
+let heroVisible=true;
+const heroEl=document.querySelector('.hero');
+if(heroEl && 'IntersectionObserver' in window){
+  new IntersectionObserver(es=>{heroVisible=es[0].isIntersecting;},{threshold:0}).observe(heroEl);
+}
 
 // ——— Fokus-system: kun ét kapitel i fokus ad gangen ———
 const secs=[...document.querySelectorAll('main .sec')];
@@ -522,15 +529,20 @@ if(!reduce && secs.length){
   secs.forEach(s=>focusIO.observe(s));
 }
 
-// ——— Hero: scroll-invitation + rail dukker op efter første skærm ———
+// ——— Scroll-håndtering samlet i én rAF-throttlet frame (nav, scroll-hint, rail) ———
 const cue=document.getElementById('scrollcue');
-function heroWatch(){
-  if(cue) cue.classList.toggle('hide', scrollY > 60);
-  if(railnav) railnav.classList.toggle('on', scrollY > innerHeight*0.5);
+let scrollQueued=false;
+function onScrollFrame(){
+  scrollQueued=false;
+  const y=scrollY;
+  nav.classList.toggle('scrolled', y>20);
+  if(cue) cue.classList.toggle('hide', y>60);
+  if(railnav) railnav.classList.toggle('on', y>innerHeight*0.5);
 }
-addEventListener('scroll',heroWatch,{passive:true});
-if(lenis)lenis.on('scroll',heroWatch);
-heroWatch();
+function queueScroll(){ if(!scrollQueued){scrollQueued=true;requestAnimationFrame(onScrollFrame);} }
+addEventListener('scroll',queueScroll,{passive:true});
+if(lenis)lenis.on('scroll',queueScroll);
+onScrollFrame();
 
 document.querySelectorAll('.qa button').forEach(b=>{
   b.onclick=()=>{
@@ -546,6 +558,7 @@ const rw=document.getElementById('rw');
 if(!reduce){
   let wi=0;
   setInterval(()=>{
+    if(!heroVisible) return;
     wi=(wi+1)%words.length;
     rw.style.transition='transform .42s cubic-bezier(.7,0,.2,1),opacity .42s';
     rw.style.transform='translateY(-115%)';rw.style.opacity='0';
@@ -632,18 +645,26 @@ opts.forEach(o=>{
   });
 })();
 
-// Cursor + lys + magnetiske knapper
-if(fineHover && !reduce){
+// Cursor + lys + magnetiske knapper — kun høj grafiktrin med mus/fin peger
+let cursorOn=false, cursorRAF=0;
+function initCursor(){
+  if(cursorOn || reduce || !fineHover || T.isReduced()) return;
+  cursorOn=true;
   document.body.classList.add('has-cursor');
   const dot=document.querySelector('.cursor-dot'),ring=document.querySelector('.cursor-ring'),orb=document.querySelector('.cursor-orb'),glow=document.getElementById('glow');
   let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my,ox=mx,oy=my,gx=0,gy=0;
-  addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx-3}px,${my-3}px)`;});
+  // mousemove gemmer kun koordinater — al DOM-skrivning sker i rAF-løkken
+  addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;},{passive:true});
   (function loop(){
+    if(!cursorOn) return;
+    dot.style.transform=`translate(${mx-3}px,${my-3}px)`;
     rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.transform=`translate(${rx-17}px,${ry-17}px)`;
     ox+=(mx-ox)*.08;oy+=(my-oy)*.08;orb.style.transform=`translate(${ox-160}px,${oy-160}px)`;
-    gx+=(((mx/innerWidth-0.5)*40)-gx)*.06;gy+=(((my/innerHeight-0.5)*40)-gy)*.06;
-    if(glow)glow.style.transform=`translate(${gx}px,${gy}px)`;
-    requestAnimationFrame(loop);
+    if(glow && heroVisible){
+      gx+=(((mx/innerWidth-0.5)*40)-gx)*.06;gy+=(((my/innerHeight-0.5)*40)-gy)*.06;
+      glow.style.transform=`translate(${gx}px,${gy}px)`;
+    }
+    cursorRAF=requestAnimationFrame(loop);
   })();
   document.querySelectorAll('a,button,.opt,input[type=range]').forEach(el=>{
     el.addEventListener('mouseenter',()=>ring.classList.add('big'));
@@ -654,6 +675,19 @@ if(fineHover && !reduce){
     el.addEventListener('mouseleave',()=>el.style.transform='');
   });
 }
+function teardownCursor(){
+  if(!cursorOn) return;
+  cursorOn=false; cancelAnimationFrame(cursorRAF);
+  document.body.classList.remove('has-cursor');
+  const glow=document.getElementById('glow'); if(glow) glow.style.transform='';
+}
+initCursor();
+
+// Skru ned til reduceret trin: stop tunge løkker og blød scroll
+T.onReduce(()=>{
+  teardownCursor();
+  if(lenis){ try{lenis.destroy();}catch(e){} lenis=null; }
+});
 </script>
 </body>
 </html>

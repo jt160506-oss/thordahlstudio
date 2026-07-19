@@ -402,3 +402,20 @@ html.noscroll,body.noscroll{height:100%;overflow:hidden}
   .cursor-blink,.typing,.scrollcue{display:none}
   .cursor-dot,.cursor-ring{display:none}
 }
+
+/* ——— Grafik-kvalitetstrin: reduceret ——— */
+/* Aktiveres af assets/perf.js via html[data-tier="reduced"] på svage enheder,
+   ved vedvarende lav FPS, ved Save-Data eller prefers-reduced-motion.
+   Layoutet er uændret — kun de dyreste render-lag trappes ned.
+   Stærke enheder (data-tier="high" eller intet attribut) er fuldstændig urørt. */
+html[data-tier="reduced"] header.nav.scrolled{
+  -webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(11,11,12,.97)
+}
+html[data-tier="reduced"] .mobile-menu{
+  -webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(11,11,12,.99)
+}
+html[data-tier="reduced"] .cursor-orb{display:none}
+html[data-tier="reduced"] .hero-glow{will-change:auto}
+html[data-tier="reduced"] .aicard{box-shadow:0 16px 40px rgba(0,0,0,.5)}
+html[data-tier="reduced"] .shot,
+html[data-tier="reduced"] .browser{box-shadow:0 14px 34px rgba(0,0,0,.4)}
