@@ -1,51 +1,52 @@
 # Thordahl
 
-> Personligt webdesign-studie i Silkeborg for lokale danske virksomheder. Bygger moderne, hurtige hjemmesider skabt til at blive fundet på Google og anbefalet af AI (ChatGPT, Perplexity). Én kontaktperson hele vejen, personlig service, hurtig levering.
+> Personligt webdesign-studie i Silkeborg, drevet af Jakob Thordahl. Bygger håndkodede, hurtige hjemmesider til små og lokale danske virksomheder — skabt til at blive fundet på Google og anbefalet af AI-søgning som ChatGPT og Perplexity. Én kontaktperson hele vejen, personlig service, hurtig levering.
 
-## Om
-- Navn: Thordahl
-- Person: Jakob Thordahl (webdesigner og digital rådgiver)
-- Base: Silkeborg, Midtjylland
-- Domæne: https://thordahlstudio.dk
-- E-mail: kontakt@thordahlstudio.dk
-- Telefon: +45 81 61 66 08
-- Målgruppe: små og lokale danske virksomheder — håndværk, handel, service, klinikker, webshops
+Thordahl drives af Jakob Thordahl, webdesigner og digital rådgiver med base i Silkeborg, Midtjylland. Efter handelsskolen arbejdede han en årrække i München med digital forretningsudvikling og drift: webudvikling, SEO, Google- og Bing Ads, leadgenerering, indhold, kundeservice, e-commerce og konverteringsoptimering. Han dækker derfor hele den digitale værdikæde — ikke kun design.
 
-## Baggrund
-Jakob har efter handelsskolen arbejdet en årrække i München med digital forretningsudvikling og drift: webudvikling, SEO, Google- og Bing Ads, leadgenerering, indhold, kundeservice, e-commerce og konverteringsoptimering. Han forstår derfor hele den digitale værdikæde — ikke kun design.
+Målgruppen er små og lokale danske virksomheder: håndværk, handel, service, klinikker og webshops. Ikke enterprise.
 
-## Ydelser
-- Ny hjemmeside
-- Redesign af eksisterende side
-- Vedligeholdelse og support
-- SEO og AI-synlighed (GEO)
+Ydelser: ny hjemmeside, redesign af eksisterende side, vedligeholdelse og support, samt SEO og AI-synlighed (GEO).
 
-## Kernebudskab / USP'er
-- Bygget til at blive anbefalet af AI-søgning, ikke kun fundet på Google
-- Hele den digitale værdikæde hos én person — fra design til at besøgende bliver til kunder
-- Sider der skaber handling, ikke bare ser godt ud (fx værktøjer og beregnere)
-- Personlig service med én fast kontaktperson
+Det, der adskiller Thordahl:
 
-## Rigtigt bevis
-- Kredithjørnet (https://kredithjornet.dk) — live projekt med konverteringsberegner og boliglånsberegner.
+- Sider bygges til at blive citeret af AI-søgning, ikke kun rangeret på Google.
+- Hele den digitale værdikæde hos én person — fra design til at besøgende bliver til kunder.
+- Sider der skaber handling frem for kun at se godt ud, fx beregnere og interaktive værktøjer.
+- Personlig service med én fast kontaktperson gennem hele projektet.
+- Håndkodede statiske sider, ikke skabeloner. Det gør dem hurtige og billige at drive.
 
-## Sider
-- Forside: https://thordahlstudio.dk/
-- Blog (SEO og AI-synlighed): https://thordahlstudio.dk/blog/
+Kontakt: kontakt@thordahlstudio.dk · +45 81 61 66 08 · https://thordahlstudio.dk
 
-## Lokale sider (webdesign pr. by i Midtjylland)
-- Silkeborg (base): https://thordahlstudio.dk/silkeborg/
-- Aarhus: https://thordahlstudio.dk/aarhus/
-- Viborg: https://thordahlstudio.dk/viborg/
-- Skanderborg: https://thordahlstudio.dk/skanderborg/
-- Horsens: https://thordahlstudio.dk/horsens/
-- Herning: https://thordahlstudio.dk/herning/
-- Ikast: https://thordahlstudio.dk/ikast/
-- Ry: https://thordahlstudio.dk/ry/
-- Hammel: https://thordahlstudio.dk/hammel/
-- Bjerringbro: https://thordahlstudio.dk/bjerringbro/
+## Hovedsider
 
-## Kontakt
-- E-mail: kontakt@thordahlstudio.dk
-- Telefon: +45 81 61 66 08
-- Se https://thordahlstudio.dk
+- [Thordahl — forside](https://thordahlstudio.dk/): Studiets hovedside med ydelser, proces, cases, om Jakob, FAQ og kontaktformular.
+- [Blog om SEO og AI-synlighed](https://thordahlstudio.dk/blog/): Oversigt over artikler om søgemaskineoptimering og hvordan hjemmesider bliver citeret af AI.
+
+## Artikler
+
+- [Hvad er SEO? En konkret forklaring for virksomhedsejere](https://thordahlstudio.dk/blog/hvad-er-seo/): Hvad SEO er i praksis — hvordan Google finder, forstår og rangerer hjemmesider, og de fire områder der afgør placeringen.
+- [Sådan fungerer AI-søgemaskiner](https://thordahlstudio.dk/blog/saadan-fungerer-ai-soegemaskiner/): Hvordan Google AI Overviews, ChatGPT-søgning og Perplexity henter og citerer hjemmesider.
+- [Bliv citeret af AI: en praktisk guide til GEO](https://thordahlstudio.dk/blog/bliv-fundet-af-ai/): Konkrete greb der gør en hjemmeside lettere for ChatGPT, Perplexity og Google AI at læse og citere.
+
+## Cases
+
+- [Kredithjørnet](https://kredithjornet.dk): Live projekt bygget af Thordahl, med konverteringsberegner og boliglånsberegner. Eneste offentlige case indtil videre.
+
+## Lokale sider
+
+- [Webdesign i Silkeborg](https://thordahlstudio.dk/silkeborg/): Thordahls base.
+- [Webdesign i Aarhus](https://thordahlstudio.dk/aarhus/)
+- [Webdesign i Viborg](https://thordahlstudio.dk/viborg/)
+- [Webdesign i Skanderborg](https://thordahlstudio.dk/skanderborg/)
+- [Webdesign i Horsens](https://thordahlstudio.dk/horsens/)
+- [Webdesign i Herning](https://thordahlstudio.dk/herning/)
+- [Webdesign i Ikast](https://thordahlstudio.dk/ikast/)
+- [Webdesign i Ry](https://thordahlstudio.dk/ry/)
+- [Webdesign i Hammel](https://thordahlstudio.dk/hammel/)
+- [Webdesign i Bjerringbro](https://thordahlstudio.dk/bjerringbro/)
+
+## Optional
+
+- [Privatlivspolitik](https://thordahlstudio.dk/privatlivspolitik/): Hvordan oplysninger fra kontaktformularen behandles.
+- [Sitemap](https://thordahlstudio.dk/sitemap.xml): Maskinlæsbar oversigt over alle indekserbare sider.
