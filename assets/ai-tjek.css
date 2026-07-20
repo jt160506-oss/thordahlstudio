@@ -11,6 +11,9 @@
 /* ——— Fælles sceneskift mellem tilstande ——— */
 .stage{display:none}
 .stage.on{display:block}
+/* Under scanning, på resultatet og ved fejl fjernes footeren, så tilstanden
+   føles midlertidig. Sættes af show() i ai-tjek.js. */
+body.tjek-igang footer{display:none}
 .scanning.on,.errorstate.on{display:flex}
 
 /* ——— 1 · Idle ——— */

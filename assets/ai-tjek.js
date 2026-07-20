@@ -352,6 +352,10 @@
     Object.keys(stages).forEach(function (k) {
       stages[k].classList.toggle('on', k === name);
     });
+    /* Alt andet end startskærmen er en midlertidig tilstand. Der skjuler vi
+       footeren, så siden ikke ligner en almindelig underside med sitemap
+       under resultatet. Vejen videre er knapperne, ikke footeren. */
+    document.body.classList.toggle('tjek-igang', name !== 'idle');
   }
 
   /* ——— Ticker ————————————————————————————————————————————————— */
