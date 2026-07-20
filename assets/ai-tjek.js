@@ -182,7 +182,11 @@
     NOT_HTML: 'Adressen svarer, men ikke med en almindelig hjemmeside. Prøv sidens forside i stedet.',
     BLOCKED: 'Siden blokerer automatiske besøg, så vi kan ikke analysere den udefra. Bemærk: det kan også ramme AI-søgemaskiner, der prøver at læse siden.',
     RATE_LIMITED: 'Du har brugt dagens scanninger fra denne forbindelse. Prøv igen i morgen — eller skriv til os, hvis du vil have kigget på flere sider.',
-    INTERNAL: 'Noget gik galt hos os — ikke hos dig. Prøv igen om et øjeblik.'
+    INTERNAL: 'Noget gik galt hos os — ikke hos dig. Prøv igen om et øjeblik.',
+    /* Adskilt fra UNREACHABLE: dér er det den scannede side, der ikke svarer.
+       Her nåede vi aldrig frem til vores egen måletjeneste, og så må vi ikke
+       give brugeren skylden for det. */
+    NETVAERK: 'Vi kunne ikke få forbindelse til vores måletjeneste. Det er ikke din side, der er noget galt med — prøv igen om lidt.'
   };
 
   var VERDICTS = {
@@ -609,9 +613,11 @@
       if (data && data.ok) renderResult(data);
       else showError((data && data.error) || 'INTERNAL');
     }).catch(function () {
+      /* fetch selv fejlede — netværk, CORS eller motoren nede. Det siger
+         intet om den side, brugeren bad os kigge på. */
       stopTicker();
       busy = false;
-      showError('UNREACHABLE');
+      showError('NETVAERK');
     });
   }
 
