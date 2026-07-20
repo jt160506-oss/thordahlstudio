@@ -9,6 +9,10 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/space-grotesk-latin-wght-normal.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/bricolage-grotesque-latin-wght-normal.woff2">
 <style>
+/* 404 har egen inline-CSS og linker ikke style.css — derfor gentages
+   de to @font-face her, saa siden faar de rigtige skrifttyper. */
+@font-face{font-family:'Space Grotesk';font-style:normal;font-display:swap;font-weight:300 700;src:url(/assets/fonts/space-grotesk-latin-wght-normal.woff2) format('woff2-variations')}
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-display:swap;font-weight:200 800;src:url(/assets/fonts/bricolage-grotesque-latin-wght-normal.woff2) format('woff2-variations')}
 *{margin:0;padding:0;box-sizing:border-box}
 a{text-decoration:none}
 :root{--bg:#08080A;--ink:#EFEBE1;--mut:#7C7C86;--acc:#C6FF3D}
@@ -22,7 +26,7 @@ p{color:#B4B3BC;margin:18px 0 32px;font-size:17px}
 </head>
 <body>
 <div>
-  <div class="code">4<span>0</span>4</div>
+  <h1 class="code">4<span>0</span>4</h1>
   <p>Den side findes ikke — men det gør en god samtale.</p>
   <a class="btn" href="/">Tilbage til forsiden →</a>
 </div>
