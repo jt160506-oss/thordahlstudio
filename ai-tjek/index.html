@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gratis AI-tjek — bliver din hjemmeside fundet af AI?</title>
+<meta name="description" content="Indtast din hjemmesideadresse og få en score fra 0 til 100 for, hvor godt din forside er bygget til at blive fundet på Google og anbefalet af ChatGPT og Perplexity.">
+<link rel="canonical" href="https://thordahlstudio.dk/ai-tjek/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Jakob Thordahl">
+<meta name="theme-color" content="#0B0B0C">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Thordahl">
+<meta property="og:locale" content="da_DK">
+<meta property="og:url" content="https://thordahlstudio.dk/ai-tjek/">
+<meta property="og:title" content="Gratis AI-tjek — bliver din hjemmeside fundet af AI?">
+<meta property="og:description" content="Få en score fra 0 til 100 for, hvor godt din forside er bygget til Google og AI-søgemaskiner. Gratis, uden login og uden at gemme dine data.">
+<meta property="og:image" content="https://thordahlstudio.dk/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Thordahl — hjemmesider, der bliver anbefalet.">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gratis AI-tjek — bliver din hjemmeside fundet af AI?">
+<meta name="twitter:description" content="Få en score fra 0 til 100 for, hvor godt din forside er bygget til Google og AI-søgemaskiner.">
+<meta name="twitter:image" content="https://thordahlstudio.dk/assets/og-image.png">
+
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="96x96" href="../assets/favicon-96x96.png">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/space-grotesk-latin-wght-normal.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/bricolage-grotesque-latin-wght-normal.woff2">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Thordahl AI-synlighedstjek",
+      "url": "https://thordahlstudio.dk/ai-tjek/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Alle browsere",
+      "inLanguage": "da-DK",
+      "description": "Gratis værktøj, der analyserer en hjemmesides forside og giver en score fra 0 til 100 for, hvor godt den er bygget til at blive fundet på Google og anbefalet af AI-søgemaskiner som ChatGPT og Perplexity.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "DKK" },
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Thordahl",
+        "url": "https://thordahlstudio.dk/",
+        "email": "kontakt@thordahlstudio.dk",
+        "telephone": "+45 81 61 66 08",
+        "areaServed": { "@type": "Country", "name": "Danmark" }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Forside", "item": "https://thordahlstudio.dk/" },
+        { "@type": "ListItem", "position": 2, "name": "AI-tjek", "item": "https://thordahlstudio.dk/ai-tjek/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Hvad måler AI-tjekket egentlig?", "acceptedAnswer": { "@type": "Answer", "text": "Værktøjet henter din forside præcis som en søgerobot ser den, og gennemgår 27 konkrete punkter fordelt på fire områder: om en AI kan læse siden, om dit Google-fundament er på plads, hvor hurtig siden er på mobil, og hvor nem din tekst er at citere. Hvert point kan forklares — der gættes ikke." } },
+        { "@type": "Question", "name": "Koster det noget, og skal jeg oprette en bruger?", "acceptedAnswer": { "@type": "Answer", "text": "Nej. Tjekket er gratis, og du skal hverken oprette en bruger eller opgive din e-mail. Du indtaster din hjemmesideadresse og får resultatet med det samme." } },
+        { "@type": "Question", "name": "Gemmer I mine oplysninger?", "acceptedAnswer": { "@type": "Answer", "text": "Nej. Der sættes ingen cookies, og der gemmes ingen personoplysninger. Selve analysen af en forside gemmes i op til et døgn, så den samme side ikke bliver scannet igen og igen — det er alt." } },
+        { "@type": "Question", "name": "Hvorfor scanner I kun forsiden?", "acceptedAnswer": { "@type": "Answer", "text": "Forsiden er den side, både Google og AI-tjenester møder først, og den afslører næsten altid, hvordan resten af sitet er bygget. En fuld gennemgang af alle undersider hører til en rigtig analyse — den laver jeg gerne manuelt." } },
+        { "@type": "Question", "name": "Hvad gør jeg med resultatet?", "acceptedAnswer": { "@type": "Answer", "text": "Listen er sorteret, så det, der koster dig mest synlighed, står øverst. Har du en webmaster, kan du sende punkterne videre — de er skrevet, så de kan forsvares fagligt. Vil du hellere have det ordnet, kan du sende resultatet til mig." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/ai-tjek.css">
+</head>
+<body>
+<a class="skip" href="#hovedindhold">Spring til indhold</a>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="/" aria-label="Thordahl forside">thordahl<span>°</span></a>
+    <nav class="nav-links" aria-label="Hovedmenu">
+      <a href="/#ydelser">Ydelser</a>
+      <a href="/#case">Cases</a>
+      <a href="/#proces">Proces</a>
+      <a href="/#om">Om</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <a href="/#kontakt" class="btn nav-cta">Kontakt</a>
+    <button class="burger" id="burger" aria-label="Åbn menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close" id="closeMenu" aria-label="Luk menu">×</button>
+  <a href="/#ydelser">Ydelser</a>
+  <a href="/#case">Cases</a>
+  <a href="/#proces">Proces</a>
+  <a href="/#om">Om</a>
+  <a href="/blog/">Blog</a>
+  <a href="/#kontakt" class="acc">Kontakt →</a>
+</div>
+
+<main id="hovedindhold">
+
+<!-- ══ 1 · IDLE ══════════════════════════════════════════════════════════ -->
+<div class="stage on" id="stage-idle">
+<section class="tjek-hero">
+  <div class="hero-glow" id="glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-solo">
+      <span class="eyebrow"><i></i>Gratis værktøj · AI-synlighed</span>
+      <h1>Bliver din hjemmeside fundet af AI?</h1>
+      <p class="sub">Flere og flere finder virksomheder ved at spørge ChatGPT eller Perplexity i stedet for Google. Indtast din adresse, og se på under et minut, om din side er bygget til at blive læst, forstået og anbefalet — af både Google og AI.</p>
+
+      <form class="tjek-form" id="tjekForm" novalidate>
+        <div class="fieldwrap">
+          <label class="skip" for="tjekUrl">Din hjemmesideadresse</label>
+          <input id="tjekUrl" name="url" type="text" inputmode="url" autocomplete="url"
+                 autocapitalize="none" spellcheck="false" placeholder="dinvirksomhed.dk">
+        </div>
+        <button type="submit" class="btn">Tjek min hjemmeside
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+      <p class="tjek-error-inline" id="inlineError" role="alert"></p>
+      <p class="tjek-note">Vi scanner kun din forside og gemmer ingen oplysninger om dig.</p>
+
+      <div class="tjek-points">
+        <div><b>30</b>AI-læsbarhed</div>
+        <div><b>25</b>Google-fundament</div>
+        <div><b>25</b>Hastighed &amp; mobil</div>
+        <div><b>20</b>AI-citérbarhed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="saadan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="chapter"><b>01</b><span class="rail"></span>Sådan virker det</span>
+      <h2>Tre skridt, ingen tilmelding</h2>
+      <p>Værktøjet henter din forside præcis som en søgerobot ser den — uden JavaScript, uden at logge ind, uden at gemme noget om dig.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="n">01</div>
+        <h3>Du indtaster din adresse</h3>
+        <p>Bare domænet, fx dinvirksomhed.dk. Du skal hverken oprette en bruger eller opgive din e-mail.</p>
+      </div>
+      <div class="step reveal">
+        <div class="n">02</div>
+        <h3>Vi læser din forside</h3>
+        <p>Vi henter siden, dine robotregler, dit sitemap og en hastighedsmåling fra Google — og gennemgår 27 konkrete punkter.</p>
+      </div>
+      <div class="step reveal">
+        <div class="n">03</div>
+        <h3>Du får en score og en liste</h3>
+        <p>En score fra 0 til 100 og en prioriteret liste i almindeligt dansk. Det vigtigste står øverst.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="hvad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="chapter"><b>02</b><span class="rail"></span>Hvad vi kigger på</span>
+      <h2>Fire områder, 100 point</h2>
+      <p>Hvert point kan forklares. Kan noget ikke måles, skriver vi det — vi gætter ikke for at få tallet til at se pænt ud.</p>
+    </div>
+    <div class="services">
+      <div class="svc reveal">
+        <div class="num">A · 30 point</div>
+        <h3>AI-læsbarhed</h3>
+        <p>Kan ChatGPT, Perplexity og Googles AI-svar overhovedet læse din side? Vi tjekker dine strukturerede data, om AI-robotterne er lukket ude i din robots.txt, og hvor meget tekst der reelt kan trækkes ud af siden.</p>
+        <div class="tags"><span>Strukturerede data</span><span>robots.txt</span><span>llms.txt</span><span>Læsbart indhold</span></div>
+      </div>
+      <div class="svc reveal">
+        <div class="num">B · 25 point</div>
+        <h3>Google-fundament</h3>
+        <p>De klassiske ting, der stadig afgør, om du bliver vist: sidetitel, beskrivelse, canonical-adresse, overskrifter, sprog, delingsvisning, mobilopsætning, sitemap og sikker forbindelse.</p>
+        <div class="tags"><span>Titel og beskrivelse</span><span>Canonical</span><span>Sitemap</span><span>HTTPS</span></div>
+      </div>
+      <div class="svc reveal">
+        <div class="num">C · 25 point</div>
+        <h3>Hastighed og mobil</h3>
+        <p>Målt med Googles egen hastighedsmåling på en mobil: samlet score, hvor hurtigt hovedindholdet vises, om siden hopper under indlæsning, hvor hurtigt den reagerer på tryk, og hvor tung forsiden er.</p>
+        <div class="tags"><span>Mobilscore</span><span>LCP</span><span>Stabilitet</span><span>Sidevægt</span></div>
+      </div>
+      <div class="svc reveal">
+        <div class="num">D · 20 point</div>
+        <h3>AI-citérbarhed</h3>
+        <p>En AI citerer få kilder. Vi ser på, om din side svarer på rigtige spørgsmål, om telefon og beliggenhed fremgår tydeligt, om teksten er delt op i bidder, der kan løftes ud, og om dit navn bruges konsistent.</p>
+        <div class="tags"><span>Spørgsmål og svar</span><span>Kontaktoplysninger</span><span>Citérbar tekst</span><span>Alt-tekster</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="chapter"><b>03</b><span class="rail"></span>Spørgsmål</span>
+      <h2>Godt at vide</h2>
+    </div>
+    <div class="faq">
+      <div class="qa reveal">
+        <button type="button" aria-expanded="false">Hvad måler AI-tjekket egentlig?</button>
+        <div class="a"><p>Værktøjet henter din forside præcis som en søgerobot ser den, og gennemgår 27 konkrete punkter fordelt på fire områder: om en AI kan læse siden, om dit Google-fundament er på plads, hvor hurtig siden er på mobil, og hvor nem din tekst er at citere. Hvert point kan forklares — der gættes ikke.</p></div>
+      </div>
+      <div class="qa reveal">
+        <button type="button" aria-expanded="false">Koster det noget, og skal jeg oprette en bruger?</button>
+        <div class="a"><p>Nej. Tjekket er gratis, og du skal hverken oprette en bruger eller opgive din e-mail. Du indtaster din hjemmesideadresse og får resultatet med det samme.</p></div>
+      </div>
+      <div class="qa reveal">
+        <button type="button" aria-expanded="false">Gemmer I mine oplysninger?</button>
+        <div class="a"><p>Nej. Der sættes ingen cookies, og der gemmes ingen personoplysninger. Selve analysen af en forside gemmes i op til et døgn, så den samme side ikke bliver scannet igen og igen — det er alt. Læs mere i <a class="acc" href="/privatlivspolitik/">privatlivspolitikken</a>.</p></div>
+      </div>
+      <div class="qa reveal">
+        <button type="button" aria-expanded="false">Hvorfor scanner I kun forsiden?</button>
+        <div class="a"><p>Forsiden er den side, både Google og AI-tjenester møder først, og den afslører næsten altid, hvordan resten af sitet er bygget. En fuld gennemgang af alle undersider hører til en rigtig analyse — den laver jeg gerne manuelt.</p></div>
+      </div>
+      <div class="qa reveal">
+        <button type="button" aria-expanded="false">Hvad gør jeg med resultatet?</button>
+        <div class="a"><p>Listen er sorteret, så det, der koster dig mest synlighed, står øverst. Har du en webmaster, kan du sende punkterne videre — de er skrevet, så de kan forsvares fagligt. Vil du hellere have det ordnet, kan du <a class="acc" href="/#kontakt">sende resultatet til mig</a>.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ══ 2 · SCANNING ═════════════════════════════════════════════════════ -->
+<section class="stage scanning" id="stage-scanning" aria-live="polite" aria-busy="true">
+  <div class="inner">
+    <span class="eyebrow" style="justify-content:center"><i></i>Analyserer</span>
+    <p class="static">Analyserer din forside — det tager op til et minut.</p>
+    <div class="ticker" id="ticker"></div>
+    <div class="progress" aria-hidden="true"><i></i></div>
+    <p class="waitnote">Vi henter din side, læser den som en søgerobot og måler hastigheden på mobil. Det tager typisk 15–45 sekunder — bliv på siden.</p>
+  </div>
+</section>
+
+<!-- ══ 3 · RESULTAT ═════════════════════════════════════════════════════ -->
+<section class="stage result" id="stage-result" aria-live="polite">
+  <div class="wrap">
+
+    <div class="score-head">
+      <div class="ring">
+        <svg width="184" height="184" viewBox="0 0 184 184" aria-hidden="true">
+          <circle class="track" cx="92" cy="92" r="78" fill="none" stroke-width="10"></circle>
+          <circle class="bar" id="ringBar" cx="92" cy="92" r="78" fill="none" stroke-width="10"></circle>
+        </svg>
+        <div class="val">
+          <span class="num" id="ringNum">0</span>
+          <span class="lbl">din score</span>
+        </div>
+      </div>
+      <div class="verdict">
+        <h2 id="verdictH">—</h2>
+        <p id="verdictP"></p>
+        <p class="scanned-url" id="scannedUrl"></p>
+        <div class="notes" id="notes"></div>
+      </div>
+    </div>
+
+    <div class="cats" id="cats"></div>
+
+    <div class="findings">
+      <h2>Det, du kan gøre noget ved</h2>
+      <p class="intro" id="findingIntro"></p>
+      <div id="findingList"></div>
+
+      <div class="passes" id="passes" hidden>
+        <button type="button" id="passesBtn" aria-expanded="false" aria-controls="passesBody">
+          <span id="passesLabel">Det, der allerede er i orden ✓</span>
+          <span class="chev" aria-hidden="true">+</span>
+        </button>
+        <div class="body" id="passesBody">
+          <div class="inner" id="passList"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tjek-cta">
+      <h2>Vil du have det ordnet?</h2>
+      <p id="ctaBody"></p>
+      <div class="actions">
+        <a href="/#kontakt" class="btn">Book et gratis opkald
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button type="button" class="btn btn-ghost" id="again">Scan en anden side</button>
+      </div>
+    </div>
+
+    <p class="result-foot">Analysen er vejledende og baseret på din forside, som den så ud i dag. Bygget af Thordahl — uden cookies og uden at gemme dine data.</p>
+  </div>
+</section>
+
+<!-- ══ 4 · FEJL ═════════════════════════════════════════════════════════ -->
+<section class="stage errorstate" id="stage-error" aria-live="polite">
+  <div class="inner">
+    <div class="mark" aria-hidden="true">!</div>
+    <h2 id="errorH">Det gik ikke</h2>
+    <p id="errorText"></p>
+    <button type="button" class="btn" id="errorRetry">Prøv igen</button>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <div class="logo">thordahl<span class="acc">°</span></div>
+      <p>Personligt digitalt studie. Moderne hjemmesider til lokale virksomheder — bygget til Google og AI.</p>
+    </div>
+    <div class="foot-col">
+      <h2>Studie</h2>
+      <a href="/">Forside</a>
+      <a href="/#ydelser">Ydelser</a>
+      <a href="/#case">Cases</a>
+      <a href="/#proces">Proces</a>
+      <a href="/blog/">Blog</a>
+    </div>
+    <div class="foot-col">
+      <h2>Kontakt</h2>
+      <a href="mailto:kontakt@thordahlstudio.dk">kontakt@thordahlstudio.dk</a>
+      <a href="tel:+4581616608">+45 81 61 66 08</a>
+      <a href="/#kontakt">Book et gratis opkald</a>
+      <a href="/privatlivspolitik/">Privatlivspolitik</a>
+    </div>
+  </div>
+  <div class="foot-cities">
+    <h2>Webdesign i Midtjylland</h2>
+    <div class="foot-cities-list">
+      <a href="/silkeborg/">Silkeborg</a>
+      <a href="/aarhus/">Aarhus</a>
+      <a href="/viborg/">Viborg</a>
+      <a href="/skanderborg/">Skanderborg</a>
+      <a href="/horsens/">Horsens</a>
+      <a href="/herning/">Herning</a>
+      <a href="/ikast/">Ikast</a>
+      <a href="/ry/">Ry</a>
+      <a href="/hammel/">Hammel</a>
+      <a href="/bjerringbro/">Bjerringbro</a>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 Thordahl · thordahlstudio.dk</span>
+    <span>Silkeborg · Midtjylland</span>
+  </div>
+</footer>
+
+<script src="/assets/perf.js"></script>
+<script src="/assets/lenis.min.js"></script>
+<script src="../assets/site.js"></script>
+<script>
+/* Mobilmenu, reveals og FAQ — samme adfærd som resten af sitet. */
+(function(){
+  var mm=document.getElementById('mobileMenu');
+  document.getElementById('burger').onclick=function(){mm.classList.add('open')};
+  document.getElementById('closeMenu').onclick=function(){mm.classList.remove('open')};
+  document.querySelectorAll('.mobile-menu a').forEach(function(a){
+    a.addEventListener('click',function(){mm.classList.remove('open')});
+  });
+
+  var groups=document.querySelectorAll('.services .svc, .steps .step, .qa');
+  groups.forEach(function(el,i){el.style.transitionDelay=((i%4)*0.07)+'s'});
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+  document.querySelectorAll('.qa button').forEach(function(b){
+    b.onclick=function(){
+      var qa=b.parentElement,a=qa.querySelector('.a'),open=qa.classList.contains('open');
+      document.querySelectorAll('.qa').forEach(function(x){
+        x.classList.remove('open');x.querySelector('.a').style.maxHeight=null;
+        x.querySelector('button').setAttribute('aria-expanded','false');
+      });
+      if(!open){qa.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';b.setAttribute('aria-expanded','true')}
+    };
+  });
+})();
+</script>
+<script src="../assets/ai-tjek.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+/* ── AI-synlighedstjek (/ai-tjek/) ──────────────────────────────────────────
+   Bygger videre på assets/style.css — samme variabler, typografi og rytme.
+   Kun de komponenter, der er nye på denne side, står her.                    */
+
+:root{
+  --ok:#C6FF3D;      /* pass — samme som accent */
+  --mid:#FFC44D;     /* warn */
+  --bad:#FF7A59;     /* fail / kritisk */
+}
+
+/* ——— Fælles sceneskift mellem tilstande ——— */
+.stage{display:none}
+.stage.on{display:block}
+.scanning.on,.errorstate.on{display:flex}
+
+/* ——— 1 · Idle ——— */
+.tjek-hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden}
+.tjek-hero>.wrap{width:100%}
+/* Nulstil sitets generelle form-styling (panel, padding, fuldbredde-knap) */
+.tjek-form{background:none;border:0;border-radius:0;padding:0}
+.tjek-form .btn{width:auto}
+.tjek-form{margin:34px auto 0;max-width:560px;display:flex;gap:12px}
+.tjek-form .fieldwrap{flex:1;position:relative;min-width:0}
+.tjek-form input{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:100px;padding:16px 22px;color:var(--ink);font-family:inherit;font-size:16px;transition:border-color .25s}
+.tjek-form input::placeholder{color:var(--mut)}
+.tjek-form input:focus{border-color:var(--acc);outline:none}
+.tjek-form .btn{flex:none;white-space:nowrap}
+.tjek-note{margin-top:16px;color:var(--mut);font-size:13.5px}
+.tjek-error-inline{margin-top:14px;color:var(--bad);font-size:14px;min-height:20px}
+.tjek-points{margin:44px auto 0;max-width:760px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tjek-points div{border:1px solid var(--line);border-radius:14px;padding:14px 12px;font-size:12.5px;color:#C9C4B9;text-align:center}
+.tjek-points b{display:block;font-family:"Bricolage Grotesque";font-weight:800;color:var(--acc);font-size:19px;margin-bottom:3px}
+
+/* ——— 2 · Scanning ——— */
+.scanning{min-height:100svh;align-items:center;justify-content:center;padding:120px 28px 80px;text-align:center}
+.scanning .inner{max-width:600px;width:100%}
+.ticker{position:relative;min-height:3.2em;height:3.2em;margin:26px 0 30px}
+.ticker span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:"Bricolage Grotesque";font-weight:700;font-size:clamp(18px,3.2vw,26px);line-height:1.25;letter-spacing:-.02em;text-wrap:balance;opacity:0;transition:opacity .55s ease}
+.ticker span.on{opacity:1}
+.progress{height:2px;background:var(--line2);border-radius:100px;overflow:hidden;max-width:420px;margin:0 auto}
+.progress i{display:block;height:100%;width:34%;background:var(--acc);border-radius:100px;animation:slide 2.4s cubic-bezier(.5,0,.4,1) infinite}
+@keyframes slide{0%{transform:translateX(-110%)}100%{transform:translateX(400%)}}
+.scanning .waitnote{margin-top:28px;color:var(--mut);font-size:13.5px}
+.scanning .static{display:none;font-family:"Bricolage Grotesque";font-weight:700;font-size:22px;margin-bottom:26px}
+
+/* ——— 3 · Resultat ——— */
+.result{padding:132px 0 0}
+.score-head{display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center;max-width:900px}
+.ring{position:relative;flex:none;width:184px;height:184px}
+.ring svg{transform:rotate(-90deg);display:block;width:100%;height:auto}
+.ring .track{stroke:rgba(237,232,221,.09)}
+.ring .bar{stroke:var(--acc);stroke-linecap:round;transition:stroke-dashoffset 1.4s cubic-bezier(.16,1,.3,1)}
+.ring .val{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.ring .num{font-family:"Bricolage Grotesque";font-weight:800;font-size:52px;letter-spacing:-.04em;line-height:1}
+.ring .lbl{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.verdict h2{font-size:clamp(26px,3.8vw,40px);margin-bottom:14px}
+.verdict p{color:#B7B2A7;font-size:16.5px;max-width:52ch}
+.scanned-url{margin-top:22px;font-size:13.5px;color:var(--mut);word-break:break-all}
+.scanned-url b{color:var(--ink);font-weight:500}
+.notes{margin-top:22px;display:flex;flex-direction:column;gap:8px}
+.note{font-size:13.5px;color:var(--mut);border-left:2px solid var(--line);padding-left:14px}
+
+/* Delscore-kort */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
+.cat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px}
+.cat .n{font-family:"Bricolage Grotesque";font-weight:800;color:var(--acc);font-size:13px;letter-spacing:.1em}
+.cat h3{font-size:18px;margin:10px 0 16px;letter-spacing:-.02em;line-height:1.15}
+.cat .sc{font-family:"Bricolage Grotesque";font-weight:800;font-size:30px;letter-spacing:-.03em;line-height:1}
+.cat .sc small{font-size:15px;color:var(--mut);font-weight:600}
+.cat .bar{height:5px;border-radius:100px;background:rgba(237,232,221,.08);margin-top:14px;overflow:hidden}
+.cat .bar i{display:block;height:100%;border-radius:100px;background:var(--acc);width:0;transition:width 1.1s cubic-bezier(.16,1,.3,1)}
+.cat.unmeasured .sc{font-size:15px;color:var(--mut);font-family:"Space Grotesk";font-weight:500;letter-spacing:0}
+.cat.lvl-mid .bar i,.cat.lvl-mid .sc{color:var(--mid)}
+.cat.lvl-mid .bar i{background:var(--mid)}
+.cat.lvl-bad .bar i,.cat.lvl-bad .sc{color:var(--bad)}
+.cat.lvl-bad .bar i{background:var(--bad)}
+
+/* Findings */
+.findings{margin-top:76px;max-width:840px}
+.findings h2{font-size:clamp(24px,3.4vw,32px);margin-bottom:8px}
+.findings .intro{color:#B7B2A7;font-size:15.5px;margin-bottom:32px}
+.finding{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--line2)}
+.finding .badge{flex:none;align-self:start;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-family:"Bricolage Grotesque";border-radius:100px;padding:5px 11px;border:1px solid;white-space:nowrap}
+.badge.kritisk{color:var(--bad);border-color:rgba(255,122,89,.45);background:rgba(255,122,89,.08)}
+.badge.vigtig{color:var(--mid);border-color:rgba(255,196,77,.4);background:rgba(255,196,77,.07)}
+.badge.forbedring{color:var(--mut);border-color:var(--line)}
+.badge.maalt{color:var(--mut);border-color:var(--line)}
+.finding h3{font-family:"Space Grotesk";font-weight:600;letter-spacing:0;line-height:1.4;font-size:16.5px;margin-bottom:6px}
+.finding p{color:#B7B2A7;font-size:15px}
+.finding p b{color:var(--ink);font-weight:600}
+
+/* Beståede checks (foldet sammen) */
+.passes{margin-top:38px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.passes>button{width:100%;background:var(--panel);border:0;color:var(--ink);text-align:left;padding:20px 24px;font-size:15.5px;font-family:"Bricolage Grotesque";font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.passes>button .chev{color:var(--acc);font-size:20px;transition:transform .3s;line-height:1}
+.passes.open>button .chev{transform:rotate(45deg)}
+.passes .body{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.passes .inner{padding:6px 24px 10px}
+.passes .finding{border-bottom:1px solid var(--line2)}
+.passes .finding:last-child{border-bottom:0}
+
+/* CTA */
+.tjek-cta{margin:76px 0 0;background:linear-gradient(180deg,var(--panel),#0E0E10);border:1px solid var(--line);border-radius:22px;padding:44px;text-align:center;max-width:840px}
+.tjek-cta h2{font-size:clamp(26px,3.6vw,36px);margin-bottom:14px}
+.tjek-cta p{color:#B7B2A7;font-size:16px;max-width:56ch;margin:0 auto 26px}
+.tjek-cta .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.result-foot{max-width:840px;margin:40px 0 0;padding-bottom:110px;color:var(--mut);font-size:12.5px;line-height:1.7}
+
+/* ——— 4 · Fejl ——— */
+.errorstate{min-height:100svh;align-items:center;justify-content:center;padding:120px 28px 80px;text-align:center}
+.errorstate .inner{max-width:520px}
+.errorstate .mark{width:56px;height:56px;border-radius:50%;background:rgba(255,122,89,.1);border:1px solid rgba(255,122,89,.4);display:grid;place-items:center;margin:0 auto 22px;color:var(--bad);font-size:26px;font-family:"Bricolage Grotesque";font-weight:800}
+.errorstate h2{font-size:clamp(24px,3.6vw,34px);margin-bottom:14px}
+.errorstate p{color:#B7B2A7;font-size:16px;margin-bottom:26px}
+
+/* ——— Responsivt ——— */
+@media(max-width:900px){
+  .cats{grid-template-columns:repeat(2,1fr)}
+  .score-head{grid-template-columns:1fr;gap:30px;justify-items:center;text-align:center}
+  .verdict p{margin:0 auto}
+  .notes{align-items:center}
+  .note{border-left:0;border-top:2px solid var(--line);padding:10px 0 0;text-align:center}
+  .tjek-points{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  .tjek-form{flex-direction:column;gap:12px}
+  .tjek-form .btn{justify-content:center;width:100%}
+  .tjek-cta .actions .btn{width:100%}
+  .result{padding-top:104px}
+  .ring{width:150px;height:150px}
+  .ring .num{font-size:44px}
+  .finding{grid-template-columns:1fr;gap:10px}
+  .finding .badge{justify-self:start}
+  .tjek-cta{padding:30px 24px}
+  .tjek-cta .actions .btn{width:100%;justify-content:center}
+}
+
+/* ——— Reduceret bevægelse ———
+   style.css slår alle animationer fra. Her sørger vi for, at scanne-tilstanden
+   stadig giver mening uden bevægelse: statisk linje frem for ticker. */
+@media(prefers-reduced-motion:reduce){
+  .ticker,.progress{display:none}
+  .scanning .static{display:block}
+  .cat .bar i{transition:none}
+  .ring .bar{transition:none}
+}
