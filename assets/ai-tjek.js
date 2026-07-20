@@ -43,7 +43,10 @@
       t: 'Kan indholdet overhovedet læses?',
       pass: 'Dit indhold kan trækkes rent ud af siden ({wordCount} ord læsbar tekst). Det er dét råmateriale, en AI arbejder med.',
       warn: 'Der kan kun trækkes {wordCount} ord ud af din forside. Det er tyndt — en AI har ikke ret meget at citere dig for.',
-      fail: 'Din side viser muligvis indhold til mennesker, men maskiner kan næsten intet læse ({wordCount} ord). Det sker typisk, når indholdet først dannes af scripts i browseren. For AI-søgemaskiner er siden i praksis tom.'
+      fail: 'Din side viser muligvis indhold til mennesker, men maskiner kan næsten intet læse ({wordCount} ord). Det sker typisk, når indholdet først dannes af scripts i browseren. For AI-søgemaskiner er siden i praksis tom.',
+      /* Checket kan dumpe på to måder: for få ord, eller nok ord der drukner i
+         kode. Den oprindelige tekst passer kun på det første — derfor denne. */
+      failRatio: 'Din side har {wordCount} ord tekst, men de drukner i kode — kun {ratioPct} % af det, en robot henter, er læsbart indhold. Det sker typisk, når siden bygges af scripts i browseren, og en AI-crawler får meget lidt ud af besøget.'
     },
     B1: {
       t: 'Sidetitel',
@@ -276,6 +279,8 @@
           return data && data.phone ? 'telefonnummer' : 'beliggenhed';
         case 'mb':
           return daTal(v);
+        case 'ratioPct':
+          return daTal(Math.round((data && data.ratio ? data.ratio : 0) * 1000) / 10);
         default:
           return v == null ? '' : String(v);
       }
@@ -305,8 +310,14 @@
     var def = CHECKS[f.id];
     if (!def) return '';
     if (f.status === 'error') return ERROR_TEXT;
+    var data = f.data || {};
     var raw = def[f.status] || def.fail || '';
-    return fmt(raw, f.data || {});
+    /* A6 dumper enten på for få ord eller på for lidt tekst i forhold til kode.
+       Er der ord nok, er det kodemængden, der er problemet — sig dét i stedet. */
+    if (f.id === 'A6' && f.status === 'fail' && def.failRatio && data.wordCount >= 100) {
+      raw = def.failRatio;
+    }
+    return fmt(raw, data);
   }
 
   function findingNode(f) {
