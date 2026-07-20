@@ -497,12 +497,33 @@
     try { sessionStorage.setItem('aitjek_prefill', msg); } catch (e) { /* privat browsing */ }
   }
 
+  /* Klokkeslæt for selve scanningen. Uden det ligner et cachet resultat
+     et friskt, og brugeren tvivler på sin egen rettelse i stedet for på
+     tallet — netop dét skete for os selv på kredithjornet.dk. */
+  function klokken(iso) {
+    var d = new Date(iso);
+    if (!iso || isNaN(d.getTime())) return null;
+    return d.toLocaleTimeString('da-DK', { hour: '2-digit', minute: '2-digit' });
+  }
+
   function renderNotes(data) {
     var host = $('#notes');
     host.innerHTML = '';
+    var t = klokken(data.scannedAt);
     if (data.cached) {
-      host.appendChild(el('p', 'note', 'Resultat fra i dag — hver side analyseres én gang i døgnet.'));
+      host.appendChild(el('p', 'note vigtig', t
+        ? 'Dette resultat er fra kl. ' + t + ' — ikke fra lige nu. Hver side gemmes et døgn, så har du rettet noget siden da, er det ikke med her.'
+        : 'Resultat fra tidligere — ikke fra lige nu. Hver side gemmes et døgn.'));
+    } else if (t) {
+      host.appendChild(el('p', 'note', 'Analyseret nu, kl. ' + t + '.'));
     }
+    if (forrigeScannedAt && data.scannedAt === forrigeScannedAt) {
+      /* Vi bad om en ny scanning, men fik samme tidsstempel igen. Sig det
+         ligeud i stedet for at lade brugeren tro, at siden blev målt påny. */
+      host.appendChild(el('p', 'note vigtig',
+        'Vi bad om en ny måling, men fik det samme gemte resultat tilbage. Prøv igen senere på dagen.'));
+    }
+    forrigeScannedAt = '';
     var c = data.categories.filter(function (x) { return x.id === 'C'; })[0];
     if (c && !c.measurable) {
       host.appendChild(el('p', 'note', 'Hastigheden kunne ikke måles lige nu (Googles måletjeneste svarede ikke). Din score er beregnet ud fra resten — prøv igen senere for det fulde billede.'));
@@ -520,6 +541,9 @@
     $('#scannedUrl').appendChild(el('b', null, shown));
 
     renderNotes(data);
+    sidsteScannedAt = data.scannedAt || '';
+    // Kun et gemt resultat er værd at måle om.
+    $('#rescan').hidden = !data.cached;
     renderCategories(data.categories);
 
     var all = data.categories.reduce(function (acc, c) { return acc.concat(c.findings); }, []);
@@ -554,6 +578,9 @@
   var input = $('#tjekUrl');
   var inlineError = $('#inlineError');
   var busy = false;
+  var sidsteUrl = '';          // så "Scan igen" ved, hvad den skal måle om
+  var sidsteScannedAt = '';    // tidsstemplet på det resultat, der vises nu
+  var forrigeScannedAt = '';   // sat kun når vi beder om en frisk måling
 
   function looksLikeUrl(value) {
     var v = value.trim().replace(/^https?:\/\//i, '').replace(/\/.*$/, '');
@@ -562,9 +589,10 @@
     return /^[a-z0-9æøå]([a-z0-9æøå-]*[a-z0-9æøå])?(\.[a-z0-9æøå-]+)+$/i.test(v);
   }
 
-  function scan(value) {
+  function scan(value, paany) {
     if (busy) return;
     busy = true;
+    sidsteUrl = value;
     inlineError.textContent = '';
     show('scanning');
     startTicker();
@@ -572,7 +600,7 @@
     fetch(API, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url: value })
+      body: JSON.stringify({ url: value, force: paany === true })
     }).then(function (res) {
       return res.json().catch(function () { return { ok: false, error: 'INTERNAL' }; });
     }).then(function (data) {
@@ -611,6 +639,12 @@
 
   $('#again').addEventListener('click', reset);
   $('#errorRetry').addEventListener('click', reset);
+
+  $('#rescan').addEventListener('click', function () {
+    if (!sidsteUrl) return;
+    forrigeScannedAt = sidsteScannedAt;
+    scan(sidsteUrl, true);
+  });
 
   $('#passesBtn').addEventListener('click', function () {
     var box = $('#passes');

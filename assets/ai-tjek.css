@@ -59,6 +59,8 @@
 .scanned-url b{color:var(--ink);font-weight:500}
 .notes{margin-top:22px;display:flex;flex-direction:column;gap:8px}
 .note{font-size:13.5px;color:var(--mut);border-left:2px solid var(--line);padding-left:14px}
+/* Et cachet resultat skal ikke kunne forveksles med et friskt. */
+.note.vigtig{color:var(--ink);border-left-color:var(--acc)}
 
 /* Delscore-kort */
 .cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
