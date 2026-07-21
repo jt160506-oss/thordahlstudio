@@ -8,6 +8,10 @@ Målgruppen er små og lokale danske virksomheder: håndværk, handel, service, 
 
 Ydelser: ny hjemmeside, redesign af eksisterende side, vedligeholdelse og support, samt SEO og AI-synlighed (GEO).
 
+Pris og vilkår: en enkel løsning — én gennemført forside uden undersider — starter fra 749 kr. ekskl. moms. Derfra følger prisen omfanget: antal sider, indhold, funktioner og hjælp til tekst. En enkel side kan typisk stå klar på to til fire dage, når indholdet er på plads. Kunden ejer selv domæne, indhold og den færdige side, og domæne og hosting betales direkte til leverandøren i kundens eget navn — der er intet obligatorisk abonnement. Første samtale er gratis og uforpligtende.
+
+Gratis værktøj: Thordahl stiller et gratis AI-synlighedstjek til rådighed på https://thordahlstudio.dk/ai-tjek/. Man indtaster en hjemmesideadresse og får en score fra 0 til 100 baseret på 27 konkrete punkter fordelt på fire områder: AI-læsbarhed (30 point), Google-fundament (25), hastighed og mobil (25) og AI-citérbarhed (20). Ingen oprettelse, ingen e-mail, ingen cookies.
+
 Det, der adskiller Thordahl:
 
 - Sider bygges til at blive citeret af AI-søgning, ikke kun rangeret på Google.
@@ -22,6 +26,7 @@ Kontakt: kontakt@thordahlstudio.dk · +45 81 61 66 08 · https://thordahlstudio.
 
 - [Thordahl — forside](https://thordahlstudio.dk/): Studiets hovedside med ydelser, proces, cases, om Jakob, FAQ og kontaktformular.
 - [Blog om SEO og AI-synlighed](https://thordahlstudio.dk/blog/): Oversigt over artikler om søgemaskineoptimering og hvordan hjemmesider bliver citeret af AI.
+- [Gratis AI-tjek](https://thordahlstudio.dk/ai-tjek/): Gratis værktøj der giver en hjemmeside en score fra 0 til 100 for, hvor godt forsiden er bygget til at blive fundet på Google og anbefalet af AI-søgning. 27 punkter, ingen oprettelse.
 
 ## Artikler
 

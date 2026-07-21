@@ -10,3 +10,6 @@
 # Logs / temp
 *.log
 node_modules/
+
+# FUSE-rester fra mountede redigeringer
+.fuse_hidden*
