@@ -16,7 +16,7 @@ Statisk site — HTML/CSS/vanilla JS. Hostet gratis på GitHub Pages. Domæne: t
 - `reference/` — skærmbilleder af den valgte retning
 
 ## Arbejdsmåde
-Arbejd altid på en branch, aldrig direkte på `main`. Preview via staging-URL før live.
+Arbejd direkte på `main` i små, logiske commits. Push først, når Jakob siger til.
 
 ## Status
 Hero-prototypen er bygget. Næste: Ydelser · Proces · Cases · Om · FAQ · Kontakt.

@@ -111,8 +111,8 @@ Retningen er en syntese af to godkendte koncepter ("B × C"): **mørk, immersiv 
 
 ## 8. Arbejdsmetode (erfaringer, vi tager med)
 
-- Arbejd altid på en **branch**, aldrig direkte på `main`. Flet + push, når Jakob har godkendt.
-- Brug en **rigtig staging-URL** til preview (fx GitHub Pages på branchen eller Cloudflare/Netlify) — ikke sammensyede enkeltfiler.
+- **Arbejd direkte på `main`.** Besluttet aug. 2026: feature-branches gav mere besvær end værdi, når Jakob selv skal committe undervejs. Commit i små, logiske trin med en beskrivende besked, så historikken kan læses bagfra. Push først, når Jakob siger til.
+- Vis Jakob resultatet, før noget går live. Han åbner selv filerne lokalt eller ser dem på GitHub Pages.
 - Ved subjektive valg (farve, layout, type, bevægelse): vis **2–3 konkrete, levende varianter** frem for at gætte.
 - **Rene leverancer:** ingen `.DS_Store`/junk i zips.
 - Assets som filer i `assets/`, konsistent håndtering (ikke base64 inline).
