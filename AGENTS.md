@@ -21,7 +21,9 @@ Regler her, der er markeret *"nuværende retning — kan justeres"*, er bevidst 
 
 ## 1. Hvad Thordahl er
 
-Et **premium digitalt studie**, drevet som personligt brand af Jakob Thordahl, der bygger moderne hjemmesider til **små og lokale danske virksomheder**.
+En **enkeltmandsvirksomhed** drevet af Jakob Thordahl, der håndkoder moderne hjemmesider til **små og lokale danske virksomheder**.
+
+> **Sprogregel (aug. 2026):** ordene "studie" og "studio" må ikke bruges i brødtekst, overskrifter, metadata eller JSON-LD. De signalerer bureau og skader troværdigheden. Brandet hedder **Thordahl**. Domænet `thordahlstudio.dk` og e-mailadressen bevares uændret — det er kun sproget, der ændres.
 
 - **Synligt brand:** Thordahl. **Domæne:** thordahlstudio.dk (eller det valgte).
 - **Niche / differentiator:** sider bygget til at blive fundet på Google **og** anbefalet af AI-søgemaskiner (ChatGPT, Perplexity — "AI-synlighed / GEO"). Det er den vinkel, de færreste kører — den er krogen.
@@ -37,6 +39,17 @@ Et **premium digitalt studie**, drevet som personligt brand af Jakob Thordahl, d
 - **Målgruppe:** små lokale danske virksomheder (håndværk, handel, service, klinikker, webshops) — ikke enterprise.
 - **Sprog:** dansk, i øjenhøjde, jargon forklares.
 
+### 2.1 Tone — konkrete regler (aug. 2026)
+
+Sitet blev gennemskrevet, fordi teksten læste som AI-genereret og talte ned til læseren. Følgende gælder nu:
+
+- **Sektionsoverskrifter er udsagn, ikke spørgsmål.** Otte spørgsmål i træk var den tydeligste afsløring. Højst ét spørgsmål som overskrift på en side.
+- **Tankestreger er rationeret.** Forsiden gik fra ca. 60 til 11 i synlig tekst. Brug punktum eller komma. En tankestreg skal kunne forsvares enkeltvis.
+- **Ingen parallelkonstruktioner** af typen "nemt at forstå — og nemt at vælge dig" eller "ingen mellemled, ingen skiftende konsulenter".
+- **Forbudte vendinger:** "Den gode nyhed:", "Det er ikke en fjern fremtid", "en opskrift fra 2015", "Der er en fordel at hente", "gennemtænkt", "skaber handling".
+- **Forklar én gang.** Læseren er en voksen virksomhedsejer, ikke et barn. Let sprog er ikke det samme som at gentage sig selv.
+- **"Jeg", aldrig "vi".** Det er en enkeltmandsvirksomhed. Passiv form er et gyldigt alternativ, hvor "jeg" bliver anstrengt.
+
 ---
 
 ## 3. Sandhed & troværdighed — dette er kritisk
@@ -47,6 +60,8 @@ Alt konkret fra det oprindelige mhpdesign-udkast var **placeholder og ikke virke
 - Har vi ikke beviset endnu, så **opfind det ikke** — design ærligt rundt om det (fx "Jeg tager løbende nye projekter ind" frem for falske anmeldelser).
 - Ingen opdigtede ratings, kundeantal, logoer eller antal projekter.
 - Lov ikke bestemte Google-placeringer eller garanterede resultater. Ærlige udsagn kun.
+- **Ingen priser på sitet (besluttet aug. 2026).** Den tidligere "fra 749 kr." blev fjernet: tallet lå så langt under markedet, at det modsagde "håndkodet, ingen skabeloner", og det ankrede forventningen så lavt, at et rigtigt tilbud ville føles som bait-and-switch. Sitet lover i stedet **fast pris og beskrivelse af leverancen, før arbejdet går i gang**. Genindfør ikke et startbeløb uden Jakobs udtrykkelige beslutning.
+- **Ingen opdigtet AI-anbefaling.** AI-kortet i heroen må kun indeholde udsagn, der faktisk passer, og er mærket som eksempel.
 - Ægte bevis at læne sig op ad: sitet selv, og Kredithjørnet (et rigtigt, live projekt) kan bruges som case.
 - Kontaktformular, e-mail og telefon skal være **rigtige og virke**, før noget går live.
 

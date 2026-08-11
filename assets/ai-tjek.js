@@ -63,7 +63,7 @@
     B3: {
       t: 'Canonical-adresse',
       pass: 'Din side fortæller entydigt, hvilken adresse der er den rigtige. Det samler din synlighed ét sted.',
-      warn: 'Din canonical peger på en anden adresse end den, vi scannede. Det kan splitte eller fejllede din synlighed — det bør tjekkes.',
+      warn: 'Din canonical peger på en anden adresse end den, der blev scannet. Det kan splitte eller fejllede din synlighed, og bør tjekkes.',
       fail: 'Din side mangler en canonical-adresse. Findes din side på flere adresser (med/uden www, med/uden skråstreg), risikerer du at konkurrere med dig selv i Google.'
     },
     B4: {
@@ -177,38 +177,38 @@
   var ERRORS = {
     INVALID_URL: 'Det ligner ikke en hjemmesideadresse. Prøv formatet dinvirksomhed.dk.',
     PRIVATE_TARGET: 'Den adresse kan ikke scannes. Indtast en offentlig hjemmesideadresse, fx dinvirksomhed.dk.',
-    UNREACHABLE: 'Vi kunne ikke få fat i siden. Tjek, at adressen er stavet rigtigt, og at siden er online.',
-    TIMEOUT: 'Siden svarede for langsomt til, at vi kunne analysere den. Det er i sig selv et vink om hastighedsproblemer — prøv igen om lidt.',
+    UNREACHABLE: 'Siden kunne ikke hentes. Tjek, at adressen er stavet rigtigt, og at siden er online.',
+    TIMEOUT: 'Siden svarede for langsomt til at kunne analyseres. Det er i sig selv et tegn på hastighedsproblemer. Prøv igen om lidt.',
     NOT_HTML: 'Adressen svarer, men ikke med en almindelig hjemmeside. Prøv sidens forside i stedet.',
-    BLOCKED: 'Siden blokerer automatiske besøg, så vi kan ikke analysere den udefra. Bemærk: det kan også ramme AI-søgemaskiner, der prøver at læse siden.',
-    RATE_LIMITED: 'Du har brugt dagens scanninger fra denne forbindelse. Prøv igen i morgen — eller skriv til os, hvis du vil have kigget på flere sider.',
-    INTERNAL: 'Noget gik galt hos os — ikke hos dig. Prøv igen om et øjeblik.',
+    BLOCKED: 'Siden blokerer automatiske besøg, så den ikke kan analyseres udefra. Bemærk: det kan også ramme AI-søgemaskiner, der prøver at læse siden.',
+    RATE_LIMITED: 'Du har brugt dagens scanninger fra denne forbindelse. Prøv igen i morgen, eller skriv til mig, hvis du vil have kigget på flere sider.',
+    INTERNAL: 'Noget gik galt i værktøjet, ikke på din side. Prøv igen om et øjeblik.',
     /* Adskilt fra UNREACHABLE: dér er det den scannede side, der ikke svarer.
        Her nåede vi aldrig frem til vores egen måletjeneste, og så må vi ikke
        give brugeren skylden for det. */
-    NETVAERK: 'Vi kunne ikke få forbindelse til vores måletjeneste. Det er ikke din side, der er noget galt med — prøv igen om lidt.'
+    NETVAERK: 'Der kunne ikke skabes forbindelse til måletjenesten. Det er ikke din side, der er noget galt med. Prøv igen om lidt.'
   };
 
   var VERDICTS = {
     strong: {
       h: 'Stærkt fundament.',
-      p: 'Din side er bygget til at blive fundet — af både Google og AI. Detaljerne nedenfor viser, hvad der kan finpudses.',
-      cta: 'Din side står stærkt — og de sidste detaljer er ofte dem, der gør forskellen mellem at blive fundet og at blive valgt. Jeg tager gerne et kig sammen med dig.'
+      p: 'Din side er bygget til at blive fundet af både Google og AI. Detaljerne nedenfor viser, hvad der kan finpudses.',
+      cta: 'Din side står stærkt. De sidste detaljer er ofte dem, der afgør, om nogen vælger dig frem for den næste på listen. Jeg kigger gerne på dem med dig.'
     },
     gaps: {
-      h: 'Godt på vej — men med huller.',
+      h: 'Godt på vej, men med huller.',
       p: 'Fundamentet er der, men der er konkrete ting, som holder din side tilbage i både Google og AI-svar.',
-      cta: 'Alt på listen ovenfor er ting, jeg arbejder med til daglig. Send mig dit resultat, så vender jeg tilbage inden for 24 timer med en ærlig vurdering af, hvad der vil rykke mest — uforpligtende.'
+      cta: 'Alt på listen ovenfor er ting, jeg arbejder med til daglig. Send mig dit resultat, så vender jeg uforpligtende tilbage inden for 24 timer med en vurdering af, hvad der vil rykke mest.'
     },
     vulnerable: {
       h: 'Sårbar.',
-      p: 'Din side kan findes, men den taber terræn til konkurrenter, der er bedre forberedt — især i AI-søgning, hvor kun få kilder bliver citeret.',
-      cta: 'Alt på listen ovenfor er ting, jeg arbejder med til daglig. Send mig dit resultat, så vender jeg tilbage inden for 24 timer med en ærlig vurdering af, hvad der vil rykke mest — uforpligtende.'
+      p: 'Din side kan findes, men den taber terræn til konkurrenter, der er bedre forberedt. Det gælder især i AI-søgning, hvor kun få kilder bliver citeret.',
+      cta: 'Alt på listen ovenfor er ting, jeg arbejder med til daglig. Send mig dit resultat, så vender jeg uforpligtende tilbage inden for 24 timer med en vurdering af, hvad der vil rykke mest.'
     },
     invisible: {
       h: 'Reelt usynlig for AI.',
-      p: 'Som siden står nu, har en AI meget svært ved at læse, forstå og anbefale den. Den gode nyhed: det kan rettes, og de vigtigste ting står øverst nedenfor.',
-      cta: 'Det ser voldsomt ud, men det meste er fundament, der kan lægges én gang og holde. Send mig dit resultat, så fortæller jeg ærligt, hvad der skal til — og hvad det ikke behøver at koste.'
+      p: 'Som siden står nu, har en AI meget svært ved at læse, forstå og anbefale den. Det kan rettes, og de vigtigste ting står øverst nedenfor.',
+      cta: 'Det ser voldsomt ud, men det meste er fundament, der lægges én gang og holder. Send mig dit resultat, så fortæller jeg ærligt, hvad der skal til.'
     }
   };
 
@@ -447,9 +447,12 @@
         var pct = c.max ? c.score / c.max : 0;
         var lvl = bandClass(pct);
         if (lvl) card.classList.add(lvl);
+        /* Kategorierne vejer ikke lige meget i den samlede score, og fire
+           forskellige maksimumtal (30/25/25/20) var mest forvirrende at se
+           på. Procent siger det samme uden at kræve en forklaring. */
         var sc = el('div', 'sc');
-        sc.appendChild(document.createTextNode(String(c.score)));
-        sc.appendChild(el('small', null, ' af ' + c.max));
+        sc.appendChild(document.createTextNode(String(Math.round(pct * 100))));
+        sc.appendChild(el('small', null, ' %'));
         card.appendChild(sc);
         var bar = el('div', 'bar');
         var fill = el('i');
@@ -472,7 +475,7 @@
 
     var intro = $('#findingIntro');
     if (open.length === 0) {
-      intro.textContent = 'Der er ingen åbne punkter — alt, vi kunne måle, er i orden.';
+      intro.textContent = 'Ingen åbne punkter. Alt, der kunne måles, er i orden.';
     } else {
       intro.textContent = 'Sorteret efter, hvad der betyder mest. Øverst er det, der koster dig mest synlighed lige nu.';
     }
@@ -520,8 +523,8 @@
     var t = klokken(data.scannedAt);
     if (data.cached) {
       host.appendChild(el('p', 'note vigtig', t
-        ? 'Dette resultat er fra kl. ' + t + ' — ikke fra lige nu. Hver side gemmes et døgn, så har du rettet noget siden da, er det ikke med her.'
-        : 'Resultat fra tidligere — ikke fra lige nu. Hver side gemmes et døgn.'));
+        ? 'Dette resultat er fra kl. ' + t + ', ikke fra lige nu. Hver side gemmes et døgn, så har du rettet noget siden da, er det ikke med her.'
+        : 'Resultat fra tidligere, ikke fra lige nu. Hver side gemmes et døgn.'));
     } else if (t) {
       host.appendChild(el('p', 'note', 'Analyseret nu, kl. ' + t + '.'));
     }
@@ -529,12 +532,12 @@
       /* Vi bad om en ny scanning, men fik samme tidsstempel igen. Sig det
          ligeud i stedet for at lade brugeren tro, at siden blev målt påny. */
       host.appendChild(el('p', 'note vigtig',
-        'Vi bad om en ny måling, men fik det samme gemte resultat tilbage. Prøv igen senere på dagen.'));
+        'Der blev bedt om en ny måling, men resultatet er stadig det gemte. Prøv igen senere på dagen.'));
     }
     forrigeScannedAt = '';
     var c = data.categories.filter(function (x) { return x.id === 'C'; })[0];
     if (c && !c.measurable) {
-      host.appendChild(el('p', 'note', 'Hastigheden kunne ikke måles lige nu (Googles måletjeneste svarede ikke). Din score er beregnet ud fra resten — prøv igen senere for det fulde billede.'));
+      host.appendChild(el('p', 'note', 'Hastigheden kunne ikke måles lige nu (Googles måletjeneste svarede ikke). Din score er beregnet ud fra resten. Prøv igen senere for det fulde billede.'));
     }
   }
 
