@@ -118,3 +118,24 @@ Retningen er en syntese af to godkendte koncepter ("B × C"): **mørk, immersiv 
 - Assets som filer i `assets/`, konsistent håndtering (ikke base64 inline).
 - Giv altid en rolig **reduced-motion-fallback** — bevægelse må aldrig stå i vejen for indholdet.
 - Undervurdér ikke, hvad vi kan bygge. Three.js, shaders, GSAP, blød scroll er alt sammen inden for rækkevidde — det handler om tid og finpudsning, ikke om "det kan vi ikke".
+
+---
+
+## 9. Disciplin & verifikation (aug. 2026 — ufravigeligt)
+
+Disse regler kom af konkrete fejl og er ikke til forhandling:
+
+- **Repoets kode er sandhedskilden — altid.** En hentet/cachet version af live-sitet må aldrig ligge til grund for analyse eller kritik. Live-sitet bruges kun til at bekræfte, at et deploy er slået igennem. (Fejl aug. 2026: en analyse kritiserede tekst, der allerede var fjernet i repoet.)
+- **Mål, gæt ikke.** Påstande om sitet verificeres mod aktuel kode/data med konkrete målinger, før de udtales.
+- **Eksterne systemers UI (virk.dk, Google-produkter, Skat): arbejd skærm for skærm.** Lange forudsagte klik-guider rammer ved siden af og spilder Jakobs tid. Bed om screenshot; svar felt for felt på det, der faktisk vises.
+- **"Standard"/"typisk" er ikke en begrundelse.** Hvert råd begrundes for Thordahls konkrete situation — inkl. fravalg og konsekvenser (sagsbehandlingstid, offentlighed af data osv.) i samme åndedrag som anbefalingen.
+- **Statusdata (Search Console, indeksering) læses i kontekst:** hvad er ændret siden sidst, og hvad er støj/lag i rapporterne — før der konkluderes noget som helst.
+
+---
+
+## 10. Status (opdateret 15. aug. 2026)
+
+- **Google Business Profile:** oprettet og verificeret (serviceområde-profil, adresse skjult, 10 byer). Koblet til sitet via `sameAs`/`hasMap` i JSON-LD på alle sider. Anmeldelseslink: `https://g.page/r/CbbLX0p5wXlJEBM/review` — første ægte anmeldelse (Kredithjørnet) er næste skridt.
+- **CVR:** enkeltmandsvirksomheden "Thordahl" under registrering, branchekode 620100, frivillig momsregistrering fra start. Afventer Skat (op til ca. 14 dage). Når CVR-nummeret foreligger: indsæt i privatlivspolitik og JSON-LD (`vatID`/`identifier`).
+- **Indeksering:** 17 sider indekseret = sitemap. `index.html`-dubletterne og http-varianten er korrekt udelukket via canonicals; intet udestående.
+- **Prioriteret arbejdsliste** (analysen aug. 2026, dokument hos Jakob): 1) forside-copy i kunde-perspektiv, én primær CTA, FAQ ned til 5–6, 2) title-tags: forside (mangler ordet "webdesign"), AI-blogartiklen (pos 9,3 / 0 kliks — CTR-problem), AI-tjek, 3) /viborg/ gøres reelt unik (pos 13,5 — tættest på side 1), 4) bevis: portrætfoto, Kredithjørnet-udtalelse + "Design: Thordahl"-footerlink, 5) kataloger (Krak, Proff m.fl.) + lokal erhvervsforening.
