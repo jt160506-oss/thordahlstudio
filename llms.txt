@@ -32,7 +32,7 @@ Kontakt: kontakt@thordahlstudio.dk · +45 81 61 66 08 · https://thordahlstudio.
 
 - [Hvad er SEO? En konkret forklaring for virksomhedsejere](https://thordahlstudio.dk/blog/hvad-er-seo/): Hvad SEO er i praksis — hvordan Google finder, forstår og rangerer hjemmesider, og de fire områder der afgør placeringen.
 - [Sådan fungerer AI-søgemaskiner](https://thordahlstudio.dk/blog/saadan-fungerer-ai-soegemaskiner/): Hvordan Google AI Overviews, ChatGPT-søgning og Perplexity henter og citerer hjemmesider.
-- [Bliv citeret af AI: en praktisk guide til GEO](https://thordahlstudio.dk/blog/bliv-fundet-af-ai/): Konkrete greb der gør en hjemmeside lettere for ChatGPT, Perplexity og Google AI at læse og citere.
+- [Sådan bliver din virksomhed anbefalet af ChatGPT](https://thordahlstudio.dk/blog/bliv-fundet-af-ai/): Konkrete greb der gør en hjemmeside lettere for ChatGPT, Perplexity og Google AI at læse og citere.
 
 ## Cases
 
