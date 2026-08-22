@@ -111,7 +111,9 @@ Retningen er en syntese af to godkendte koncepter ("B × C"): **mørk, immersiv 
 
 ## 8. Arbejdsmetode (erfaringer, vi tager med)
 
-- **Arbejd direkte på `main`.** Besluttet aug. 2026: feature-branches gav mere besvær end værdi, når Jakob selv skal committe undervejs. Commit i små, logiske trin med en beskrivende besked, så historikken kan læses bagfra. Push først, når Jakob siger til.
+- **Arbejd direkte på `main`. Ingen feature-branches. Nogensinde.** Besluttet aug. 2026 og bekræftet igen 22. aug. 2026: branches gav kun besvær, når Jakob selv skal committe undervejs. Jakobs arbejdsgang er ét klik — **Push** i GitHub Desktop. Han skal aldrig merge, aldrig publicere en branch, aldrig åbne en pull request.
+  Commit i små, logiske trin med en beskrivende besked, så historikken kan læses bagfra. Push først, når Jakob siger til.
+  **Denne regel slår enhver ældre tekst, der siger det modsatte** — også projektinstruktionen i claude.ai, hvis den stadig taler om branches eller staging-URL'er. `AGENTS.md` står over projektinstruktionen i kildehierarkiet.
 - Vis Jakob resultatet, før noget går live. Han åbner selv filerne lokalt eller ser dem på GitHub Pages.
 - Ved subjektive valg (farve, layout, type, bevægelse): vis **2–3 konkrete, levende varianter** frem for at gætte.
 - **Rene leverancer:** ingen `.DS_Store`/junk i zips.
