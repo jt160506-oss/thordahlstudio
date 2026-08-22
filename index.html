@@ -70,8 +70,40 @@
     "knowsAbout": ["Digital forretningsudvikling", "Webudvikling", "SEO", "Performance marketing", "Konverteringsoptimering", "E-commerce operations"]
   },
   "makesOffer": [
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ny hjemmeside" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Redesign" } },
+    {
+      "@type": "Offer",
+      "name": "Enkel side",
+      "description": "Håndkodet hjemmeside på 1-3 sider til den lokale virksomhed, der skal kunne findes og ringes op.",
+      "itemOffered": { "@type": "Service", "name": "Ny hjemmeside, enkel" },
+      "price": "14900",
+      "priceCurrency": "DKK",
+      "valueAddedTaxIncluded": false,
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "name": "Virksomhedsside",
+      "description": "Håndkodet hjemmeside på 5-8 sider med tekstsparring, lokal SEO og struktureret data.",
+      "itemOffered": { "@type": "Service", "name": "Ny hjemmeside, virksomhed" },
+      "price": "24900",
+      "priceCurrency": "DKK",
+      "valueAddedTaxIncluded": false,
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "name": "Side med værktøj",
+      "description": "Hjemmeside med beregner, booking eller konfigurator bygget ind.",
+      "itemOffered": { "@type": "Service", "name": "Hjemmeside med interaktivt værktøj" },
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": "39900",
+        "priceCurrency": "DKK",
+        "valueAddedTaxIncluded": false
+      },
+      "availability": "https://schema.org/InStock"
+    },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Redesign af eksisterende side" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vedligeholdelse og support" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO og moderne synlighed" } }
   ]
@@ -87,7 +119,7 @@
       "name": "Hvad koster en ny hjemmeside?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Det afhænger af omfanget: antal sider, indhold, funktioner og hvor meget hjælp du har brug for til teksten. Derfor sætter jeg ikke et tal på her. Du får en fast pris og en beskrivelse af, hvad der er med, før der bliver lavet noget, og du binder dig ikke ved at spørge."
+        "text": "En enkel side på 1-3 sider koster 14.900 kr., en virksomhedsside på 5-8 sider koster 24.900 kr., og en side med beregner eller booking starter ved 39.900 kr. Alle priser er ekskl. moms og ligger fast, før arbejdet går i gang. Skal en eksisterende side laves om, afhænger prisen af, hvor meget der kan genbruges."
       }
     },
     {
@@ -147,6 +179,7 @@
     <a class="logo" href="/" aria-label="Thordahl forside">thordahl<span>°</span></a>
     <nav class="nav-links" aria-label="Hovedmenu">
       <a href="#case">Cases</a>
+      <a href="#priser">Priser</a>
       <a href="#om">Om</a>
       <a href="#ydelser">Ydelser</a>
       <a href="#proces">Proces</a>
@@ -163,6 +196,7 @@
 
 <nav class="railnav" id="railnav" aria-label="Sektioner på siden">
   <a href="#case" data-sec="case"><span class="dot" aria-hidden="true"></span><span class="lbl">Cases</span></a>
+  <a href="#priser" data-sec="priser"><span class="dot" aria-hidden="true"></span><span class="lbl">Priser</span></a>
   <a href="#om" data-sec="om"><span class="dot" aria-hidden="true"></span><span class="lbl">Om mig</span></a>
   <a href="#ydelser" data-sec="ydelser"><span class="dot" aria-hidden="true"></span><span class="lbl">Ydelser</span></a>
   <a href="#hvorfor" data-sec="hvorfor"><span class="dot" aria-hidden="true"></span><span class="lbl">Udgangspunktet</span></a>
@@ -175,6 +209,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <button class="close" id="closeMenu" aria-label="Luk menu">×</button>
   <a href="#case">Cases</a>
+  <a href="#priser">Priser</a>
   <a href="#om">Om</a>
   <a href="#ydelser">Ydelser</a>
   <a href="#proces">Proces</a>
@@ -202,7 +237,7 @@
       <div class="trust">
         <span><b>Håndkodet</b>, ikke skabelon</span>
         <span><b>Én person</b> på hele projektet</span>
-        <span><b>Bygget til</b> Google og AI</span>
+        <span><b>Priser</b> står på siden</span>
       </div>
     </div>
 
@@ -296,11 +331,77 @@
   </div>
 </section>
 
-<!-- 02 · OM -->
+<!-- 02 · PRISER -->
+<section class="sec" id="priser">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="chapter"><b>02</b><span class="rail"></span>Priser</span>
+      <h2>Hvad det koster</h2>
+      <p class="sec-lead">De fleste i branchen skriver “kontakt os for et tilbud”. <strong>Her står tallene.</strong> Du kan regne på det i fred, før du skriver til mig, og prisen ligger fast, før arbejdet går i gang.</p>
+    </div>
+
+    <div class="pris reveal">
+
+      <article class="pris-card">
+        <div class="pris-top">
+          <h3>Enkel side</h3>
+          <p class="pris-who">Den lokale virksomhed, der skal kunne findes og ringes op.</p>
+        </div>
+        <div class="pris-tal"><b>14.900</b><span>kr.</span></div>
+        <ul class="pris-liste">
+          <li>1–3 sider</li>
+          <li>Design fra bunden, ingen skabelon</li>
+          <li>Mobil-først og hurtig at loade</li>
+          <li>Google Business-profil sat rigtigt op</li>
+          <li>Klar på 1–2 uger</li>
+        </ul>
+        <a href="#kontakt" class="btn btn-ghost pris-cta" data-pakke="Enkel side">Skriv om Enkel side</a>
+      </article>
+
+      <article class="pris-card fremhaevet">
+        <div class="pris-badge">Oftest valgt</div>
+        <div class="pris-top">
+          <h3>Virksomhedsside</h3>
+          <p class="pris-who">Dig med flere ydelser, der skal forklares og sælges hver for sig.</p>
+        </div>
+        <div class="pris-tal"><b>24.900</b><span>kr.</span></div>
+        <ul class="pris-liste">
+          <li>5–8 sider</li>
+          <li>Sparring på teksten, så den sælger</li>
+          <li>Lokal SEO og struktureret data</li>
+          <li>Kontaktformular, der virker fra dag ét</li>
+          <li>Klar på 2–4 uger</li>
+        </ul>
+        <a href="#kontakt" class="btn pris-cta" data-pakke="Virksomhedsside">Skriv om Virksomhedsside</a>
+      </article>
+
+      <article class="pris-card">
+        <div class="pris-top">
+          <h3>Side med værktøj</h3>
+          <p class="pris-who">Når besøgende selv skal regne, booke eller vælge noget på siden.</p>
+        </div>
+        <div class="pris-tal"><span class="fra">fra</span><b>39.900</b><span>kr.</span></div>
+        <ul class="pris-liste">
+          <li>Alt fra Virksomhedsside</li>
+          <li>Beregner, booking eller konfigurator</li>
+          <li>Integration med fx Cal.com</li>
+          <li>Det Kredithjørnet og Silke Barbers har</li>
+          <li>Fast tilbud efter én samtale</li>
+        </ul>
+        <a href="#kontakt" class="btn btn-ghost pris-cta" data-pakke="Side med værktøj">Skriv om Side med værktøj</a>
+      </article>
+
+    </div>
+
+    <p class="pris-note reveal">Alle priser er ekskl. moms og ligger fast, før der bliver kodet en linje. Domæne og hosting står i dit eget navn og betales direkte til leverandøren, så der er <strong>intet abonnement til mig</strong>. Skal en eksisterende side laves om, afhænger prisen af, hvor meget der kan genbruges — <a href="#kontakt">send mig linket</a>, så får du et tal.</p>
+  </div>
+</section>
+
+<!-- 03 · OM -->
 <section class="sec" id="om">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="chapter"><b>02</b><span class="rail"></span>Om mig</span>
+      <span class="chapter"><b>03</b><span class="rail"></span>Om mig</span>
       <h2>Hvem du arbejder med</h2>
     </div>
     <div class="about">
@@ -321,11 +422,11 @@
   </div>
 </section>
 
-<!-- 03 · YDELSER -->
+<!-- 04 · YDELSER -->
 <section class="sec" id="ydelser">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="chapter"><b>03</b><span class="rail"></span>Ydelser</span>
+      <span class="chapter"><b>04</b><span class="rail"></span>Ydelser</span>
       <h2>Det du kan få hjælp til</h2>
       <p class="sec-lead">Ny side, redesign, løbende hjælp eller bedre synlighed. <strong>Du arbejder direkte med mig</strong>, ikke med en projektleder.</p>
     </div>
@@ -354,11 +455,11 @@
   </div>
 </section>
 
-<!-- 04 · UDGANGSPUNKTET -->
+<!-- 05 · UDGANGSPUNKTET -->
 <section class="sec" id="hvorfor">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="chapter"><b>04</b><span class="rail"></span>Udgangspunktet</span>
+      <span class="chapter"><b>05</b><span class="rail"></span>Udgangspunktet</span>
       <h2>Måden folk søger på har ændret sig</h2>
       <p class="sec-lead">De fleste hjemmesider til mindre virksomheder er langsomme, svære for søgemaskiner at læse og skrevet dengang alle stadig googlede. Det sidste er ved at koste mest. <strong>Din næste kunde spørger måske en AI i stedet.</strong></p>
     </div>
@@ -378,11 +479,11 @@
   </div>
 </section>
 
-<!-- 05 · OMFANG -->
+<!-- 06 · OMFANG -->
 <section class="sec" id="loesninger">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="chapter"><b>05</b><span class="rail"></span>Omfang</span>
+      <span class="chapter"><b>06</b><span class="rail"></span>Omfang</span>
       <h2>Sæt dit projekt sammen</h2>
       <p class="sec-lead">Vælg det, du har brug for. Så vender jeg tilbage med et konkret forslag og <strong>en fast pris, før der bliver lavet noget.</strong> Du binder dig ikke ved at spørge.</p>
     </div>
@@ -426,11 +527,11 @@
   </div>
 </section>
 
-<!-- 06 · PROCES -->
+<!-- 07 · PROCES -->
 <section class="sec" id="proces">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="chapter"><b>06</b><span class="rail"></span>Proces</span>
+      <span class="chapter"><b>07</b><span class="rail"></span>Proces</span>
       <h2>Sådan foregår det</h2>
       <p class="sec-lead">Tre trin fra første besked til et konkret forslag. <strong>Du binder dig ikke undervejs.</strong></p>
     </div>
@@ -442,15 +543,15 @@
   </div>
 </section>
 
-<!-- 07 · FAQ -->
+<!-- 08 · FAQ -->
 <section class="sec" id="faq">
   <div class="wrap">
     <div class="sec-head reveal" style="margin:0 auto 52px;text-align:center">
-      <span class="chapter" style="justify-content:center"><b>07</b><span class="rail"></span>FAQ</span>
+      <span class="chapter" style="justify-content:center"><b>08</b><span class="rail"></span>FAQ</span>
       <h2>Det folk plejer at spørge om</h2>
     </div>
     <div class="faq">
-      <div class="qa reveal"><button aria-expanded="false">Hvad koster en ny hjemmeside?</button><div class="a"><p>Det afhænger af omfanget: antal sider, indhold, funktioner og hvor meget hjælp du har brug for til teksten. Derfor sætter jeg ikke et tal på her. Du får en fast pris og en beskrivelse af, hvad der er med, før der bliver lavet noget, og du binder dig ikke ved at spørge.</p></div></div>
+      <div class="qa reveal"><button aria-expanded="false">Hvad koster en ny hjemmeside?</button><div class="a"><p>En enkel side på 1-3 sider koster 14.900 kr., en virksomhedsside på 5-8 sider koster 24.900 kr., og en side med beregner eller booking starter ved 39.900 kr. Alle priser er ekskl. moms og ligger fast, før arbejdet går i gang. Skal en eksisterende side laves om, afhænger prisen af, hvor meget der kan genbruges.</p></div></div>
       <div class="qa reveal"><button aria-expanded="false">Hvor lang tid tager det at få lavet en hjemmeside?</button><div class="a"><p>Det afhænger af omfanget. En enkel side kan typisk stå klar på to til fire dage, når indholdet er på plads. En større side, en webshop eller et redesign tager længere. Du får en realistisk tidsplan sammen med tilbuddet, ikke et løst gæt.</p></div></div>
       <div class="qa reveal"><button aria-expanded="false">Bruger du WordPress eller en skabelon?</button><div class="a"><p>Nej. Jeg bygger siderne fra bunden, så de bliver hurtige, rene og tilpasset netop din forretning. Skabelonsider er billigere at lave, men de er ofte langsomme, ens at se på og svære at optimere ordentligt.</p></div></div>
       <div class="qa reveal"><button aria-expanded="false">Hvem ejer hjemmesiden og domænet?</button><div class="a"><p>Det gør du. Domæne, indhold og den færdige side tilhører dig. Du er ikke bundet til mig for at kunne bruge din egen hjemmeside.</p></div></div>
@@ -460,11 +561,11 @@
   </div>
 </section>
 
-<!-- 08 · KONTAKT -->
+<!-- 09 · KONTAKT -->
 <section class="sec" id="kontakt">
   <div class="wrap contact">
     <div class="reveal">
-      <span class="chapter"><b>08</b><span class="rail"></span>Kontakt</span>
+      <span class="chapter"><b>09</b><span class="rail"></span>Kontakt</span>
       <h2>Skriv til mig</h2>
       <p class="lead">Send et par linjer om dit projekt. <strong>Jeg vender tilbage inden for 24 timer.</strong> Det er uforpligtende, og du binder dig ikke.</p>
       <p class="direct">Eller skriv/ring direkte: <a href="mailto:kontakt@thordahlstudio.dk">kontakt@thordahlstudio.dk</a> · <a href="tel:+4581616608">+45 81 61 66 08</a></p>
@@ -504,6 +605,7 @@
     <div class="foot-col">
       <h2>Thordahl</h2>
       <a href="#case">Cases</a>
+      <a href="#priser">Priser</a>
       <a href="#om">Om</a>
       <a href="#ydelser">Ydelser</a>
       <a href="#proces">Proces</a>
@@ -731,6 +833,14 @@ function playAI(){
   },BEAT);
 }
 playAI();
+
+// Pakkevalg fra prissektionen skrives ind i beskeden
+document.querySelectorAll('.pris-cta').forEach(a=>{
+  a.addEventListener('click',()=>{
+    const f=document.getElementById('projekt');
+    if(f && !f.value.trim()) f.value='Jeg er interesseret i "'+a.dataset.pakke+'". ';
+  });
+});
 
 // Konfigurator
 const opts=document.querySelectorAll('.opt');

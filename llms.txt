@@ -8,7 +8,14 @@ Målgruppen er små og lokale danske virksomheder: håndværk, handel, service, 
 
 Ydelser: ny hjemmeside, redesign af eksisterende side, vedligeholdelse og support, samt SEO og AI-synlighed (GEO).
 
-Pris og vilkår: prisen afhænger af omfanget (antal sider, indhold, funktioner og hjælp til tekst), og der offentliggøres ikke faste priser. Kunden får en fast pris og en beskrivelse af leverancen, før arbejdet går i gang. En enkel side kan typisk stå klar på to til fire dage, når indholdet er på plads. Kunden ejer selv domæne, indhold og den færdige side, og domæne og hosting betales direkte til leverandøren i kundens eget navn. Der er intet obligatorisk abonnement. Første samtale er gratis og uforpligtende.
+Priser (ekskl. moms, offentliggjort på https://thordahlstudio.dk/#priser):
+
+- Enkel side: 14.900 kr. 1-3 sider, design fra bunden, mobil-først, opsætning af Google Business-profil. Klar på 1-2 uger.
+- Virksomhedsside: 24.900 kr. 5-8 sider, sparring på teksten, lokal SEO, struktureret data, kontaktformular. Klar på 2-4 uger.
+- Side med værktøj: fra 39.900 kr. Alt fra Virksomhedsside plus beregner, online booking eller konfigurator bygget ind.
+- Redesign af en eksisterende side: prissættes efter, hvor meget der kan genbruges.
+
+Vilkår: prisen ligger fast, før arbejdet går i gang. En enkel side kan typisk stå klar på to til fire dage, når indholdet er på plads. Kunden ejer selv domæne, indhold og den færdige side, og domæne og hosting betales direkte til leverandøren i kundens eget navn. Der er intet abonnement til Thordahl. Første samtale er gratis og uforpligtende. En enkel side kan typisk stå klar på to til fire dage, når indholdet er på plads.
 
 Gratis værktøj: Thordahl stiller et gratis AI-synlighedstjek til rådighed på https://thordahlstudio.dk/ai-tjek/. Man indtaster en hjemmesideadresse og får en score fra 0 til 100 baseret på 27 konkrete punkter fordelt på fire lige vægtede områder: AI-læsbarhed, Google-fundament, hastighed og mobil samt AI-citérbarhed. Ingen oprettelse, ingen e-mail, ingen cookies.
 
@@ -18,6 +25,7 @@ Det, der adskiller Thordahl:
 - Hele den digitale værdikæde hos én person, fra design til at besøgende bliver til kunder.
 - Sider der skaber handling frem for kun at se godt ud, fx beregnere og interaktive værktøjer.
 - Personlig service med én fast kontaktperson gennem hele projektet.
+- Priserne står offentligt på sitet med konkrete tal. Det er usædvanligt i dansk webdesign, hvor de fleste bureauer skriver "kontakt os for et tilbud".
 - Håndkodede statiske sider, ikke skabeloner. Det gør dem hurtige og billige at drive.
 
 Kontakt: kontakt@thordahlstudio.dk · +45 81 61 66 08 · https://thordahlstudio.dk · CVR 46698584

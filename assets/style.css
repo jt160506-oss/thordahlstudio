@@ -577,3 +577,37 @@ html[data-tier="reduced"] .browser{box-shadow:0 14px 34px rgba(0,0,0,.4)}
 
 /* CVR-linje i kontakt */
 .direct.biz{margin-top:8px;font-size:13.5px;color:var(--mut)}
+
+
+/* ── Priser ───────────────────────────────────────────────── */
+.pris{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.pris-card{position:relative;display:flex;flex-direction:column;background:var(--panel);
+  border:1px solid var(--line);border-radius:18px;padding:30px 26px 26px;min-width:0}
+.pris-card.fremhaevet{background:var(--panel2);border-color:rgba(198,255,61,.38);
+  box-shadow:0 26px 64px rgba(0,0,0,.5)}
+.pris-badge{position:absolute;top:-11px;left:26px;background:var(--acc);color:var(--acc-deep);
+  font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  padding:4px 11px;border-radius:100px}
+.pris-top{min-height:96px}
+.pris-card h3{font-family:"Bricolage Grotesque";font-weight:700;font-size:22px;
+  letter-spacing:-.02em;margin:0 0 8px;color:var(--ink)}
+.pris-who{color:var(--mut);font-size:14px;line-height:1.5;margin:0}
+.pris-tal{display:flex;align-items:baseline;gap:7px;margin:6px 0 22px;
+  padding-bottom:22px;border-bottom:1px solid var(--line2)}
+.pris-tal b{font-family:"Bricolage Grotesque";font-weight:800;font-size:40px;letter-spacing:-.035em;
+  color:var(--ink);font-variant-numeric:tabular-nums;line-height:1}
+.pris-tal span{color:var(--mut);font-size:15px}
+.pris-tal .fra{font-size:14px;align-self:center}
+.pris-card.fremhaevet .pris-tal b{color:var(--acc)}
+.pris-liste{list-style:none;margin:0 0 26px;padding:0;display:flex;flex-direction:column;gap:11px;flex:1}
+.pris-liste li{position:relative;padding-left:24px;color:#B7B2A7;font-size:14.5px;line-height:1.5}
+.pris-liste li::before{content:"";position:absolute;left:0;top:.45em;width:12px;height:7px;
+  border-left:2px solid var(--acc);border-bottom:2px solid var(--acc);transform:rotate(-45deg)}
+.pris-card .pris-cta{width:100%;justify-content:center;text-align:center}
+.pris-note{margin-top:30px;max-width:62ch;color:var(--mut);font-size:14px;line-height:1.65}
+.pris-note a{color:var(--acc)}
+@media(max-width:900px){
+  .pris{grid-template-columns:1fr;gap:30px}
+  .pris-top{min-height:0}
+  .pris-card{padding:28px 22px 24px}
+}

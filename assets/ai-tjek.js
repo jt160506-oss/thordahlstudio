@@ -30,8 +30,8 @@
     },
     A4: {
       t: 'llms.txt',
-      pass: 'Din side har en llms.txt — en lille fil, der giver AI-tjenester et rent overblik over dit indhold.',
-      fail: 'Din side har ingen llms.txt. Det er en ny standard, som få har endnu — netop derfor er den en nem måde at komme foran på.'
+      pass: 'Din side har en llms.txt. Ingen af de store AI-tjenester har bekræftet, at de bruger filen, så den er ikke en fordel i sig selv. Den skader til gengæld ikke.',
+      fail: 'Din side har ingen llms.txt, og det betyder reelt ingenting. Målinger af over 100.000 domæner viser, at AI-crawlerne stort set aldrig henter filen, og Google har meldt ud, at de ikke bruger den. Vær skeptisk, hvis nogen sælger den som en genvej.'
     },
     A5: {
       t: 'Sidens struktur (semantisk HTML)',
