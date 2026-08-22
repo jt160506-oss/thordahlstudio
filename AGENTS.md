@@ -138,6 +138,6 @@ Disse regler kom af konkrete fejl og er ikke til forhandling:
 ## 10. Status (opdateret 15. aug. 2026)
 
 - **Google Business Profile:** oprettet og verificeret (serviceområde-profil, adresse skjult, 10 byer). Koblet til sitet via `sameAs`/`hasMap` i JSON-LD på alle sider. Anmeldelseslink: `https://g.page/r/CbbLX0p5wXlJEBM/review` — første ægte anmeldelse (Kredithjørnet) er næste skridt.
-- **CVR:** enkeltmandsvirksomheden "Thordahl" under registrering, branchekode 620100, frivillig momsregistrering fra start. Afventer Skat (op til ca. 14 dage). Når CVR-nummeret foreligger: indsæt i privatlivspolitik og JSON-LD (`vatID`/`identifier`).
+- **CVR:** enkeltmandsvirksomheden "Thordahl", CVR-nr. **46698584**, godkendt 18. aug. 2026, momsregistreret. Nummeret ligger nu i footer, JSON-LD (`identifier`/`vatID`/`taxID`), kontaktsektionen, privatlivspolitikken og `llms.txt`. Skal også på Google Business-profilen og alle tilbud og fakturaer.
 - **Indeksering:** 17 sider indekseret = sitemap. `index.html`-dubletterne og http-varianten er korrekt udelukket via canonicals; intet udestående.
 - **Prioriteret arbejdsliste** (analysen aug. 2026, dokument hos Jakob): 1) forside-copy i kunde-perspektiv, én primær CTA, FAQ ned til 5–6, 2) title-tags: forside (mangler ordet "webdesign"), AI-blogartiklen (pos 9,3 / 0 kliks — CTR-problem), AI-tjek, 3) /viborg/ gøres reelt unik (pos 13,5 — tættest på side 1), 4) bevis: portrætfoto, Kredithjørnet-udtalelse + "Design: Thordahl"-footerlink, 5) kataloger (Krak, Proff m.fl.) + lokal erhvervsforening.

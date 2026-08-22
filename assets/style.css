@@ -555,3 +555,25 @@ html[data-tier="reduced"] .browser{box-shadow:0 14px 34px rgba(0,0,0,.4)}
 /* Menupunkt til AI-tjekket — samme vægt som de øvrige, med et lille lys */
 .nav-tjek{display:inline-flex;align-items:center;gap:7px;color:var(--ink)}
 .nav-tjek i{width:5px;height:5px;border-radius:50%;background:var(--acc);box-shadow:0 0 8px var(--acc);flex:none}
+
+
+/* ── Vilkårsstribe under hero ─────────────────────────────── */
+.terms-band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(237,232,221,.015)}
+.terms{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;padding:36px 28px}
+.term b{display:block;color:var(--ink);font-size:15px;font-weight:600;margin-bottom:6px;letter-spacing:-.01em}
+.term span{display:block;color:var(--mut);font-size:13.5px;line-height:1.55}
+@media(max-width:900px){.terms{grid-template-columns:repeat(2,1fr);gap:26px;padding:30px 28px}}
+@media(max-width:560px){.terms{grid-template-columns:1fr;gap:20px}}
+
+/* ── Cases: gitter der kan vokse ──────────────────────────── */
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:40px;align-items:start}
+.case-card{display:flex;flex-direction:column;min-width:0}
+.case-card .shot{margin-bottom:24px}
+.case-card .case-body .chapter{margin-bottom:10px}
+.case-card .case-body h3{font-size:clamp(26px,2.6vw,32px);letter-spacing:-.03em;margin:0 0 14px}
+.case-card .case-body p{color:#B7B2A7;font-size:15.5px;line-height:1.62;margin:0 0 12px}
+.case-card .case-meta{margin:18px 0 0}
+@media(max-width:900px){.cases{grid-template-columns:1fr;gap:56px}}
+
+/* CVR-linje i kontakt */
+.direct.biz{margin-top:8px;font-size:13.5px;color:var(--mut)}

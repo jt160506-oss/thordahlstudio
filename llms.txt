@@ -36,7 +36,8 @@ Kontakt: kontakt@thordahlstudio.dk · +45 81 61 66 08 · https://thordahlstudio.
 
 ## Cases
 
-- [Kredithjørnet](https://kredithjornet.dk): Live projekt bygget af Thordahl, med konverteringsberegner og boliglånsberegner. Eneste offentlige case indtil videre.
+- [Silke Barbers](https://silkebarbers.dk): Barbersalon i Søndergade 19, 8600 Silkeborg. Hjemmeside bygget af Thordahl med online booking via Cal.com, åbne priser, en før og efter-slider til klippene, samtykke-styret Google Maps og lokal SEO. Åbner snart.
+- [Kredithjørnet](https://kredithjornet.dk): Live projekt bygget af Thordahl, med konverteringsberegner og boliglånsberegner.
 
 ## Lokale sider
 
