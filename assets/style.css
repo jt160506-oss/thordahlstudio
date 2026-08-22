@@ -611,3 +611,9 @@ html[data-tier="reduced"] .browser{box-shadow:0 14px 34px rgba(0,0,0,.4)}
   .pris-top{min-height:0}
   .pris-card{padding:28px 22px 24px}
 }
+
+
+/* Footeren skal ligge over .edgefade.bot, som ellers laegger en fast
+   gradient hen over de nederste 19vh - det gjorde CVR-linjen usynlig
+   paa forsiden, hvor edgefade findes. */
+footer{position:relative;z-index:26;background:var(--bg)}
