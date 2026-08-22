@@ -164,6 +164,24 @@
       warn: 'Kun {pct} % af dine billeder har beskrivelser. Maskiner kan ikke se billeder — kun læse deres beskrivelser.',
       fail: 'De fleste af dine billeder ({pct} % har beskrivelse) er usynlige for maskiner. Det koster både på tilgængelighed og forståelse af, hvad din side handler om.'
     },
+    E1: {
+      t: 'Tilgængelighed',
+      pass: 'Din side scorer {score}/100 på tilgængelighed. Den kan bruges af folk med skærmlæser, nedsat syn eller tykke fingre på en telefon.',
+      warn: 'Din side scorer {score}/100 på tilgængelighed. Det virker for de fleste, men ikke for alle — og for stadig flere virksomheder er tilgængelighed et lovkrav, ikke en pænhed.',
+      fail: 'Din side scorer {score}/100 på tilgængelighed. Der er besøgende, der ikke kan bruge siden. Det er typisk for lav kontrast, knapper der sidder for tæt, eller billeder uden beskrivelse.'
+    },
+    E2: {
+      t: 'Teknisk kvalitet',
+      pass: 'Din side scorer {score}/100 i Googles tekniske kvalitetstjek: sikker forbindelse, ingen forældede metoder, ingen fejl i konsollen.',
+      warn: 'Din side scorer {score}/100 i Googles tekniske kvalitetstjek. Noget under motorhjelmen halter — typisk gamle biblioteker eller fejl, ingen har opdaget.',
+      fail: 'Din side scorer {score}/100 i Googles tekniske kvalitetstjek. En besøgende ser det sjældent direkte, men det er som regel tegn på en side, der ikke er blevet vedligeholdt.'
+    },
+    E3: {
+      t: 'Googles egen SEO-vurdering',
+      pass: 'Google giver din side {score}/100 i sit eget SEO-tjek. Det grundlæggende er på plads.',
+      warn: 'Google giver din side {score}/100 i sit eget SEO-tjek. Der mangler nogle af de basale ting, Google selv peger på.',
+      fail: 'Google giver din side {score}/100 i sit eget SEO-tjek. Det er Googles måling, ikke min vurdering — og den siger, at fundamentet ikke er på plads.'
+    },
     D5: {
       t: 'Entydigt virksomhedsnavn',
       pass: 'Dit virksomhedsnavn optræder konsistent på tværs af siden. Maskiner er ikke i tvivl om, hvem afsenderen er.',
@@ -216,7 +234,8 @@
     A: 'AI-læsbarhed',
     B: 'Google-fundament',
     C: 'Hastighed & mobil',
-    D: 'AI-citérbarhed'
+    D: 'AI-citérbarhed',
+    E: 'Tilgængelighed & kvalitet'
   };
 
   var TICKER = [
@@ -226,6 +245,7 @@
     'Måler hastighed på mobil — det her tager op til et halvt minut …',
     'Vurderer om en AI kan citere din side …',
     'Tjekker dit Google-fundament …',
+    'Tjekker tilgængelighed og teknisk kvalitet …',
     'Regner din samlede score ud …',
     'Næsten færdig …'
   ];

@@ -300,7 +300,7 @@ function mkFinding(id, status, maxPoints, priority, data = {}, override) {
   return { id, status, priority, points, maxPoints, data };
 }
 __name(mkFinding, "mkFinding");
-var CATEGORY_MAX = { A: 30, B: 25, C: 25, D: 20 };
+var CATEGORY_MAX = { A: 30, B: 25, C: 25, D: 20, E: 15 };
 function buildCategory(id, findings) {
   const score = findings.reduce((sum, f) => sum + f.points, 0);
   const measurable = findings.some((f) => f.status !== "error");
@@ -489,11 +489,14 @@ function checkA3(robotsRes) {
 }
 __name(checkA3, "checkA3");
 function checkA4(llms) {
-  if (llms.errored) return mkFinding("A4", "error", 2, "forbedring", {});
+  // Vejer 0. Maalinger af 137.000 domaener viser, at AI-crawlere stort set
+  // aldrig henter filen, og Google har meldt ud, at de ikke bruger den.
+  // Punktet vises stadig, men det maa ikke traekke nogens score op eller ned.
+  if (llms.errored) return mkFinding("A4", "error", 0, "forbedring", {});
   const isText = (llms.contentType ?? "").toLowerCase().includes("text/");
   const hasBody = (llms.body ?? "").trim().length > 0;
   const ok = llms.ok && isText && hasBody;
-  return mkFinding("A4", ok ? "pass" : "fail", 2, "forbedring", { found: ok });
+  return mkFinding("A4", ok ? "pass" : "fail", 0, "forbedring", { found: ok });
 }
 __name(checkA4, "checkA4");
 function headingIssues(page) {
@@ -1027,7 +1030,13 @@ var PSI_UNAVAILABLE = {
   inpMs: null,
   tbtMs: null,
   interactionSource: null,
-  totalBytes: null
+  totalBytes: null,
+  accessibilityScore: null,
+  bestPracticesScore: null,
+  seoScore: null,
+  kontrastFejl: null,
+  tapFejl: null,
+  altFejl: null
 };
 function num(value) {
   return typeof value === "number" && Number.isFinite(value) ? value : null;
@@ -1040,6 +1049,19 @@ function parsePsi(json2) {
   const fieldMetrics = root.loadingExperience?.metrics ?? {};
   const perfRaw = num(lh.categories?.performance?.score);
   const performanceScore = perfRaw === null ? null : Math.round(perfRaw * 100);
+  const pct = /* @__PURE__ */ __name((v) => v === null ? null : Math.round(v * 100), "pct");
+  const accessibilityScore = pct(num(lh.categories?.accessibility?.score));
+  const bestPracticesScore = pct(num(lh.categories?.["best-practices"]?.score));
+  const seoScore = pct(num(lh.categories?.seo?.score));
+  const failed = /* @__PURE__ */ __name((id) => {
+    const a = audits[id];
+    if (!a) return null;
+    if (a.scoreDisplayMode === "notApplicable" || a.scoreDisplayMode === "informative") return null;
+    return a.score !== null && a.score < 0.9;
+  }, "failed");
+  const kontrastFejl = failed("color-contrast");
+  const tapFejl = failed("tap-targets");
+  const altFejl = failed("image-alt");
   const fieldLcp = num(fieldMetrics.LARGEST_CONTENTFUL_PAINT_MS?.percentile);
   const labLcp = num(audits["largest-contentful-paint"]?.numericValue);
   const fieldCls = num(fieldMetrics.CUMULATIVE_LAYOUT_SHIFT_SCORE?.percentile);
@@ -1058,7 +1080,13 @@ function parsePsi(json2) {
     inpMs: fieldInp === null ? null : Math.round(fieldInp),
     tbtMs: labTbt === null ? null : Math.round(labTbt),
     interactionSource: fieldInp !== null ? "felt" : labTbt !== null ? "lab" : null,
-    totalBytes: num(audits["total-byte-weight"]?.numericValue)
+    totalBytes: num(audits["total-byte-weight"]?.numericValue),
+    accessibilityScore,
+    bestPracticesScore,
+    seoScore,
+    kontrastFejl,
+    tapFejl,
+    altFejl
   };
   return result;
 }
@@ -1068,7 +1096,7 @@ async function fetchPsi(targetUrl, apiKey) {
     console.error("PSI_API_KEY missing \u2014 category C unmeasurable");
     return PSI_UNAVAILABLE;
   }
-  const endpoint = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(targetUrl)}&strategy=mobile&category=performance&key=${encodeURIComponent(apiKey)}`;
+  const endpoint = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(targetUrl)}&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo&key=${encodeURIComponent(apiKey)}`;
   for (let attempt = 0; attempt < 2; attempt++) {
     const { signal, done } = withTimeout(PSI_TIMEOUT_MS);
     try {
@@ -1144,6 +1172,36 @@ function runCategoryC(psi) {
   return [checkC1(psi), checkC2(psi), checkC3(psi), checkC4(psi), checkC5(psi)];
 }
 __name(runCategoryC, "runCategoryC");
+
+// Kategori E - tilgaengelighed og teknisk kvalitet.
+// Alle tre kommer fra det samme PageSpeed-kald som kategori C og koster
+// hverken ekstra kvote eller ekstra ventetid.
+function bandFinding(id, score, maxPoints, pass, warn, extra = {}) {
+  if (score === null || score === void 0) return mkFinding(id, "error", maxPoints, "forbedring", extra);
+  const status = score >= pass ? "pass" : score >= warn ? "warn" : "fail";
+  return mkFinding(id, status, maxPoints, status === "fail" ? "kritisk" : "forbedring", { score, ...extra });
+}
+__name(bandFinding, "bandFinding");
+function checkE1(psi) {
+  return bandFinding("E1", psi.accessibilityScore, 7, 90, 70, {
+    kontrastFejl: psi.kontrastFejl,
+    tapFejl: psi.tapFejl,
+    altFejl: psi.altFejl
+  });
+}
+__name(checkE1, "checkE1");
+function checkE2(psi) {
+  return bandFinding("E2", psi.bestPracticesScore, 4, 90, 70);
+}
+__name(checkE2, "checkE2");
+function checkE3(psi) {
+  return bandFinding("E3", psi.seoScore, 4, 90, 70);
+}
+__name(checkE3, "checkE3");
+function runCategoryE(psi) {
+  return [checkE1(psi), checkE2(psi), checkE3(psi)];
+}
+__name(runCategoryE, "runCategoryE");
 
 // src/index.ts
 var CACHE_TTL_SECONDS = 86400;
@@ -1255,7 +1313,8 @@ async function runScan(target, env, selfHost) {
     buildCategory("A", runCategoryA(pageData, robots, llms)),
     buildCategory("B", runCategoryB(pageData, finalUrl, robots, sitemap, favicon, httpsOk, httpProbe)),
     buildCategory("C", runCategoryC(psi)),
-    buildCategory("D", runCategoryD(pageData))
+    buildCategory("D", runCategoryD(pageData)),
+    buildCategory("E", runCategoryE(psi))
   ];
   const totalScore = totalScoreFor(categories);
   const result = {

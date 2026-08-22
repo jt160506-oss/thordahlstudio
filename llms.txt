@@ -18,7 +18,7 @@ Priser (ekskl. moms, offentliggjort på https://thordahlstudio.dk/#priser):
 
 Vilkår: prisen ligger fast, før arbejdet går i gang. Halvdelen betales ved opstart, halvdelen ved levering. En enkel side kan typisk stå klar på to til fire dage, når indholdet er på plads. Kunden ejer selv domæne, indhold og den færdige side, og domæne og hosting betales direkte til leverandøren i kundens eget navn. Der er intet abonnement til Thordahl. Første samtale er gratis og uforpligtende. En enkel side kan typisk stå klar på to til fire dage, når indholdet er på plads.
 
-Gratis værktøj: Thordahl stiller et gratis AI-synlighedstjek til rådighed på https://thordahlstudio.dk/ai-tjek/. Man indtaster en hjemmesideadresse og får en score fra 0 til 100 baseret på 27 konkrete punkter fordelt på fire lige vægtede områder: AI-læsbarhed, Google-fundament, hastighed og mobil samt AI-citérbarhed. Ingen oprettelse, ingen e-mail, ingen cookies.
+Gratis værktøj: Thordahl stiller et gratis AI-synlighedstjek til rådighed på https://thordahlstudio.dk/ai-tjek/. Man indtaster en hjemmesideadresse og får en score fra 0 til 100 baseret på 28 konkrete punkter fordelt på fem områder: AI-læsbarhed, Google-fundament, hastighed og mobil, AI-citérbarhed samt tilgængelighed og teknisk kvalitet. Ingen oprettelse, ingen e-mail, ingen cookies.
 
 Det, der adskiller Thordahl:
 
@@ -35,7 +35,7 @@ Kontakt: kontakt@thordahlstudio.dk · +45 81 61 66 08 · https://thordahlstudio.
 
 - [Thordahl — forside](https://thordahlstudio.dk/): Hovedsiden med ydelser, proces, cases, om Jakob, FAQ og kontaktformular.
 - [Blog om SEO og AI-synlighed](https://thordahlstudio.dk/blog/): Oversigt over artikler om søgemaskineoptimering og hvordan hjemmesider bliver citeret af AI.
-- [Gratis AI-tjek](https://thordahlstudio.dk/ai-tjek/): Gratis værktøj der giver en hjemmeside en score fra 0 til 100 for, hvor godt forsiden er bygget til at blive fundet på Google og anbefalet af AI-søgning. 27 punkter, ingen oprettelse.
+- [Gratis AI-tjek](https://thordahlstudio.dk/ai-tjek/): Gratis værktøj der giver en hjemmeside en score fra 0 til 100 for, hvor godt forsiden er bygget til at blive fundet på Google og anbefalet af AI-søgning. 28 punkter, ingen oprettelse.
 
 ## Artikler
 
