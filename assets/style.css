@@ -604,7 +604,9 @@ html[data-tier="reduced"] .browser{box-shadow:0 14px 34px rgba(0,0,0,.4)}
 .pris-liste li::before{content:"";position:absolute;left:0;top:.45em;width:12px;height:7px;
   border-left:2px solid var(--acc);border-bottom:2px solid var(--acc);transform:rotate(-45deg)}
 .pris-card .pris-cta{width:100%;justify-content:center;text-align:center}
-.pris-note{margin-top:30px;max-width:62ch;color:var(--mut);font-size:14px;line-height:1.65}
+.pris-note{margin-top:34px;max-width:64ch;color:var(--mut);font-size:14px;line-height:1.65;display:flex;flex-direction:column;gap:12px}
+.pris-note p{margin:0}
+.pris-note strong{color:var(--ink);font-weight:600}
 .pris-note a{color:var(--acc)}
 @media(max-width:900px){
   .pris{grid-template-columns:1fr;gap:30px}
