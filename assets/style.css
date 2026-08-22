@@ -619,3 +619,14 @@ html[data-tier="reduced"] .browser{box-shadow:0 14px 34px rgba(0,0,0,.4)}
    gradient hen over de nederste 19vh - det gjorde CVR-linjen usynlig
    paa forsiden, hvor edgefade findes. */
 footer{position:relative;z-index:26;background:var(--bg)}
+
+
+/* ── Datagrafik i blogindlæg ──────────────────────────────── */
+.post .graf{margin:36px 0 32px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px 22px 18px}
+.post .graf svg{width:100%;height:auto;display:block;overflow:visible}
+.post .graf .graf-h{color:var(--ink);font-family:"Bricolage Grotesque";font-weight:700;font-size:16px;line-height:1.35;margin:0 0 5px;letter-spacing:-.01em}
+.post .graf .graf-sub{color:var(--mut);font-size:13.5px;line-height:1.5;margin:0 0 20px}
+.post .graf figcaption{margin-top:18px;padding-top:14px;border-top:1px solid var(--line2);color:var(--mut);font-size:12.5px;line-height:1.6}
+.post .graf rect.bar{transition:opacity .2s}
+.post .graf g.b:hover rect.bar{opacity:.8;cursor:default}
+@media(max-width:560px){.post .graf{padding:20px 16px 14px}.post .graf .graf-sub{margin-bottom:14px}}
