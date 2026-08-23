@@ -638,3 +638,12 @@ footer{position:relative;z-index:26;background:var(--bg)}
 .post .btn-ghost{color:var(--ink)}
 .post .mobile-menu a{color:var(--ink);border-bottom:none}
 .post-cta .btn{color:var(--acc-deep)}
+
+
+/* ── Byfoto-bånd ──────────────────────────────────────────── */
+.byband{position:relative;margin:0;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.byband img{display:block;width:100%;height:clamp(150px,26vw,300px);object-fit:cover;object-position:center 42%}
+.byband::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(11,11,12,.42),rgba(11,11,12,0) 38%,rgba(11,11,12,0) 58%,rgba(11,11,12,.72))}
+.byband figcaption{position:absolute;right:14px;bottom:10px;z-index:2;color:var(--mut);font-size:11px;opacity:.75}
+@media(max-width:560px){.byband figcaption{font-size:10px;right:10px}}
