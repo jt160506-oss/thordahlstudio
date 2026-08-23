@@ -561,6 +561,31 @@
     }
   }
 
+  /* Sammenligning med de oevrige maalte sider. En score paa 62 siger ikke
+     noget alene; ved siden af gennemsnittet goer den. Vises foerst naar der
+     er maalt nok sider til at et gennemsnit betyder noget. */
+  function renderBenchmark(data) {
+    var host = $('#benchmark');
+    if (!host) return;
+    var b = data.benchmark;
+    host.innerHTML = '';
+    if (!b || !b.klar) { host.hidden = true; return; }
+    host.hidden = false;
+    var p = el('p', 'bm-linje');
+    p.appendChild(document.createTextNode('Gennemsnittet af de '));
+    p.appendChild(el('b', null, String(b.antal)));
+    p.appendChild(document.createTextNode(' sider, der er målt med værktøjet, er '));
+    p.appendChild(el('b', null, b.gennemsnit + '/100'));
+    p.appendChild(document.createTextNode('. '));
+    if (typeof b.bedreEnd === 'number') {
+      var d = data.totalScore >= b.gennemsnit ? 'Din side ligger bedre end ' : 'Din side ligger bedre end ';
+      p.appendChild(document.createTextNode(d));
+      p.appendChild(el('b', null, b.bedreEnd + ' %'));
+      p.appendChild(document.createTextNode(' af dem.'));
+    }
+    host.appendChild(p);
+  }
+
   function renderResult(data) {
     var verdict = VERDICTS[data.verdictBand] || VERDICTS.gaps;
     $('#verdictH').textContent = verdict.h;
@@ -571,6 +596,7 @@
     $('#scannedUrl').appendChild(document.createTextNode('Analyseret forside: '));
     $('#scannedUrl').appendChild(el('b', null, shown));
 
+    renderBenchmark(data);
     renderNotes(data);
     sidsteScannedAt = data.scannedAt || '';
     // Kun et gemt resultat er værd at måle om.

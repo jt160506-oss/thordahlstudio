@@ -1365,7 +1365,8 @@ async function handleScan(request, env) {
   if (cachedRaw) {
     try {
       const cached = JSON.parse(cachedRaw);
-      return json({ ...cached, cached: true }, 200, request, env);
+      const bm = await benchmarkFor(env, cached.totalScore);
+      return json({ ...cached, cached: true, benchmark: bm }, 200, request, env);
     } catch {
       console.error("corrupt cache entry", cacheKey);
     }
@@ -1394,10 +1395,77 @@ async function handleScan(request, env) {
     puts.push(env.SCAN_CACHE.put(finalKey, payload, { expirationTtl: CACHE_TTL_SECONDS }));
   }
   await Promise.all(puts);
+  await opdaterBenchmark(env, scan.finalOrigin || target.origin, scan.result.totalScore);
+  scan.result.benchmark = await benchmarkFor(env, scan.result.totalScore);
   await bumpRateLimit(env, ip, now);
   return json(scan.result, 200, request, env);
 }
 __name(handleScan, "handleScan");
+
+// ─── Benchmark ──────────────────────────────────────────────────────────
+// Hver scannet side taeller med i et rullende gennemsnit, saa en score kan
+// staa ved siden af "gennemsnittet af N maalte sider". Kun foerste scanning
+// af et domaene taeller, saa gentagne tjek af samme side ikke skaevvrider.
+var BM_AGG = "bm:agg";
+var BM_MIN = 10;          // under dette er et gennemsnit ikke meningsfuldt
+var BM_SEEN_TTL = 60 * 60 * 24 * 365;
+
+function tomAgg() {
+  return { n: 0, sum: 0, hist: new Array(10).fill(0), opdateret: null };
+}
+__name(tomAgg, "tomAgg");
+
+async function laesAgg(env) {
+  try {
+    const raw = await env.SCAN_CACHE.get(BM_AGG);
+    if (!raw) return tomAgg();
+    const a = JSON.parse(raw);
+    if (!a || typeof a.n !== "number" || !Array.isArray(a.hist) || a.hist.length !== 10) return tomAgg();
+    return a;
+  } catch { return tomAgg(); }
+}
+__name(laesAgg, "laesAgg");
+
+// Andel af de maalte sider, denne score slaar. Regnes ud af histogrammet,
+// hvor egen bucket taelles halvt, saa tallet ikke hopper ved bucketgraensen.
+function bedreEnd(agg, score) {
+  if (agg.n <= 0) return null;
+  const b = Math.min(9, Math.max(0, Math.floor(score / 10)));
+  let under = 0;
+  for (let i = 0; i < b; i++) under += agg.hist[i];
+  under += agg.hist[b] * 0.5;
+  return Math.max(0, Math.min(100, Math.round(under / agg.n * 100)));
+}
+__name(bedreEnd, "bedreEnd");
+
+async function opdaterBenchmark(env, origin, score) {
+  try {
+    const seenKey = `bm:seen:${origin}`;
+    if (await env.SCAN_CACHE.get(seenKey)) return;
+    const agg = await laesAgg(env);
+    agg.n += 1;
+    agg.sum += score;
+    agg.hist[Math.min(9, Math.max(0, Math.floor(score / 10)))] += 1;
+    agg.opdateret = (/* @__PURE__ */ new Date()).toISOString();
+    await env.SCAN_CACHE.put(BM_AGG, JSON.stringify(agg));
+    await env.SCAN_CACHE.put(seenKey, "1", { expirationTtl: BM_SEEN_TTL });
+  } catch (e) {
+    console.error("benchmark kunne ikke opdateres", String(e?.message ?? e));
+  }
+}
+__name(opdaterBenchmark, "opdaterBenchmark");
+
+async function benchmarkFor(env, score) {
+  const agg = await laesAgg(env);
+  if (agg.n < BM_MIN) return { klar: false, antal: agg.n, kraever: BM_MIN };
+  return {
+    klar: true,
+    antal: agg.n,
+    gennemsnit: Math.round(agg.sum / agg.n),
+    bedreEnd: bedreEnd(agg, score)
+  };
+}
+__name(benchmarkFor, "benchmarkFor");
 var index_default = {
   async fetch(request, env) {
     const url = new URL(request.url);
