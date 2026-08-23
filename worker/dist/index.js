@@ -1278,6 +1278,10 @@ __name(runCategoryF, "runCategoryF");
 
 // src/index.ts
 var CACHE_TTL_SECONDS = 86400;
+// Bump denne, naar checks, vaegte eller kategorier aendres. Ellers ville
+// gamle cachede svar blive serveret med den gamle models form i op til et
+// doegn efter et deploy.
+var SCORE_VERSION = "v2";
 var RATE_HOURLY_MAX = 5;
 var RATE_DAILY_MAX = 15;
 function allowedOrigin(request, env) {
@@ -1434,8 +1438,9 @@ async function handleScan(request, env) {
     const e = err;
     return errorResponse(e.code ?? "INVALID_URL", e.detail, request, env);
   }
-  const cacheKey = `scan:${target.origin}`;
-  const cachedRaw = await env.SCAN_CACHE.get(cacheKey);
+  const cacheKey = `scan:${SCORE_VERSION}:${target.origin}`;
+  const force = body?.force === true;
+  const cachedRaw = force ? null : await env.SCAN_CACHE.get(cacheKey);
   if (cachedRaw) {
     try {
       const cached = JSON.parse(cachedRaw);
@@ -1460,7 +1465,7 @@ async function handleScan(request, env) {
     console.error("unexpected scan failure", String(err?.message ?? err));
     return errorResponse("INTERNAL", void 0, request, env);
   }
-  const finalKey = `scan:${scan.finalOrigin}`;
+  const finalKey = `scan:${SCORE_VERSION}:${scan.finalOrigin}`;
   const payload = JSON.stringify(scan.result);
   const puts = [
     env.SCAN_CACHE.put(cacheKey, payload, { expirationTtl: CACHE_TTL_SECONDS })
