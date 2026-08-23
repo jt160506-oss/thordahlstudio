@@ -86,3 +86,18 @@
     if (lenis) { try { lenis.destroy(); } catch (e) {} lenis = null; }
   });
 })();
+
+/* Mobilmenu. Forsiden og bysiderne binder den selv i deres egen inline-JS,
+   men blogsiderne har ingen. Her bindes den ét sted for alle, saa burgeren
+   virker overalt. Inline-koden overskriver bare med samme adfaerd. */
+(function () {
+  var b = document.getElementById('burger');
+  var mm = document.getElementById('mobileMenu');
+  var luk = document.getElementById('closeMenu');
+  if (!b || !mm) return;
+  b.onclick = function () { mm.classList.add('open'); };
+  if (luk) luk.onclick = function () { mm.classList.remove('open'); };
+  mm.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') mm.classList.remove('open');
+  });
+})();

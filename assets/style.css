@@ -630,3 +630,11 @@ footer{position:relative;z-index:26;background:var(--bg)}
 .post .graf rect.bar{transition:opacity .2s}
 .post .graf g.b:hover rect.bar{opacity:.8;cursor:default}
 @media(max-width:560px){.post .graf{padding:20px 16px 14px}.post .graf .graf-sub{margin-bottom:14px}}
+
+
+/* Blogindlæg farver alle links acidgrønne. Det ramte ogsaa .btn, saa
+   knapteksten blev acidgroen paa acidgroen baggrund og forsvandt. */
+.post .btn{color:var(--acc-deep);border-bottom:none}
+.post .btn-ghost{color:var(--ink)}
+.post .mobile-menu a{color:var(--ink);border-bottom:none}
+.post-cta .btn{color:var(--acc-deep)}
