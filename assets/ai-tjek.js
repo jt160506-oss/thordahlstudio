@@ -164,6 +164,30 @@
       warn: 'Kun {pct} % af dine billeder har beskrivelser. Maskiner kan ikke se billeder — kun læse deres beskrivelser.',
       fail: 'De fleste af dine billeder ({pct} % har beskrivelse) er usynlige for maskiner. Det koster både på tilgængelighed og forståelse af, hvad din side handler om.'
     },
+    F1: {
+      t: 'Telefonnummeret',
+      pass: 'Dit telefonnummer står tidligt på siden og kan ringes op med ét tryk. Det er stadig den korteste vej fra besøgende til samtale.',
+      warn: 'Dit telefonnummer findes, men først langt nede på siden. De fleste besøgende når aldrig så langt, især ikke på mobil.',
+      fail: 'Der er intet telefonnummer at ringe op. For en lokal virksomhed er det den dyreste enkeltmangel på hele siden.'
+    },
+    F2: {
+      t: 'En tydelig handling',
+      pass: 'Der er en tydelig handling tidligt på siden, så den besøgende ved, hvad næste skridt er.',
+      warn: 'Der er en handling på siden, men den kommer sent. Bliver den besøgende ikke ledt videre med det samme, forsvinder de fleste.',
+      fail: 'Der er ingen tydelig handling på siden. Den besøgende bliver ikke bedt om noget, og så gør de som regel ingenting.'
+    },
+    F3: {
+      t: 'Kontaktformular eller booking',
+      pass: 'Den besøgende kan skrive eller booke direkte på siden uden at skifte til noget andet.',
+      warn: 'Der er kun en mailadresse. Det virker, men koster den besøgende et ekstra skridt, og et skridt koster henvendelser.',
+      fail: 'Der er hverken formular, booking eller mailadresse. Den besøgende har ingen måde at række ud på.'
+    },
+    F4: {
+      t: 'Priser på siden',
+      pass: 'Der står konkrete priser på siden. Det er det første, en køber vil vide, og det gør dig samtidig lettere at citere for en AI.',
+      warn: 'Priser omtales, men uden tal. "Kontakt os for et tilbud" er den sætning, der koster flest henvendelser i branchen.',
+      fail: 'Der står ingen priser. De fleste besøgende gætter for højt og skriver aldrig.'
+    },
     E1: {
       t: 'Tilgængelighed',
       pass: 'Din side scorer {score}/100 på tilgængelighed. Den kan bruges af folk med skærmlæser, nedsat syn eller tykke fingre på en telefon.',
@@ -235,7 +259,8 @@
     B: 'Google-fundament',
     C: 'Hastighed & mobil',
     D: 'AI-citérbarhed',
-    E: 'Tilgængelighed & kvalitet'
+    E: 'Tilgængelighed & kvalitet',
+    F: 'Fra besøgende til kunde'
   };
 
   var TICKER = [

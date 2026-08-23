@@ -300,7 +300,7 @@ function mkFinding(id, status, maxPoints, priority, data = {}, override) {
   return { id, status, priority, points, maxPoints, data };
 }
 __name(mkFinding, "mkFinding");
-var CATEGORY_MAX = { A: 30, B: 25, C: 25, D: 20, E: 15 };
+var CATEGORY_MAX = { A: 30, B: 25, C: 25, D: 20, E: 15, F: 15 };
 function buildCategory(id, findings) {
   const score = findings.reduce((sum, f) => sum + f.points, 0);
   const measurable = findings.some((f) => f.status !== "error");
@@ -1203,6 +1203,79 @@ function runCategoryE(psi) {
 }
 __name(runCategoryE, "runCategoryE");
 
+// ─── Kategori F: bliver den besoegende til en kunde? ────────────────────
+// Alt herunder laeses ud af den HTML, motoren allerede har hentet.
+// "Tidligt paa siden" er et proxymaal for over folden: vi kan ikke maale
+// pixels ud af markup, men rækkefoelgen i dokumentet er et rimeligt bud.
+var HANDLEORD = /\b(kontakt|ring|book|bestil|tilbud|skriv til|send besked|få en|kom i gang|tilmeld|bestil tid|book tid)\b/i;
+var PRIS_TAL = /\b\d{1,3}(?:[.\s]\d{3})*\s*(?:kr|kroner|DKK)\b/i;
+var BOOKING = /(calendly|cal\.com|bookingtid|planlaeg|setmore|acuityscheduling|simplybook|timify|bookeo)/i;
+
+function tidligtIDok(html, idx) {
+  if (idx < 0) return null;
+  return idx / Math.max(1, html.length);
+}
+__name(tidligtIDok, "tidligtIDok");
+
+function checkF1(page) {
+  const html = page.html || "";
+  const harTel = (page.telLinks || []).length > 0;
+  if (!harTel && !DK_PHONE.test(page.text || "")) {
+    return mkFinding("F1", "fail", 5, "kritisk", { fundet: false });
+  }
+  const pos = tidligtIDok(html, html.search(/href\s*=\s*["']tel:/i));
+  const iNav = DK_PHONE.test(page.navText || "");
+  const tidligt = iNav || (pos !== null && pos <= 0.3);
+  return mkFinding("F1", tidligt ? "pass" : "warn", 5, tidligt ? "forbedring" : "vigtig",
+    { fundet: true, tidligt, andel: pos === null ? null : Math.round(pos * 100) });
+}
+__name(checkF1, "checkF1");
+
+function checkF2(page) {
+  const html = page.html || "";
+  const tekster = [];
+  const re = /<(a|button)\b[^>]*>([\s\S]{0,120}?)<\/\1>/gi;
+  let m, i = 0;
+  while ((m = re.exec(html)) !== null && i < 400) {
+    const rå = m[2].replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+    if (rå) tekster.push({ t: rå, pos: m.index / Math.max(1, html.length) });
+    i++;
+  }
+  const handlinger = tekster.filter((x) => HANDLEORD.test(x.t));
+  if (!handlinger.length) return mkFinding("F2", "fail", 4, "kritisk", { antal: 0 });
+  const tidligst = Math.min(...handlinger.map((x) => x.pos));
+  const tidligt = tidligst <= 0.35;
+  return mkFinding("F2", tidligt ? "pass" : "warn", 4, tidligt ? "forbedring" : "vigtig",
+    { antal: handlinger.length, tidligt, eksempel: handlinger[0].t.slice(0, 40) });
+}
+__name(checkF2, "checkF2");
+
+function checkF3(page) {
+  const html = page.html || "";
+  const harForm = /<form\b/i.test(html);
+  const harBooking = BOOKING.test(html);
+  const harMail = /href\s*=\s*["']mailto:/i.test(html);
+  if (harForm || harBooking) return mkFinding("F3", "pass", 3, "forbedring", { form: harForm, booking: harBooking });
+  if (harMail) return mkFinding("F3", "warn", 3, "vigtig", { form: false, booking: false, mail: true });
+  return mkFinding("F3", "fail", 3, "kritisk", { form: false, booking: false, mail: false });
+}
+__name(checkF3, "checkF3");
+
+function checkF4(page) {
+  const tekst = page.text || "";
+  const harTal = PRIS_TAL.test(tekst);
+  const naevnerPris = /\bpris(er|en)?\b/i.test(tekst);
+  if (harTal) return mkFinding("F4", "pass", 3, "forbedring", { tal: true });
+  if (naevnerPris) return mkFinding("F4", "warn", 3, "vigtig", { tal: false, omtalt: true });
+  return mkFinding("F4", "fail", 3, "vigtig", { tal: false, omtalt: false });
+}
+__name(checkF4, "checkF4");
+
+function runCategoryF(page) {
+  return [checkF1(page), checkF2(page), checkF3(page), checkF4(page)];
+}
+__name(runCategoryF, "runCategoryF");
+
 // src/index.ts
 var CACHE_TTL_SECONDS = 86400;
 var RATE_HOURLY_MAX = 5;
@@ -1314,7 +1387,8 @@ async function runScan(target, env, selfHost) {
     buildCategory("B", runCategoryB(pageData, finalUrl, robots, sitemap, favicon, httpsOk, httpProbe)),
     buildCategory("C", runCategoryC(psi)),
     buildCategory("D", runCategoryD(pageData)),
-    buildCategory("E", runCategoryE(psi))
+    buildCategory("E", runCategoryE(psi)),
+    buildCategory("F", runCategoryF(pageData))
   ];
   const totalScore = totalScoreFor(categories);
   const result = {
