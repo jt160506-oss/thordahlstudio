@@ -90,7 +90,11 @@ async function parseHtml(html) {
     footerText: "",
     textBlocks: [],
     htmlBytes: new TextEncoder().encode(html).byteLength,
-    detectedPlatform: detectPlatform(html)
+    detectedPlatform: detectPlatform(html),
+    // Raa HTML beholdes, saa kategori F kan se links, knapper og formularer.
+    // parseHtml gav kun den rensede tekst, og F-checkene fik derfor tom
+    // streng og dumpede alt.
+    html
   };
   let skipDepth = 0;
   let navDepth = 0;
