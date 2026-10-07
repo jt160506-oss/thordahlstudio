@@ -735,3 +735,8 @@ a.partner:hover{border-color:rgba(198,255,61,.35);transform:translateY(-3px)}
 .about-who span{display:block;font-size:13.5px;color:var(--mut);margin-top:2px}
 .about-txt{max-width:74ch}
 @media(max-width:768px){.about-photo{width:66px;height:66px}}
+
+
+/* ── Prislisten gik fra tre pakker til to ──────────────────────────── */
+.pris{grid-template-columns:repeat(2,1fr);max-width:880px}
+@media(max-width:768px){.pris{grid-template-columns:1fr}}
