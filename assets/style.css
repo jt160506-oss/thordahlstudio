@@ -720,3 +720,18 @@ a.partner:hover{border-color:rgba(198,255,61,.35);transform:translateY(-3px)}
   .lokalcase{grid-template-columns:1fr;gap:28px}
   .kortfakta{grid-template-columns:1fr;gap:16px}
 }
+
+
+/* ── Om mig: lille byline frem for plakatportraet ───────────────────
+   Fotoet fyldte foer en hel gridkolonne (~445x590 px). Nu er det en
+   lille rund avatar ved siden af navnet, og teksten baerer sektionen. */
+.about{display:block}
+.about-byline{display:flex;align-items:center;gap:15px;margin-bottom:30px}
+.about-photo{flex:none;width:80px;height:80px;aspect-ratio:auto;margin:0;
+  border-radius:50%;overflow:hidden;border:1px solid var(--line);background:var(--panel2)}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.about-photo .fallback .init{font-size:26px}
+.about-who b{display:block;font-size:16px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.about-who span{display:block;font-size:13.5px;color:var(--mut);margin-top:2px}
+.about-txt{max-width:74ch}
+@media(max-width:768px){.about-photo{width:66px;height:66px}}
