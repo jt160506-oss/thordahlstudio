@@ -248,8 +248,8 @@
       </div>
       <div class="aicard-body">
         <div class="msg user">
-          <div class="av" aria-hidden="true">Du</div>
-          <div class="bubble">Hvem laver hjemmesider til mindre virksomheder i Midtjylland?</div>
+          <div class="av" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="bubble" id="aiQ">Jeg skal have lavet en ny hjemmeside til min lille butik i Silkeborg. Hvem kan hjælpe?</div>
         </div>
         <div class="msg ai">
           <div class="av" aria-hidden="true">°</div>
@@ -281,8 +281,8 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="chapter"><b>01</b><span class="rail"></span>Cases</span>
-      <h2>To projekter i drift</h2>
-      <p class="sec-lead">Sitet her er bygget efter samme principper som de to nedenfor. Håndkodet og statisk, uden skabelon og uden plugins, og målt på om folk gør det, siden beder dem om.</p>
+      <h2>Udvalgt arbejde</h2>
+      <p class="sec-lead">Sitet her er bygget efter samme principper som de to nedenfor: håndkodet og statisk, uden skabelon og uden plugins. Begge er målt på ét — om besøgende rent faktisk gør det, siden beder dem om.</p>
     </div>
 
     <div class="cases reveal">
@@ -301,9 +301,13 @@
         <div class="case-body">
           <div class="chapter"><b>Snart live</b><span class="rail"></span>Barbersalon</div>
           <h3>Silke Barbers</h3>
-          <p>En barbersalon i Søndergade lever af, at folk booker en tid, ikke af at de læser om håndværket. Derfor er hele siden bygget om <strong>ét klik: book en tid</strong>. Priserne står åbent, ledige tider hentes live, og gæsten betaler i salonen.</p>
-          <p>Arbejdet vises med en <strong>før og efter-slider</strong>, man selv trækker i, i stedet for et galleri, folk scroller forbi. Det er den slags detalje, der holder en besøgende på siden længe nok til at booke.</p>
+          <p>En barbersalon lever af bookinger, ikke af at folk læser om håndværket. Derfor er hele siden bygget om <strong>ét klik: book en tid</strong>. Priserne står åbent, ledige tider hentes live, og gæsten betaler i salonen.</p>
+          <p>Arbejdet vises med en <strong>før og efter-slider</strong>, man selv trækker i, frem for et galleri, folk scroller forbi — den slags detalje holder en besøgende på siden længe nok til at booke.</p>
           <div class="case-meta"><span>Online booking</span><span>Før og efter-slider</span><span>Åbne priser</span><span>Lokal SEO</span></div>
+          <figure class="case-proof">
+            <blockquote>Jakob var fantastisk god til at opfylde mine ønsker.</blockquote>
+            <figcaption><span class="who">Kahraman</span><span class="role">Silke Barbers · Silkeborg</span></figcaption>
+          </figure>
         </div>
       </article>
 
@@ -324,6 +328,10 @@
           <p>Et site om privatøkonomi, hvor læseren skal forstå noget kompliceret og træffe et valg. I stedet for endnu en side, der bare <em>fortæller</em>, byggede jeg <strong>beregnere, der regner på læserens egen situation</strong>.</p>
           <p>Det er forskellen på at læse om et boliglån og at se, hvad det koster netop dig. Siden er bygget let fra bunden, så den også loader hurtigt på en telefon med dårligt signal.</p>
           <div class="case-meta"><span>Konverteringsberegner</span><span>Boliglånsberegner</span><span>SEO-struktur</span><span>Mobil-først</span></div>
+          <div class="case-stats">
+            <div><b>4.240</b><span>visninger i Google på 28 dage</span></div>
+            <div><b>24</b><span>sider, der henter søgetrafik</span></div>
+          </div>
         </div>
       </article>
 
@@ -331,13 +339,36 @@
   </div>
 </section>
 
+<!-- SAMARBEJDSPARTNERE — KLAR, MEN IKKE AKTIV → se noten nedenfor.
+     Sektionen er færdigbygget og stylet. Den går live, så snart tre ting
+     er bekræftet af Nordværdi: (1) deres domæne, (2) én sætning om hvad de
+     laver, skrevet af dem selv, (3) et logo i assets/partnere/. Indtil da
+     bliver den stående udkommenteret, så der ikke ligger gættet tekst live.
+
+<section class="partners" aria-label="Samarbejdspartnere">
+  <div class="wrap partners-in">
+    <div class="partners-lead">
+      <span class="chapter"><b>—</b><span class="rail"></span>Netværk</span>
+      <h2 style="font-size:clamp(24px,2.4vw,30px);letter-spacing:-.03em">Samarbejdspartnere</h2>
+      <p>Nogle opgaver løses bedst sammen med andre. Her er dem, jeg arbejder fast sammen med.</p>
+    </div>
+    <div class="partner-list">
+      <a class="partner" href="DOMÆNE" target="_blank" rel="noopener">
+        <span class="partner-mark"><img src="/assets/partnere/nordvaerdi.svg" alt="Nordværdi"></span>
+        <span class="partner-txt"><b>Nordværdi</b><span>ÉN SÆTNING FRA NORDVÆRDI</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+-->
+
 <!-- 02 · PRISER -->
 <section class="sec" id="priser">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="chapter"><b>02</b><span class="rail"></span>Priser</span>
-      <h2>Fast pris, ikke et estimat</h2>
-      <p class="sec-lead">Beløbet aftales, før der bliver kodet en linje, og det ændrer sig ikke undervejs. Halvdelen ved opstart, halvdelen ved levering. Alle priser er ekskl. moms.</p>
+      <h2>Hvad det koster</h2>
+      <p class="sec-lead">Du får beløbet at vide på forhånd, og det ændrer sig ikke undervejs. Halvdelen ved opstart, halvdelen ved levering. Alle priser er ekskl. moms.</p>
     </div>
 
     <div class="pris reveal">
@@ -429,7 +460,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="chapter"><b>04</b><span class="rail"></span>Ydelser</span>
-      <h2>Det du kan få hjælp til</h2>
+      <h2>Kompetencer</h2>
       <p class="sec-lead">Ny side, redesign, løbende hjælp eller bedre synlighed. <strong>Du arbejder direkte med mig</strong>, ikke med en projektleder.</p>
     </div>
     <div class="services">
@@ -462,7 +493,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="chapter"><b>05</b><span class="rail"></span>Udgangspunktet</span>
-      <h2>Måden folk søger på har ændret sig</h2>
+      <h2>Søgningen har flyttet sig</h2>
       <p class="sec-lead">De fleste hjemmesider til mindre virksomheder er langsomme, svære for søgemaskiner at læse og skrevet dengang alle stadig googlede. Det sidste er ved at koste mest. <strong>Din næste kunde spørger måske en AI i stedet.</strong></p>
     </div>
     <div class="shift reveal">
@@ -487,7 +518,7 @@
     <div class="sec-head reveal">
       <span class="chapter"><b>06</b><span class="rail"></span>Omfang</span>
       <h2>Sæt dit projekt sammen</h2>
-      <p class="sec-lead">Vælg det, du har brug for. Så vender jeg tilbage med et konkret forslag og <strong>en fast pris, før der bliver lavet noget.</strong> Du binder dig ikke ved at spørge.</p>
+      <p class="sec-lead">Vælg det, du har brug for. Så vender jeg tilbage med et konkret forslag og <strong>en fast pris, inden du siger ja.</strong> Du binder dig ikke ved at spørge.</p>
     </div>
 
     <div class="config reveal">
@@ -807,34 +838,104 @@ if(!reduce){
 }
 
 // Hero AI-svar
+/* ——— AI-kortet i heroen ————————————————————————————————
+   Tre eksempler på, hvordan en AI-søgning kan se ud. Svaret er bygget som
+   et rigtigt AI-svar: en kort indledning, der tager imod spørgsmålet, et
+   fremhævet navn, en punktopstilling og en afrunding med kilde.
+   Kortet skriver svaret ud, holder det længe nok til at blive læst, og
+   går videre. Alt kører på heroens fælles slag (BEAT).                   */
 const aiEl=document.getElementById('aiText');
-const answerHTML=
-  '<b>Thordahl</b> er en enkeltmandsvirksomhed i Silkeborg, drevet af Jakob Thordahl.'
-  +'<ul class="ai-list">'
-  +'<li>Håndkoder siderne frem for at bruge WordPress eller skabeloner</li>'
-  +'<li>Bygger dem, så både Google og AI-tjenester kan læse indholdet</li>'
-  +'<li>Samme kontaktperson fra første samtale til lancering</li>'
-  +'</ul>'
-  +'Kredithjørnet.dk er et af de projekter, der er live.'
-  +'<span class="src"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"/><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg>Kilde: <b>thordahlstudio.dk</b></span>';
-const answerText='Thordahl er en enkeltmandsvirksomhed i Silkeborg, drevet af Jakob Thordahl. Håndkoder siderne frem for at bruge WordPress eller skabeloner. Bygger dem, så både Google og AI-tjenester kan læse indholdet. Samme kontaktperson fra første samtale til lancering. Kredithjørnet.dk er et af de projekter, der er live.';
-function playAI(){
-  if(reduce){aiEl.innerHTML=answerHTML;return;}
-  /* Svaret begynder på slag 1 og er skrevet færdigt på slag 6, så det
-     lander sammen med et ordskift i stedet for et vilkårligt sted. */
-  const perChar=(BEAT*5)/answerText.length;
-  setTimeout(()=>{
+const aiQEl=document.getElementById('aiQ');
+const aiBody=document.querySelector('.aicard-body');
+const SRCICON='<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"/><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg>';
+
+const convos=[
+  {
+    q:'Jeg skal have lavet en ny hjemmeside til min lille butik i Silkeborg. Hvem kan hj\u00e6lpe?',
+    intro:'Til en virksomhed i den st\u00f8rrelse er en enkelt udvikler som regel b\u00e5de hurtigere og billigere end et bureau. Lokalt er der is\u00e6r \u00e9t studie, der arbejder s\u00e5dan:',
+    ent:['Thordahl','Webdesign \u00b7 Silkeborg'],
+    bullets:[
+      'Siderne kodes i h\u00e5nden \u2014 ingen WordPress, ingen skabelon',
+      'Fast pris aftalt, inden arbejdet g\u00e5r i gang',
+      'Samme person fra f\u00f8rste samtale til lancering'
+    ],
+    outro:'Priser og to projekter i drift st\u00e5r \u00e5bent p\u00e5 sitet.'
+  },
+  {
+    q:'Hvad koster en professionel hjemmeside til en mindre virksomhed i Danmark?',
+    intro:'Sp\u00e6ndet er stort \u2014 fra under 5.000 kr. for en skabelonside til langt over 100.000 kr. hos et bureau. F\u00e5 danske udbydere skriver prisen \u00e5bent. En af dem:',
+    ent:['Thordahl','Priser oplyst \u00b7 Silkeborg'],
+    bullets:[
+      'Enkel side fra 6.500 kr., udvidet fra 9.500 kr.',
+      'Beregner eller booking bygget ind fra 14.500 kr.',
+      'Intet abonnement \u2014 du ejer domæne, kode og indhold'
+    ],
+    outro:'Bel\u00f8bet aftales f\u00f8r start og \u00e6ndrer sig ikke undervejs.'
+  },
+  {
+    q:'Min hjemmeside bliver aldrig n\u00e6vnt, n\u00e5r folk sp\u00f8rger ChatGPT. Hvad skyldes det?',
+    intro:'Sprogmodeller henter typisk 3\u20135 kilder pr. svar og v\u00e6lger efter, hvor let en side er at l\u00e6se og citere \u2014 ikke kun efter Google-placering. Tre ting afg\u00f8r det:',
+    ent:['Thordahl','Bygger efter netop det \u00b7 Silkeborg'],
+    entAfter:true,
+    bullets:[
+      'Struktureret data, s\u00e5 indholdet kan l\u00e6ses maskinelt',
+      'Klare overskrifter med \u00e9t svar under hver',
+      'Hurtig indl\u00e6sning uden tunge plugins'
+    ],
+    outro:'Studiet har skrevet en gennemgang af, hvordan AI-s\u00f8gemaskiner v\u00e6lger deres kilder.'
+  }
+];
+
+function entHTML(e){
+  return '<div class="ai-entity"><span class="ai-mark" aria-hidden="true">\u00b0</span>'
+       + '<span class="ai-ent"><b>'+e[0]+'</b><small>'+e[1]+'</small></span></div>';
+}
+function aiHTML(c){
+  let h='<p class="ai-p">'+c.intro+'</p>';
+  if(!c.entAfter) h+=entHTML(c.ent);
+  h+='<ul class="ai-list">'+c.bullets.map(b=>'<li>'+b+'</li>').join('')+'</ul>';
+  if(c.entAfter) h+=entHTML(c.ent);
+  h+='<p class="ai-p ai-outro">'+c.outro+'</p>';
+  h+='<span class="src">'+SRCICON+'Kilde: <b>thordahlstudio.dk</b></span>';
+  return h;
+}
+/* Den tekst, der skrives ud tegn for tegn, inden det færdige svar sættes ind. */
+function aiPlain(c){ return c.intro+' '+c.bullets.join('. ')+'. '+c.outro; }
+
+const DOTS='<span class="typing" aria-hidden="true"><span></span><span></span><span></span></span>';
+let aiIdx=0, aiTimers=[];
+const aiWait=(fn,ms)=>aiTimers.push(setTimeout(fn,ms));
+const aiStop=()=>{aiTimers.forEach(clearTimeout);aiTimers=[]};
+
+function aiShow(){
+  aiStop();
+  const c=convos[aiIdx];
+  aiQEl.textContent=c.q;
+  if(reduce){ aiEl.innerHTML=aiHTML(c); return; }
+  aiEl.innerHTML=DOTS;
+  const txt=aiPlain(c), html=aiHTML(c), perChar=(BEAT*4)/txt.length;
+  aiWait(()=>{
     let i=0;
     const step=()=>{
       i++;
-      aiEl.innerHTML=answerText.slice(0,i).replace('Thordahl','<b>Thordahl</b>')+'<span class="cursor-blink"></span>';
-      if(i<answerText.length)setTimeout(step,perChar);
-      else aiEl.innerHTML=answerHTML;
+      aiEl.innerHTML=txt.slice(0,i)+'<span class="cursor-blink"></span>';
+      if(i<txt.length) aiWait(step,perChar);
+      else { aiEl.innerHTML=html; aiWait(aiNext,BEAT*7); }
     };
     step();
   },BEAT);
 }
-playAI();
+function aiNext(){
+  /* Er heroen scrollet væk, venter kortet i stedet for at køre videre i blinde. */
+  if(!heroVisible){ aiWait(aiNext,BEAT*3); return; }
+  aiBody.classList.add('swap');
+  aiWait(()=>{
+    aiIdx=(aiIdx+1)%convos.length;
+    aiBody.classList.remove('swap');
+    aiShow();
+  },400);
+}
+aiShow();
 
 // Pakkevalg fra prissektionen skrives ind i beskeden
 document.querySelectorAll('.pris-cta').forEach(a=>{
