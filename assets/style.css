@@ -705,3 +705,18 @@ a.partner:hover{border-color:rgba(198,255,61,.35);transform:translateY(-3px)}
 .partner-txt span{display:block;font-size:13px;color:var(--mut);line-height:1.5;margin-top:2px}
 @media(max-width:900px){.partners-in{grid-template-columns:1fr;gap:26px;padding:34px 0}
   .partners-lead p{max-width:none}}
+
+
+/* ── By-sider: lokal case og kortpakke-fakta ───────────────────────── */
+.lokalcase{display:grid;grid-template-columns:1fr 1.05fr;gap:44px;align-items:start}
+.lokalcase p{color:#B7B2A7;font-size:15.5px;line-height:1.62;margin:0 0 12px}
+.lokalcase .shot{margin:0}
+.kortfakta{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:34px}
+.kortfakta div{padding:22px 22px 24px;background:var(--panel);border:1px solid var(--line);border-radius:16px}
+.kortfakta b{display:block;font-family:"Bricolage Grotesque";font-weight:800;font-size:13px;
+  letter-spacing:.14em;color:var(--acc);margin-bottom:11px}
+.kortfakta span{display:block;font-size:14.5px;line-height:1.6;color:#B7B2A7}
+@media(max-width:900px){
+  .lokalcase{grid-template-columns:1fr;gap:28px}
+  .kortfakta{grid-template-columns:1fr;gap:16px}
+}
