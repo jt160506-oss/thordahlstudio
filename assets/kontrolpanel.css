@@ -6,7 +6,7 @@
    ============================================================ */
 
 /* ---------- Hero ---------- */
-.kp-hero{padding:132px 0 56px;position:relative;overflow:hidden}
+.kp-hero{padding:132px 0 20px;position:relative;overflow:hidden}
 .kp-hero .hero-solo{max-width:760px}
 .kp-hero h1{font-family:'Bricolage Grotesque',system-ui,sans-serif;
   font-size:clamp(2.6rem,7vw,4.6rem);line-height:.98;letter-spacing:-.03em;
@@ -15,14 +15,8 @@
 .kp-hero .sub b{color:var(--ink);font-weight:500}
 
 /* ---------- Demo-sektion ---------- */
-.kp-demo{padding:34px 0 86px}
-.kp-demo-head{max-width:68ch;margin-bottom:30px}
-.kp-demo-head h2{font-family:'Bricolage Grotesque',system-ui,sans-serif;
-  font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.06;letter-spacing:-.025em;
-  font-weight:600;margin:.3em 0 .4em}
-.kp-demo-head p{color:var(--mut);line-height:1.62;max-width:58ch}
-
-.kp-branche{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:20px;
+.kp-demo-head{margin:0 0 26px}
+.kp-branche{display:flex;flex-wrap:wrap;align-items:center;gap:8px;
   font-size:.82rem;color:var(--mut)}
 .kp-branche span{margin-right:2px}
 .kp-branche button{appearance:none;background:transparent;color:var(--mut);
@@ -100,7 +94,7 @@
 .kp-side svg{flex:0 0 auto;color:#9A9AA2}
 .kp-side button.on svg{color:#18181B}
 
-.kp-form{padding:19px 20px 22px;max-height:430px;overflow-y:auto;overscroll-behavior:contain}
+.kp-form{padding:19px 20px 22px;max-height:430px;overflow-y:auto}
 .kp-pane{display:none}
 .kp-pane.on{display:block}
 .kp-pane>h3{font-size:14px;font-weight:600;margin:0 0 3px;letter-spacing:-.01em}
@@ -162,8 +156,13 @@
 .kp-phone{width:min(300px,100%);background:#131316;border:1px solid rgba(255,255,255,.14);
   border-radius:36px;padding:9px;box-shadow:0 30px 60px -22px rgba(0,0,0,.8)}
 .kp-notch{height:4px;width:74px;border-radius:99px;background:#2A2A30;margin:1px auto 7px}
-.kp-screen{height:542px;overflow-y:auto;overscroll-behavior:contain;background:#fff;
+.kp-screen{height:542px;overflow-y:auto;background:#fff;
   border-radius:27px;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+/* Paa mobil ruller telefonen ikke indeni — den viser hele siden, saa
+   fingeren aldrig bliver fanget i en rude inden i en rude. */
+@media(max-width:1040px){
+  .kp-screen{height:auto;max-height:none;overflow:visible}
+}
 @media(prefers-reduced-motion:reduce){.kp-screen{scroll-behavior:auto}}
 
 /* Mock-sidens eget, neutrale udtryk — bevidst ikke Thordahls */
@@ -208,7 +207,8 @@
 
 .kp-live{font-size:.78rem;color:var(--mut);text-align:center;min-height:1.3em;margin:0}
 .kp-live.on{color:var(--acc)}
-.kp-fake{font-size:.74rem;color:#6B6B73;text-align:center;margin:0}
+.kp-fake{font-size:.74rem;color:#6B6B73;text-align:center;margin:0;
+  max-width:320px;line-height:1.5}
 
 /* ---------- Bagved-skuffen ---------- */
 .kp-bag{margin-top:30px;border:1px solid var(--line);border-radius:12px;background:var(--panel);
@@ -227,7 +227,7 @@
 .kp-diff .n{color:var(--acc)}
 
 /* ---------- Kan / kan ikke ---------- */
-.kp-can{display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:14px;margin-top:30px}
+.kp-can{display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:14px}
 .kp-can article{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:19px}
 .kp-can h3{font-size:.95rem;font-weight:600;margin:11px 0 6px;letter-spacing:-.01em}
 .kp-can p{font-size:.86rem;color:var(--mut);line-height:1.6;margin:0}
@@ -242,8 +242,7 @@
 .kp-not b{color:var(--ink);font-weight:500}
 
 /* ---------- Sammenligning ---------- */
-.kp-cmp{padding:84px 0}
-.kp-tw{overflow-x:auto;margin-top:30px;border:1px solid var(--line);border-radius:13px}
+.kp-tw{overflow-x:auto;border:1px solid var(--line);border-radius:13px}
 .kp-table{width:100%;border-collapse:collapse;font-size:.87rem;min-width:720px}
 .kp-table th,.kp-table td{padding:13px 16px;text-align:left;vertical-align:top;
   border-bottom:1px solid var(--line2)}
@@ -277,11 +276,8 @@
 }
 
 /* ---------- Pris + CTA ---------- */
-.kp-price{padding:0 0 84px}
 .kp-price .box{background:var(--panel);border:1px solid var(--line);border-radius:15px;
   padding:30px 32px;max-width:62ch}
-.kp-price h2{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.55rem;
-  font-weight:600;letter-spacing:-.02em;margin:0 0 11px}
 .kp-price p{color:var(--mut);line-height:1.64;margin:0 0 11px}
 .kp-price p:last-child{margin:0}
 .kp-price b{color:var(--ink);font-weight:500}
@@ -309,3 +305,25 @@
   .kp-app-top{padding:0 13px;gap:10px}
   .kp-app-name small{display:none}
 }
+
+/* ---------- Saadan gor du (tre trin over demoen) ---------- */
+.kp-how{list-style:none;margin:0 0 26px;padding:0;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:13px}
+.kp-how li{display:flex;gap:12px;align-items:flex-start;background:var(--panel);
+  border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.kp-how b{flex:0 0 auto;width:23px;height:23px;border-radius:50%;background:var(--acc);
+  color:var(--acc-deep);font-size:.76rem;font-weight:700;display:grid;place-items:center;
+  margin-top:1px;font-family:'Space Grotesk',system-ui,sans-serif}
+.kp-how span{font-size:.88rem;line-height:1.55;color:var(--mut)}
+.kp-how strong{color:var(--ink);font-weight:500}
+
+/* ---------- Slutsektion ---------- */
+.kp-end{padding-bottom:104px}
+.kp-end-in{max-width:58ch;margin:0 auto;text-align:center}
+.kp-end-in h2{font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.06;letter-spacing:-.025em;
+  font-weight:600;margin:0 0 18px}
+.kp-end-in p{color:var(--mut);line-height:1.64;font-size:1.02rem;margin:0 0 28px}
+.kp-end-note{font-size:.88rem;margin:20px 0 0 !important}
+.kp-end-note a{color:var(--acc);text-decoration:none;border-bottom:1px solid rgba(198,255,61,.3)}
+.kp-end-note a:hover{border-bottom-color:var(--acc)}
