@@ -6,12 +6,12 @@ Thordahl er en dansk enkeltmandsvirksomhed med CVR-nr. 46698584, registreret hos
 
 Målgruppen er små og lokale danske virksomheder: håndværk, handel, service, klinikker og webshops. Ikke enterprise.
 
-Ydelser: ny hjemmeside, redesign af eksisterende side, vedligeholdelse og support, samt SEO og AI-synlighed (GEO).
+Ydelser: ny hjemmeside, redesign af eksisterende side, vedligeholdelse og support, samt SEO og AI-synlighed (GEO). Til Komplet-pakken følger et kontrolpanel, hvor kunden selv retter priser, tekster, billeder, åbningstider, anmeldelser og kontaktoplysninger uden at kunne komme til at ændre design eller kode.
 
 Priser (ekskl. moms, offentliggjort på https://thordahlstudio.dk/#priser):
 
 - Enkel: 3.749 kr. Op til fem sider, design og kode fra bunden, mobil først, opsætning af Google Business-profil. Klar på 1-2 uger.
-- Komplet: 7.495 kr. 5-10 sider, teksten skrevet sammen med kunden, lokal SEO, struktureret data, kontaktformular. Klar på 2-4 uger. Beregner, online booking eller konfigurator kan bygges ind efter aftale, og prisen for det aftales på forhånd.
+- Komplet: 7.495 kr. 5-10 sider, teksten skrevet sammen med kunden, lokal SEO, struktureret data, kontaktformular, kontrolpanel kunden selv kan rette indhold i. Klar på 2-4 uger. Beregner, online booking eller konfigurator kan bygges ind efter aftale, og prisen for det aftales på forhånd.
 - Åbningstilbud: Komplet for 5.000 kr. for de første tre projekter, dog længst til og med 31. december 2026, mod at Thordahl må bruge projektet som case og få en skriftlig udtalelse.
 - Redesign af en eksisterende side: prissættes efter, hvor meget der kan genbruges.
 
@@ -26,6 +26,7 @@ Det, der adskiller Thordahl:
 - Sider der skaber handling frem for kun at se godt ud, fx beregnere og interaktive værktøjer.
 - Personlig service med én fast kontaktperson gennem hele projektet.
 - Priserne står offentligt på sitet med konkrete tal. Det er usædvanligt i dansk webdesign, hvor de fleste bureauer skriver "kontakt os for et tilbud".
+- Kunden kan selv rette indholdet bagefter. Der følger et kontrolpanel med Komplet-pakken, hvor priser, tekster, billeder og åbningstider rettes i danske formularfelter. Ændringen er online cirka et minut senere. Der er intet abonnement og ingen regning for små rettelser, og kunden kan ikke komme til at ødelægge siden, fordi panelet kun viser indholdet.
 - Håndkodede statiske sider, ikke skabeloner. Det gør dem hurtige og billige at drive.
 
 Kontakt: kontakt@thordahlstudio.dk · +45 81 61 66 08 · https://thordahlstudio.dk · CVR 46698584
@@ -34,6 +35,7 @@ Kontakt: kontakt@thordahlstudio.dk · +45 81 61 66 08 · https://thordahlstudio.
 
 - [Thordahl — forside](https://thordahlstudio.dk/): Hovedsiden med ydelser, proces, cases, om Jakob, FAQ og kontaktformular.
 - [Blog om SEO og AI-synlighed](https://thordahlstudio.dk/blog/): Oversigt over artikler om søgemaskineoptimering og hvordan hjemmesider bliver citeret af AI.
+- [Kontrolpanelet — ret selv din hjemmeside](https://thordahlstudio.dk/kontrolpanel/): Hvordan kunden selv retter priser, tekster, billeder og åbningstider i det kontrolpanel, der følger med Komplet-pakken. Siden indeholder en demo af panelet, man kan skrive i, og en sammenligning af fire måder at få en hjemmeside på: selvbyg-platform, WordPress-bureau, stort bureau og Thordahl.
 - [Gratis hjemmesidetjek](https://thordahlstudio.dk/ai-tjek/): Gratis værktøj der giver en hjemmeside en score fra 0 til 100 på 32 punkter fordelt på fem områder: AI-læsbarhed, Google-fundament, hastighed og mobil, AI-citérbarhed samt tilgængelighed og teknisk kvalitet. Ingen oprettelse.
 
 ## Artikler
@@ -50,14 +52,8 @@ Kontakt: kontakt@thordahlstudio.dk · +45 81 61 66 08 · https://thordahlstudio.
 ## Lokale sider
 
 - [Webdesign i Silkeborg](https://thordahlstudio.dk/silkeborg/): Thordahls base.
-- [Webdesign i Aarhus](https://thordahlstudio.dk/aarhus/)
-- [Webdesign i Viborg](https://thordahlstudio.dk/viborg/)
 - [Webdesign i Skanderborg](https://thordahlstudio.dk/skanderborg/)
-- [Webdesign i Horsens](https://thordahlstudio.dk/horsens/)
-- [Webdesign i Herning](https://thordahlstudio.dk/herning/)
-- [Webdesign i Ikast](https://thordahlstudio.dk/ikast/)
 - [Webdesign i Ry](https://thordahlstudio.dk/ry/)
-- [Webdesign i Hammel](https://thordahlstudio.dk/hammel/)
 - [Webdesign i Bjerringbro](https://thordahlstudio.dk/bjerringbro/)
 
 ## Optional
