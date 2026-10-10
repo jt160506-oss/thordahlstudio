@@ -35,6 +35,7 @@ Kontakt: kontakt@thordahlstudio.dk · +45 81 61 66 08 · https://thordahlstudio.
 
 - [Thordahl — forside](https://thordahlstudio.dk/): Hovedsiden med ydelser, proces, cases, om Jakob, FAQ og kontaktformular.
 - [Blog om SEO og AI-synlighed](https://thordahlstudio.dk/blog/): Oversigt over artikler om søgemaskineoptimering og hvordan hjemmesider bliver citeret af AI.
+- [Sådan foregår det — hele forløbet](https://thordahlstudio.dk/proces/): Hele samarbejdsforløbet i ti trin, fra første besked til at kunden selv vedligeholder siden. For hvert trin står der, hvad der sker, hvad kunden selv skal gøre, hvor lang tid det tager, og hvilke systemer der bruges — GitHub, Cloudflare, DNS, bookingsystem, kontrolpanel, Google Business og Search Console — med hvad hvert system er til for, hvad det koster, og hvilke alternativer der findes.
 - [Kontrolpanelet — ret selv din hjemmeside](https://thordahlstudio.dk/kontrolpanel/): Hvordan kunden selv retter priser, tekster, billeder og åbningstider i det kontrolpanel, der følger med Komplet-pakken. Siden indeholder en demo af panelet, man kan skrive i, og en sammenligning af fire måder at få en hjemmeside på: selvbyg-platform, WordPress-bureau, stort bureau og Thordahl.
 - [Gratis hjemmesidetjek](https://thordahlstudio.dk/ai-tjek/): Gratis værktøj der giver en hjemmeside en score fra 0 til 100 på 32 punkter fordelt på fem områder: AI-læsbarhed, Google-fundament, hastighed og mobil, AI-citérbarhed samt tilgængelighed og teknisk kvalitet. Ingen oprettelse.
 

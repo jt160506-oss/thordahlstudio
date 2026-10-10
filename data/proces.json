@@ -1,78 +1,157 @@
 {
-  "_om": "Én kilde til hele samarbejdsforløbet. Den offentlige linje på /proces/ og Jakobs interne tjekliste læser begge herfra, så processen kun skal rettes ét sted. Generér siden med: python3 vaerktoej/proces.py",
+  "_om": "Én kilde til hele samarbejdsforløbet. Den offentlige side /proces/ genereres herfra med: python3 vaerktoej/proces.py — hent den ALDRIG med fetch() ved runtime, så ser Google en tom side.",
+  "_felter": {
+    "lead": "overfladen — den ene sætning kunden læser i farten",
+    "hvad_der_sker": "dybden — hvad der faktisk foregår, når trinnet foldes ud",
+    "dig": "hvad kunden selv skal gøre (som regel ingenting)",
+    "jeg_skal_bruge": "hvad Jakob konkret har brug for fra kunden i dette trin",
+    "systemer": "værktøjerne i trinnet, forklaret i hverdagssprog, med alternativer",
+    "internt": "Jakobs egen tjekliste — vises ikke på den offentlige side"
+  },
   "opdateret": "2026-10-10",
   "faser": [
     {
-      "id": "kontakt",
-      "nr": "01",
-      "navn": "Du skriver",
+      "id": "kontakt", "nr": "01", "navn": "Du skriver",
       "lead": "Et par linjer om din virksomhed, og hvad du gerne vil have hjælp til. Ikke mere.",
-      "dig": "Skriv eller ring. Du behøver ikke vide, hvad du vil have.",
+      "hvad_der_sker": "Du skriver eller ringer. Du behøver ikke vide, hvad du vil have, eller hvad det hedder. Inden jeg svarer, bruger jeg en halv time på at se på din virksomhed: hvad du laver, hvordan du ser ud på Google i dag, hvad dine konkurrenter i byen har gjort, og hvad der er galt med den side, du eventuelt har i forvejen. Så er den første samtale ikke spildt på det, jeg selv kunne have slået op.",
+      "dig": "Skriv eller ring. Du behøver ikke forberede noget.",
       "tid": "Under 1 minut",
-      "pakke": ["enkel", "komplet"],
-      "valgfri": false,
+      "jeg_skal_bruge": "Virksomhedens navn, hvad I laver, og hvilken by I er i.",
+      "pakke": ["enkel", "komplet"], "valgfri": false,
+      "systemer": [
+        {
+          "navn": "Hjemmesidetjekket",
+          "hvad_det_er": "Mit eget gratis værktøj, der gennemgår en hjemmeside på 32 punkter og giver den en score fra 0 til 100.",
+          "hvorfor": "Har du en side i forvejen, kører jeg den igennem, før vi taler sammen. Så ved vi begge to, hvad der er galt, og hvad der faktisk er værd at lave om.",
+          "pris": "Gratis. Du kan selv køre det på thordahlstudio.dk/ai-tjek/.",
+          "alternativer": "Google PageSpeed Insights måler hastighed, men siger intet om, hvorvidt en AI kan læse siden, eller om en besøgende bliver til en kunde."
+        },
+        {
+          "navn": "Google Business-profilen",
+          "hvad_det_er": "Det kort med åbningstider, billeder og anmeldelser, der dukker op til højre, når nogen googler din virksomhed.",
+          "hvorfor": "Jeg kigger på, om din er udfyldt. For en lokal virksomhed er den ofte vigtigere end selve hjemmesiden, og den er gratis at rette op på.",
+          "pris": "Gratis.",
+          "alternativer": "Ingen rigtig. Det er Googles eget, og der er ikke noget at vælge imellem."
+        }
+      ],
       "internt": [
         "Svar samme dag. Notér branche, by og hvad de beder om.",
-        "Slå virksomheden op: CVR, Google Business-profil, nuværende side, konkurrenter i byen.",
+        "Slå virksomheden op: CVR, Google Business, nuværende side, konkurrenter i byen.",
         "Kør hjemmesidetjekket på deres nuværende side, hvis de har en."
       ]
     },
+
     {
-      "id": "samtale",
-      "nr": "02",
-      "navn": "Vi taler sammen",
-      "lead": "En kort samtale om, hvad siden skal kunne, og hvem den skal tale til. Du får ærlig besked, hvis noget ikke er pengene værd.",
+      "id": "samtale", "nr": "02", "navn": "Vi taler sammen",
+      "lead": "En kort samtale om, hvad siden skal kunne, og hvem den skal tale til.",
+      "hvad_der_sker": "Vi taler om én ting mest af alt: hvad en besøgende skal gøre, når de lander på siden. Ringe? Booke? Finde vej? Alt andet følger af det svar. Jeg spørger også til tre praktiske ting, der plejer at give bøvl senere: hvem der ejer dit domæne i dag, om der ligger firmamail på det, og hvilket bookingsystem du allerede bruger. Og du får ærlig besked, hvis noget af det, du spørger om, ikke er pengene værd.",
       "dig": "Afsæt en halv time. Ingen forberedelse.",
       "tid": "Ca. 30 min",
-      "pakke": ["enkel", "komplet"],
-      "valgfri": false,
+      "jeg_skal_bruge": "At du ved, hvor dit domæne er købt — eller hvem der har sat det op for dig.",
+      "pakke": ["enkel", "komplet"], "valgfri": false,
+      "systemer": [
+        {
+          "navn": "Domæneregistratoren",
+          "hvad_det_er": "Det sted, dit domæne er købt — fx One.com, Simply.com, GoDaddy eller DK Hostmaster.",
+          "hvorfor": "Jeg skal vide hvilken, fordi det er dér, siden senere skal pege hen. Vi skal ikke flytte dit domæne — kun ændre, hvor det peger.",
+          "pris": "Typisk 50–150 kr. om året for et .dk-domæne. Det betaler du direkte, i dit eget navn.",
+          "alternativer": "Hvis du ikke har et domæne endnu, hjælper jeg med at vælge og købe det. Det skal stå i dit navn, ikke i mit."
+        },
+        {
+          "navn": "Dit nuværende bookingsystem",
+          "hvad_det_er": "Det, du allerede bruger til at tage imod tider — fx Cal.com, Calendly, Shortcut, Planway eller en telefonbog.",
+          "hvorfor": "Jeg bygger siden omkring det, du har, i stedet for at flytte dig. Et systemskifte midt i en hjemmesideopgave giver to problemer i stedet for ét.",
+          "pris": "Det, du betaler i dag. Uændret.",
+          "alternativer": "Har du ingen, kan Cal.com bruges gratis, eller vi kan nøjes med en formular og et telefonnummer. Det afhænger af, om du faktisk vil have folk til at booke selv."
+        }
+      ],
       "internt": [
-        "Afklar: hvad skal en besøgende gøre på siden? Ringe, booke, købe, finde vej?",
+        "Afklar: hvad skal en besøgende gøre? Ringe, booke, købe, finde vej?",
         "Spørg hvilket bookingsystem de ALLEREDE bruger. Bevar det, migrér dem ikke.",
         "Afklar hvem der ejer domænet i dag, og om der ligger mail på det.",
         "Afklar om de selv vil rette indhold bagefter — afgør Enkel eller Komplet."
       ]
     },
+
     {
-      "id": "tilbud",
-      "nr": "03",
-      "navn": "Du får et tilbud",
+      "id": "tilbud", "nr": "03", "navn": "Du får et tilbud",
       "lead": "Fast pris, tidsplan og præcis hvad der er med. Prisen ændrer sig ikke undervejs.",
-      "dig": "Læs det igennem. Sig ja eller nej. Du binder dig ikke før.",
+      "hvad_der_sker": "Du får omfanget skrevet ud i sider og funktioner, så der ikke er tvivl bagefter om, hvad der var med. Halvdelen betales ved opstart, halvdelen ved levering. Siger du nej, er der ikke sket noget — du har ikke betalt for samtalen, og du skylder ikke noget.",
+      "dig": "Læs det igennem. Sig ja eller nej.",
       "tid": "1–2 dage",
-      "pakke": ["enkel", "komplet"],
-      "valgfri": false,
+      "jeg_skal_bruge": "Et ja eller et nej. Begge dele er fine.",
+      "pakke": ["enkel", "komplet"], "valgfri": false,
+      "systemer": [],
       "internt": [
         "Skriv omfanget ud i sider og funktioner, så der ikke er tvivl bagefter.",
         "Halvdelen ved opstart, halvdelen ved levering. Skriv det i tilbuddet.",
-        "Hvis det er åbningstilbuddet: skriv betingelsen om case og udtalelse ind."
+        "Er det åbningstilbuddet: skriv betingelsen om case og udtalelse ind."
       ]
     },
+
     {
-      "id": "materiale",
-      "nr": "04",
-      "navn": "Du sender materialet",
-      "lead": "Billeder, priser, logo og det, du gerne vil have sagt. Det er det eneste sted i forløbet, hvor du skal bruge tid.",
+      "id": "materiale", "nr": "04", "navn": "Du sender materialet",
+      "lead": "Billeder, priser, logo og det, du gerne vil have sagt.",
+      "hvad_der_sker": "Det her er det eneste sted i hele forløbet, hvor du skal bruge tid. Send det, du har — også selvom det ikke er pænt eller færdigt. Mangler der tekst, skriver jeg et udkast, og så retter du i det. Det går hurtigere end at vente på, at du får skrevet det selv. Dine billeder bliver kørt gennem en behandling, der gør dem skarpere og samtidig meget mindre, så siden ikke bliver langsom af dem.",
       "dig": "Saml det, du har. Mangler der noget, finder vi ud af det sammen.",
       "tid": "Din egen takt",
-      "pakke": ["enkel", "komplet"],
-      "valgfri": false,
+      "jeg_skal_bruge": "Billeder i den oprindelige størrelse — ikke hentet ned fra Facebook. Logo, hvis du har et. Priser. Og gerne et par sætninger om, hvad du er stolt af.",
+      "pakke": ["enkel", "komplet"], "valgfri": false,
+      "systemer": [
+        {
+          "navn": "Billedbehandlingen",
+          "hvad_det_er": "Et lille program, jeg kører dine billeder igennem. Det gør dem skarpere, fjerner støj og gemmer dem i flere størrelser og i et nyere filformat.",
+          "hvorfor": "Et billede fra en telefon fylder typisk 4 megabyte. På siden fylder det samme billede omkring 150 kilobyte og ser bedre ud. Det er en af hovedgrundene til, at siden loader hurtigt på mobil.",
+          "pris": "Ingenting. Det er med i prisen.",
+          "alternativer": "WordPress-sider bruger som regel et plugin til det samme. Det virker, men det skal holdes opdateret, og det gør siden langsommere, ikke hurtigere."
+        },
+        {
+          "navn": "Google Business-profilen",
+          "hvad_det_er": "Dit virksomhedskort på Google.",
+          "hvorfor": "Jeg henter åbningstider, adresse og telefonnummer derfra, så siden og Google siger præcis det samme. Siger de noget forskelligt, tror Google på ingen af dem.",
+          "pris": "Gratis.",
+          "alternativer": "Ingen."
+        }
+      ],
       "internt": [
         "Bed om originalbilleder, ikke skærmbilleder eller Facebook-downloads.",
-        "Kør billederne gennem opskaleringen og lav WebP i flere bredder plus LQIP.",
-        "Mangler der tekst, skriv et udkast selv og lad kunden rette — det er hurtigere end at vente.",
+        "Kør billederne gennem opskaleringen, lav WebP i flere bredder plus LQIP.",
+        "Mangler der tekst: skriv udkast selv og lad kunden rette. Hurtigere end at vente.",
         "Hent åbningstider, priser og adresse fra Google Business, så intet modsiger hinanden."
       ]
     },
+
     {
-      "id": "bygning",
-      "nr": "05",
-      "navn": "Jeg bygger siden",
-      "lead": "Struktur, design og kode. Håndskrevet fra bunden, bygget til mobil først, uden skabelon og uden plugins.",
+      "id": "bygning", "nr": "05", "navn": "Jeg bygger siden",
+      "lead": "Struktur, design og kode. Skrevet fra bunden, bygget til mobil først.",
+      "hvad_der_sker": "Først et sidekort: hvad står hvor, og hvad er det ene, en besøgende skal gøre. Så design, så kode. Siden skrives i hånden — der er ingen skabelon og ingen plugins, og derfor er der heller ingenting, der skal opdateres eller kan gå i stykker senere. Undervejs bygges tre ting ind, som man ikke kan se, men som afgør, om du bliver fundet: en maskinlæsbar beskrivelse af din virksomhed, en fil der gør det let for ChatGPT og Perplexity at citere dig rigtigt, og en gennemgang for at sikre, at siden kan bruges af folk med skærmlæser eller dårligt syn.",
       "dig": "Ingenting. Du hører fra mig, når der er noget at se.",
       "tid": "1–3 uger",
-      "pakke": ["enkel", "komplet"],
-      "valgfri": false,
+      "jeg_skal_bruge": "Ingenting. Materialet fra forrige trin er nok.",
+      "pakke": ["enkel", "komplet"], "valgfri": false,
+      "systemer": [
+        {
+          "navn": "Håndskrevet HTML, CSS og JavaScript",
+          "hvad_det_er": "De tre sprog en browser forstår direkte. Ingen WordPress, intet Wix, ingen skabelon ovenpå.",
+          "hvorfor": "En side uden lag ovenpå er hurtigere, kan ikke hackes gennem et plugin, og kræver ingen opdateringer. Om fem år virker den stadig, uden at nogen har rørt den.",
+          "pris": "Ingen løbende udgift. Det er bare filer.",
+          "alternativer": "WordPress giver flere færdige funktioner hurtigt, men koster vedligeholdelse resten af sidens levetid. Til en side på 5–10 sider er det en dårlig byttehandel."
+        },
+        {
+          "navn": "Struktureret data",
+          "hvad_det_er": "En usynlig faktaboks i sidens kode: hvad virksomheden hedder, hvor den ligger, hvornår der er åbent, hvad den tilbyder.",
+          "hvorfor": "Det er dét, der får åbningstider og stjerner til at stå direkte i Googles søgeresultat i stedet for bare et link. Og det er dét, en AI læser, når nogen spørger den, hvornår I har åbent.",
+          "pris": "Med i prisen.",
+          "alternativer": "Man kan lade være. Så står der bare et link."
+        },
+        {
+          "navn": "llms.txt",
+          "hvad_det_er": "En almindelig tekstfil på siden med virksomhedens fakta skrevet ud, så en AI kan læse dem uden at skulle gætte.",
+          "hvorfor": "ChatGPT og Perplexity anbefaler i stigende grad lokale virksomheder direkte. Filen gør det let for dem at citere dig korrekt i stedet for at tage fejl.",
+          "pris": "Med i prisen.",
+          "alternativer": "Det er en ny ting, og de fleste bureauer laver den ikke endnu. Det er netop derfor, det er værd at have."
+        }
+      ],
       "internt": [
         "Sidekort først: hvad står hvor, og hvad er det ene, en besøgende skal gøre.",
         "Byg indholdet ind i HTML'en, ikke oven på den. Siden skal kunne læses uden JavaScript.",
@@ -81,63 +160,148 @@
         "Tjek 320 til 1440 px for vandret scroll, før kunden ser noget."
       ]
     },
+
     {
-      "id": "booking",
-      "nr": "05b",
-      "navn": "Booking eller beregner",
-      "lead": "Skal siden kunne mere end at fortælle — tage imod bookinger eller regne et prisoverslag ud — bygges det ind her.",
+      "id": "booking", "nr": "05b", "navn": "Booking eller beregner",
+      "lead": "Skal siden kunne mere end at fortælle — tage imod bookinger eller regne et overslag ud — bygges det ind her.",
+      "hvad_der_sker": "Skal folk kunne booke selv, kobler jeg dit eksisterende bookingsystem ind i siden, så knapperne peger det rigtige sted hen og ser ud som resten. Skal siden kunne regne noget ud — et prisoverslag, et materialeforbrug — bygger jeg en lille beregner. Den regner i kroner, kunden forstår, ikke i procenter. Prisen for det her aftales på forhånd, ikke bagefter.",
       "dig": "Fortæl hvad den skal kunne regne ud eller tage imod.",
       "tid": "Efter aftale",
-      "pakke": ["komplet"],
-      "valgfri": true,
+      "jeg_skal_bruge": "Login til dit bookingsystem, eller reglerne for hvordan du selv regner et tilbud ud.",
+      "pakke": ["komplet"], "valgfri": true,
       "branche": ["frisør", "klinik", "restaurant", "håndværk"],
+      "systemer": [
+        {
+          "navn": "Cal.com",
+          "hvad_det_er": "Et bookingsystem, hvor kunder selv vælger en ledig tid i din kalender.",
+          "hvorfor": "Det kan bruges gratis, det kobler sig på din egen kalender, og det kan lægges direkte ind i siden i stedet for at sende folk videre til et fremmed websted.",
+          "pris": "Gratis til én person. Betalt plan, hvis I er flere, der skal bookes hver for sig.",
+          "alternativer": "Calendly ligner, men koster hurtigere penge. Planway og Shortcut er danske og har flere salon-funktioner. Bruger du allerede ét af dem, bevarer vi det."
+        },
+        {
+          "navn": "En beregner bygget til dig",
+          "hvad_det_er": "Et lille skema på siden, hvor en kunde selv taster sine tal ind og får et overslag.",
+          "hvorfor": "Den sorterer. De, der får et tal, de ikke kan leve med, ringer ikke — og du bruger ikke en time på et tilbud, der aldrig blev til noget. De, der ringer, er varme.",
+          "pris": "Efter aftale, fastsat før vi går i gang.",
+          "alternativer": "Ingen færdig løsning kan regne efter dine regler. Det skal bygges."
+        }
+      ],
       "internt": [
         "Brug kundens eget bookingsystem. Migrér dem kun, hvis de selv beder om det.",
         "Beregnere: regn i kroner kunden forstår, ikke i procenter.",
         "Prisen for det her aftales på forhånd, ikke bagefter."
       ]
     },
+
     {
-      "id": "gennemgang",
-      "nr": "06",
-      "navn": "Du ser den og siger til",
-      "lead": "Du får et link til den færdige side, før nogen andre kan se den. Sig hvad der skal laves om.",
-      "dig": "Kig den igennem i ro. Skriv alt det, du vil have rettet, i én omgang.",
+      "id": "gennemgang", "nr": "06", "navn": "Du ser den og siger til",
+      "lead": "Du får et link til den færdige side, før nogen andre kan se den.",
+      "hvad_der_sker": "Du får ét link, ikke skærmbilleder — du skal se siden på din egen telefon, som dine kunder vil se den. Kig den igennem i ro, og skriv alt det, du vil have rettet, i én omgang. To runder rettelser er helt normalt og med i prisen. Siden ligger på en midlertidig adresse, som Google ikke kan finde, indtil du siger god for den.",
+      "dig": "Kig den igennem i ro. Saml alle rettelser i én besked.",
       "tid": "2–3 dage",
-      "pakke": ["enkel", "komplet"],
-      "valgfri": false,
+      "jeg_skal_bruge": "Alle dine rettelser samlet. Også de små — det er nemmere end at tage dem én ad gangen.",
+      "pakke": ["enkel", "komplet"], "valgfri": false,
+      "systemer": [
+        {
+          "navn": "Midlertidig visningsadresse",
+          "hvad_det_er": "En skjult webadresse, hvor den færdige side kan ses, før den kommer op på dit rigtige domæne.",
+          "hvorfor": "Du skal kunne se den rigtige side på din rigtige telefon og vise den til din familie, uden at en kunde eller Google falder over den.",
+          "pris": "Gratis.",
+          "alternativer": "Skærmbilleder. Men de lyver — de viser ikke, hvordan det føles at scrolle."
+        }
+      ],
       "internt": [
         "Send ét link, ikke skærmbilleder. De skal se den på deres egen telefon.",
         "Bed om alle rettelser samlet. Ellers bliver det en uendelig række af småting.",
         "Ret og vis igen. To runder er normalt."
       ]
     },
+
     {
-      "id": "live",
-      "nr": "07",
-      "navn": "Siden går i luften",
-      "lead": "Domæne, hosting og det tekniske. Jeg sætter det hele op i dit eget navn, så du ejer det.",
+      "id": "live", "nr": "07", "navn": "Siden går i luften",
+      "lead": "Domæne, hosting og det tekniske. Jeg sætter det hele op i dit eget navn.",
+      "hvad_der_sker": "Det er her, der kan gå noget galt, hvis man har travlt — og derfor det trin, jeg bruger mest omhu på. Dit domæne skal pege et nyt sted hen, og i den ombæring kan firmamailen forsvinde, hvis man ikke passer på. Derfor skriver jeg hver eneste eksisterende indstilling på dit domæne ned i hånden først og tjekker dem igen bagefter. En automatisk flytning tager dem ikke alle med — det er den klassiske måde at slukke for en virksomheds mail på. Derefter kommer siden op, sikkerhedscertifikatet sættes op af sig selv, og Google får besked om, at der er noget nyt at kigge på.",
       "dig": "Godkend, at vi går live. Resten ordner jeg.",
       "tid": "1 dag",
-      "pakke": ["enkel", "komplet"],
-      "valgfri": false,
+      "jeg_skal_bruge": "Adgang til det sted, dit domæne er købt — eller at du selv ændrer to indstillinger, mens jeg guider dig over telefonen.",
+      "pakke": ["enkel", "komplet"], "valgfri": false,
+      "systemer": [
+        {
+          "navn": "GitHub",
+          "hvad_det_er": "Det sted, selve filerne til din hjemmeside ligger og gemmes. Tænk på det som et arkivskab, der husker hver eneste version af siden.",
+          "hvorfor": "Alt kan rulles tilbage. Går der noget galt med en ændring, kan vi altid hente gårsdagens udgave frem igen. Det er også herfra, dit kontrolpanel gemmer dine rettelser.",
+          "pris": "Gratis.",
+          "alternativer": "Man kan uploade filer manuelt til en server. Så er der bare ingen historik, og ingenting kan fortrydes."
+        },
+        {
+          "navn": "Cloudflare",
+          "hvad_det_er": "Det sted, siden faktisk bliver serveret fra, og det sted, der styrer, hvor dit domæne peger hen.",
+          "hvorfor": "Dine filer bliver lagt ud på maskiner over hele verden, så siden hentes fra den nærmeste. Det er derfor, den åbner med det samme, uanset om man står i Silkeborg eller i Spanien. Og der er ingen månedlig regning for en side som din.",
+          "pris": "Gratis. Du betaler kun for selve domænet.",
+          "alternativer": "GitHub Pages kan det samme og er også gratis. Almindelig webhotel-hosting koster typisk 50–100 kr. om måneden og er som regel langsommere."
+        },
+        {
+          "navn": "Dine DNS-indstillinger",
+          "hvad_det_er": "Den lille seddel, der fortæller internettet, hvor dit domæne peger hen — både hjemmesiden og firmamailen.",
+          "hvorfor": "Mailen og hjemmesiden ligger forskellige steder, men styres af den samme seddel. Derfor gennemgår jeg hver linje manuelt, før der ændres noget, og tjekker bagefter, at mailen stadig kommer frem.",
+          "pris": "Gratis.",
+          "alternativer": "Der er ikke noget at vælge. Der er kun at gøre det omhyggeligt eller at lade være."
+        },
+        {
+          "navn": "Sikkerhedscertifikat (HTTPS)",
+          "hvad_det_er": "Den lille hængelås ved siden af adressen i browseren.",
+          "hvorfor": "Uden den skriver Chrome »Ikke sikker« ud for din side, og folk lukker den igen. Den sættes op automatisk og fornyer sig selv.",
+          "pris": "Gratis.",
+          "alternativer": "Ingen. Det skal bare være der."
+        },
+        {
+          "navn": "Google Search Console",
+          "hvad_det_er": "Googles eget værktøj, hvor man kan se, hvad Google har fundet på siden, og hvad folk søger på, inden de klikker.",
+          "hvorfor": "Jeg melder siden ind, så Google ved, den findes, i stedet for at vente på at blive opdaget. Du får også selv adgang, hvis du vil se tallene.",
+          "pris": "Gratis.",
+          "alternativer": "Bing har sit eget tilsvarende. Det melder jeg også siden ind i."
+        }
+      ],
       "internt": [
         "Skriv ALLE eksisterende DNS-records ned, før navneserverne skiftes. Særligt MX, SPF, DKIM, DMARC og autodiscover.",
         "Verificér hver record live bagefter. En automatisk import tager dem ikke alle.",
         "Domæne og hosting i kundens eget navn, betalt direkte til leverandøren.",
-        "Sitemap, robots.txt og llms.txt på plads. Google Business-profilen peger på den nye adresse.",
+        "Sitemap, robots.txt og llms.txt på plads. Google Business peger på den nye adresse.",
         "Kontaktformularen skal være testet og virke, før der sendes et link ud."
       ]
     },
+
     {
-      "id": "panel",
-      "nr": "08",
-      "navn": "Du overtager indholdet",
-      "lead": "Du får kontrolpanelet og en kort gennemgang. Derefter retter du selv priser, tekster, billeder og åbningstider, uden at spørge nogen om lov.",
-      "dig": "Prøv at rette noget, mens vi er i telefonen. Så sidder det fast.",
+      "id": "panel", "nr": "08", "navn": "Du overtager indholdet",
+      "lead": "Du får kontrolpanelet og en kort gennemgang. Derefter retter du selv.",
+      "hvad_der_sker": "Du logger ind på din egen side under /admin og ser et panel med dine egne ting: priser, billeder, tekster, åbningstider, anmeldelser og kontaktoplysninger. Du retter det, du vil rette, og trykker Publish. Bag kulissen gemmes ændringen i arkivskabet, siden bygges om af sig selv, og cirka et minut senere ser dine kunder det nye. Vi laver den første rettelse sammen, mens vi er i telefonen — så sidder det fast. Panelet viser kun indholdet, ikke designet eller koden, så der er ikke noget, du kan komme til at ødelægge.",
+      "dig": "Prøv at rette noget, mens vi er i telefonen.",
       "tid": "15 min",
-      "pakke": ["komplet"],
-      "valgfri": false,
+      "jeg_skal_bruge": "At du opretter en gratis GitHub-konto. Det tager to minutter, og det er den, du logger ind i panelet med.",
+      "pakke": ["komplet"], "valgfri": false,
+      "systemer": [
+        {
+          "navn": "Kontrolpanelet",
+          "hvad_det_er": "En side på dit eget domæne med almindelige danske formularfelter — »Pris«, »Åbner«, »Lukket denne dag«.",
+          "hvorfor": "Du skal ikke ringe til nogen for at hæve en pris med 25 kroner. Felterne hedder noget, et menneske forstår, og der står eksempler i dem.",
+          "pris": "Følger med Komplet-pakken. Intet abonnement.",
+          "alternativer": "WordPress giver dig et stort kontrolpanel med tusind indstillinger, du aldrig skal bruge — og hvor du kan komme til at ødelægge siden. Her kan du kun røre indholdet."
+        },
+        {
+          "navn": "Din egen GitHub-konto",
+          "hvad_det_er": "Den konto, du logger ind i panelet med. Den er din, ikke min.",
+          "hvorfor": "Det betyder, at du beholder adgangen til din egen side, også hvis du en dag holder op med at arbejde med mig. Du er ikke låst inde.",
+          "pris": "Gratis.",
+          "alternativer": "Jeg kunne bruge min egen konto og lade dig gå gennem mig. Det ville binde dig til mig, og det er ikke en handel, jeg vil tilbyde."
+        },
+        {
+          "navn": "Login-mellemleddet",
+          "hvad_det_er": "Et lillebitte program, der står mellem panelet og arkivskabet og tjekker, at det er dig, der logger ind.",
+          "hvorfor": "Uden det skulle der betales abonnement til en tredjepart for at kunne logge ind. Det her koster ingenting og kører på din egen opsætning.",
+          "pris": "Gratis.",
+          "alternativer": "Færdige løsninger findes, men de koster typisk et månedligt beløb per side."
+        }
+      ],
       "internt": [
         "Kunden skal have sin EGEN konto med adgang, ikke min.",
         "Felternes navne skrives som til et menneske, med eksempler i selve labelen.",
@@ -145,15 +309,24 @@
         "Ét A4-ark med fremgangsmåden. Ikke en manual."
       ]
     },
+
     {
-      "id": "efter",
-      "nr": "09",
-      "navn": "Bagefter",
-      "lead": "Der er ingen binding og intet abonnement. Skal der laves noget nyt, ringer du, og vi aftaler prisen først.",
+      "id": "efter", "nr": "09", "navn": "Bagefter",
+      "lead": "Ingen binding og intet abonnement. Skal der laves noget nyt, aftaler vi prisen først.",
+      "hvad_der_sker": "Siden kører af sig selv. Der er ikke noget, der skal opdateres, og der kommer ingen regning, fordi du retter et ord. Skal der bygges noget nyt — en ny sektion, en ny side, en funktion panelet ikke kan — ringer du, og vi aftaler prisen, før jeg går i gang. Jeg holder øje med, hvordan siden klarer sig på Google, og siger til, hvis der sker noget, du bør vide.",
       "dig": "Ingenting. Siden kører.",
       "tid": "Så længe du vil",
-      "pakke": ["enkel", "komplet"],
-      "valgfri": false,
+      "jeg_skal_bruge": "En skriftlig udtalelse, når du er tilfreds — hvis du har lyst.",
+      "pakke": ["enkel", "komplet"], "valgfri": false,
+      "systemer": [
+        {
+          "navn": "Support efter aftale",
+          "hvad_det_er": "Du skriver eller ringer, når der er noget. Der er ingen fast aftale og ingen timebank.",
+          "hvorfor": "De fleste måneder er der ingenting, og så skal du ikke betale for ingenting.",
+          "pris": "Efter aftale, sagt på forhånd.",
+          "alternativer": "Et fast serviceabonnement giver forudsigelighed for mig og en regning for dig i de måneder, hvor der ikke sker noget. Det tilbyder jeg ikke."
+        }
+      ],
       "internt": [
         "Bed om den skriftlige udtalelse nu, mens de er glade — ikke tre måneder senere.",
         "Spørg efter tre måneder, hvordan det går. Det er dér, der kommer mersalg og henvisninger.",
