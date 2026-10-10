@@ -1,0 +1,164 @@
+{
+  "_om": "Én kilde til hele samarbejdsforløbet. Den offentlige linje på /proces/ og Jakobs interne tjekliste læser begge herfra, så processen kun skal rettes ét sted. Generér siden med: python3 vaerktoej/proces.py",
+  "opdateret": "2026-10-10",
+  "faser": [
+    {
+      "id": "kontakt",
+      "nr": "01",
+      "navn": "Du skriver",
+      "lead": "Et par linjer om din virksomhed, og hvad du gerne vil have hjælp til. Ikke mere.",
+      "dig": "Skriv eller ring. Du behøver ikke vide, hvad du vil have.",
+      "tid": "Under 1 minut",
+      "pakke": ["enkel", "komplet"],
+      "valgfri": false,
+      "internt": [
+        "Svar samme dag. Notér branche, by og hvad de beder om.",
+        "Slå virksomheden op: CVR, Google Business-profil, nuværende side, konkurrenter i byen.",
+        "Kør hjemmesidetjekket på deres nuværende side, hvis de har en."
+      ]
+    },
+    {
+      "id": "samtale",
+      "nr": "02",
+      "navn": "Vi taler sammen",
+      "lead": "En kort samtale om, hvad siden skal kunne, og hvem den skal tale til. Du får ærlig besked, hvis noget ikke er pengene værd.",
+      "dig": "Afsæt en halv time. Ingen forberedelse.",
+      "tid": "Ca. 30 min",
+      "pakke": ["enkel", "komplet"],
+      "valgfri": false,
+      "internt": [
+        "Afklar: hvad skal en besøgende gøre på siden? Ringe, booke, købe, finde vej?",
+        "Spørg hvilket bookingsystem de ALLEREDE bruger. Bevar det, migrér dem ikke.",
+        "Afklar hvem der ejer domænet i dag, og om der ligger mail på det.",
+        "Afklar om de selv vil rette indhold bagefter — afgør Enkel eller Komplet."
+      ]
+    },
+    {
+      "id": "tilbud",
+      "nr": "03",
+      "navn": "Du får et tilbud",
+      "lead": "Fast pris, tidsplan og præcis hvad der er med. Prisen ændrer sig ikke undervejs.",
+      "dig": "Læs det igennem. Sig ja eller nej. Du binder dig ikke før.",
+      "tid": "1–2 dage",
+      "pakke": ["enkel", "komplet"],
+      "valgfri": false,
+      "internt": [
+        "Skriv omfanget ud i sider og funktioner, så der ikke er tvivl bagefter.",
+        "Halvdelen ved opstart, halvdelen ved levering. Skriv det i tilbuddet.",
+        "Hvis det er åbningstilbuddet: skriv betingelsen om case og udtalelse ind."
+      ]
+    },
+    {
+      "id": "materiale",
+      "nr": "04",
+      "navn": "Du sender materialet",
+      "lead": "Billeder, priser, logo og det, du gerne vil have sagt. Det er det eneste sted i forløbet, hvor du skal bruge tid.",
+      "dig": "Saml det, du har. Mangler der noget, finder vi ud af det sammen.",
+      "tid": "Din egen takt",
+      "pakke": ["enkel", "komplet"],
+      "valgfri": false,
+      "internt": [
+        "Bed om originalbilleder, ikke skærmbilleder eller Facebook-downloads.",
+        "Kør billederne gennem opskaleringen og lav WebP i flere bredder plus LQIP.",
+        "Mangler der tekst, skriv et udkast selv og lad kunden rette — det er hurtigere end at vente.",
+        "Hent åbningstider, priser og adresse fra Google Business, så intet modsiger hinanden."
+      ]
+    },
+    {
+      "id": "bygning",
+      "nr": "05",
+      "navn": "Jeg bygger siden",
+      "lead": "Struktur, design og kode. Håndskrevet fra bunden, bygget til mobil først, uden skabelon og uden plugins.",
+      "dig": "Ingenting. Du hører fra mig, når der er noget at se.",
+      "tid": "1–3 uger",
+      "pakke": ["enkel", "komplet"],
+      "valgfri": false,
+      "internt": [
+        "Sidekort først: hvad står hvor, og hvad er det ene, en besøgende skal gøre.",
+        "Byg indholdet ind i HTML'en, ikke oven på den. Siden skal kunne læses uden JavaScript.",
+        "Struktureret data: LocalBusiness eller branchens undertype, åbningstider, ydelser.",
+        "Tilgængelighed: kontrast, fokus, prefers-reduced-motion, alt-tekster.",
+        "Tjek 320 til 1440 px for vandret scroll, før kunden ser noget."
+      ]
+    },
+    {
+      "id": "booking",
+      "nr": "05b",
+      "navn": "Booking eller beregner",
+      "lead": "Skal siden kunne mere end at fortælle — tage imod bookinger eller regne et prisoverslag ud — bygges det ind her.",
+      "dig": "Fortæl hvad den skal kunne regne ud eller tage imod.",
+      "tid": "Efter aftale",
+      "pakke": ["komplet"],
+      "valgfri": true,
+      "branche": ["frisør", "klinik", "restaurant", "håndværk"],
+      "internt": [
+        "Brug kundens eget bookingsystem. Migrér dem kun, hvis de selv beder om det.",
+        "Beregnere: regn i kroner kunden forstår, ikke i procenter.",
+        "Prisen for det her aftales på forhånd, ikke bagefter."
+      ]
+    },
+    {
+      "id": "gennemgang",
+      "nr": "06",
+      "navn": "Du ser den og siger til",
+      "lead": "Du får et link til den færdige side, før nogen andre kan se den. Sig hvad der skal laves om.",
+      "dig": "Kig den igennem i ro. Skriv alt det, du vil have rettet, i én omgang.",
+      "tid": "2–3 dage",
+      "pakke": ["enkel", "komplet"],
+      "valgfri": false,
+      "internt": [
+        "Send ét link, ikke skærmbilleder. De skal se den på deres egen telefon.",
+        "Bed om alle rettelser samlet. Ellers bliver det en uendelig række af småting.",
+        "Ret og vis igen. To runder er normalt."
+      ]
+    },
+    {
+      "id": "live",
+      "nr": "07",
+      "navn": "Siden går i luften",
+      "lead": "Domæne, hosting og det tekniske. Jeg sætter det hele op i dit eget navn, så du ejer det.",
+      "dig": "Godkend, at vi går live. Resten ordner jeg.",
+      "tid": "1 dag",
+      "pakke": ["enkel", "komplet"],
+      "valgfri": false,
+      "internt": [
+        "Skriv ALLE eksisterende DNS-records ned, før navneserverne skiftes. Særligt MX, SPF, DKIM, DMARC og autodiscover.",
+        "Verificér hver record live bagefter. En automatisk import tager dem ikke alle.",
+        "Domæne og hosting i kundens eget navn, betalt direkte til leverandøren.",
+        "Sitemap, robots.txt og llms.txt på plads. Google Business-profilen peger på den nye adresse.",
+        "Kontaktformularen skal være testet og virke, før der sendes et link ud."
+      ]
+    },
+    {
+      "id": "panel",
+      "nr": "08",
+      "navn": "Du overtager indholdet",
+      "lead": "Du får kontrolpanelet og en kort gennemgang. Derefter retter du selv priser, tekster, billeder og åbningstider, uden at spørge nogen om lov.",
+      "dig": "Prøv at rette noget, mens vi er i telefonen. Så sidder det fast.",
+      "tid": "15 min",
+      "pakke": ["komplet"],
+      "valgfri": false,
+      "internt": [
+        "Kunden skal have sin EGEN konto med adgang, ikke min.",
+        "Felternes navne skrives som til et menneske, med eksempler i selve labelen.",
+        "Lås det, der ikke må slettes ved et uheld.",
+        "Ét A4-ark med fremgangsmåden. Ikke en manual."
+      ]
+    },
+    {
+      "id": "efter",
+      "nr": "09",
+      "navn": "Bagefter",
+      "lead": "Der er ingen binding og intet abonnement. Skal der laves noget nyt, ringer du, og vi aftaler prisen først.",
+      "dig": "Ingenting. Siden kører.",
+      "tid": "Så længe du vil",
+      "pakke": ["enkel", "komplet"],
+      "valgfri": false,
+      "internt": [
+        "Bed om den skriftlige udtalelse nu, mens de er glade — ikke tre måneder senere.",
+        "Spørg efter tre måneder, hvordan det går. Det er dér, der kommer mersalg og henvisninger.",
+        "Hold øje med deres Google-placering og sig til, hvis der sker noget."
+      ]
+    }
+  ]
+}
